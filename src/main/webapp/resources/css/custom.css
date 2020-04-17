@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+.gnb .navber-open {
+	height: 45px;
+	width: 80px;
+	background-repeat: no-repeat;
+	background-size: 22px;
+	background-position-x: center;
+	background-position-y: 7px;
+	background-color: transparent;
+}
+
+header .button, header [role=button], header [type=button], header button {
+    box-sizing: border-box;
+    position: relative;
+    top: -.125rem;
+    height: 3.4375rem;
+    background: transparent;
+    line-height: 2.4375rem;
+    text-align: center;
+    color: #444;
+    border: 0;
+    border-radius: 0;
+    margin: 0;
+    text-transform: uppercase;
+}
