@@ -23,14 +23,15 @@ $( document ).ready(function(){
 </script>
 </head>
 <body>
-<form id="category" method="get" action="myStudylist">
+<form id="category" method="post" action="myStudylist">
 <input type="button" value="머신러닝" name="c"><br>
 <input type="button" value="프로그래밍" name="c"><br>
 <input type="button" value="디자인" name="c"><br>
 <input type="button" value="마케팅" name="c"><br>
 <input type="hidden" id="cate_name" name="cate">
-<input type="hidden" id="mem_no" name="mem">
+<input type="hidden" id="mem_no" name="mem" value="<%=session.getAttribute("member_no") %>">
 </form>
+
 </body>
 </html>
 
