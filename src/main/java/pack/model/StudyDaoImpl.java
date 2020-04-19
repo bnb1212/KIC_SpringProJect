@@ -1,5 +1,6 @@
 package pack.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +14,9 @@ public class StudyDaoImpl implements StudyDaoInter{
 	private StudyAnnoInter studyAnnoInter;
 	
 	@Override
-	public List<ClassDto> getcateClass(String cate) throws DataAccessException {
+	public List<ClassDto> getcateClass(HashMap<String, String> map) throws DataAccessException {
 		
-		List<ClassDto> classes =  studyAnnoInter.selectMyCateClass(cate);
+		List<ClassDto> classes =  studyAnnoInter.selectMyCateClass(map);
 		return classes;
 	}
 }
