@@ -8,6 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-한잔
+<c:forEach var="m" items="${list }" >
+	<tr>
+		<td>${m.class_no }</td>
+		<td>${m.class_name }</td>
+		<td>${m.class_info }</td>
+	</tr>
+	</c:forEach>
 </body>
 </html>
