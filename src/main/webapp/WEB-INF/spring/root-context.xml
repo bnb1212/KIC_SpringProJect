@@ -30,5 +30,8 @@
 		<property name="mapperInterface" value="admin_model.Admin_MemberInit_AnnoInter"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
 	</bean>
-
+	<bean class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="pack.model.MemberAnnoInter"/>	
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+	</bean>
 </beans>
