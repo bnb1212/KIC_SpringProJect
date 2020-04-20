@@ -16,11 +16,10 @@ import pack.model.ClassInter;
 
 @Controller
 public class DatailController {
+	
 	@Autowired
 	@Qualifier("classImpl")
 	private ClassInter inter;
-	
-
 	
 	@RequestMapping("detail")
 	public ModelAndView searchProcess(ClassinfoBean bean) {
