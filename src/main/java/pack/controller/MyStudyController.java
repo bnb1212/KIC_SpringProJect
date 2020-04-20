@@ -25,4 +25,10 @@ public class MyStudyController{
 	public ModelAndView list(@RequestParam HashMap<String, String> map){
 		return new ModelAndView("mystudylist","list",inter.getcateClass(map));
 	}
+	
+	@RequestMapping(value="myStudyroom",method=RequestMethod.POST)
+	public ModelAndView list2(@RequestParam("clno") String clno){
+		return new ModelAndView("mystudyroom","curries",inter.getClassCurri(clno));
+	}
+	
 }

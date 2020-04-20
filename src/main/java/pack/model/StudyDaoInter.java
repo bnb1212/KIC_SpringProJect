@@ -7,4 +7,5 @@ import org.springframework.dao.DataAccessException;
 
 public interface StudyDaoInter {
 	List<ClassDto> getcateClass(HashMap<String, String> map) throws DataAccessException;
+	List<CurriDto> getClassCurri(String class_no) throws DataAccessException;
 }

@@ -19,4 +19,10 @@ public class StudyDaoImpl implements StudyDaoInter{
 		List<ClassDto> classes =  studyAnnoInter.selectMyCateClass(map);
 		return classes;
 	}
+	
+	@Override
+	public List<CurriDto> getClassCurri(String class_no) throws DataAccessException {
+		List<CurriDto> curries =  studyAnnoInter.selectClassCurri(class_no);
+		return curries;
+	}
 }
