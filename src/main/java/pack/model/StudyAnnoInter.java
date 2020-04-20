@@ -12,4 +12,10 @@ public interface StudyAnnoInter {
 	
 	@Select("select section_no,goal_title from curri where class_no= #{no}")
 	public List<CurriDto> selectClassCurri(String class_no);
+	
+	@Select("select class_name from class where class_no= #{no}")
+	public String selectClassName(String class_no);
+	
+	@Select("select video_title from video where class_no = #{clno} and section_no = #{sctno}")
+	public List<VideoDto> selectVideoPart(HashMap<String, String> map);
 }
