@@ -26,7 +26,7 @@
 			</div>
 		</section>
 	</header>
-<h2 align="center">머신러닝</h2>
+<h2 align="center">디자인</h2>
 
 
 	<div class="container" style="background-color: #D7FFF1">
@@ -37,7 +37,7 @@
 				<table border="1"  width= "250"  style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '4'}">
+	<c:if test="${i.class_no eq '7'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -47,7 +47,7 @@
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '4'}">
+	<c:if test="${i.class_no eq '7'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -56,7 +56,7 @@
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '4'}">
+	<c:if test="${i.class_no eq '7'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -65,7 +65,7 @@
 	
 		<tr><th>카테고리</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '7'}">
 	<tr>
 		<td>${i.class_category}</td>
 	</tr>
@@ -81,7 +81,7 @@
 				<table border="1"  width= "250" style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '5'}">
+	<c:if test="${i.class_no eq '8'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -91,7 +91,7 @@
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '5'}">
+	<c:if test="${i.class_no eq '8'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -100,7 +100,7 @@
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '5'}">
+	<c:if test="${i.class_no eq '8'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -109,7 +109,7 @@
 	
 		<tr><th>카테고리</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '5'}">
+	<c:if test="${i.class_no eq '8'}">
 	<tr>
 		<td>${i.class_category}</td>
 	</tr>
@@ -127,7 +127,7 @@
 				<table border="1" width="250" style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '6'}">
+	<c:if test="${i.class_no eq '9'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -137,7 +137,7 @@
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '6'}">
+	<c:if test="${i.class_no eq '9'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -146,7 +146,7 @@
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '6'}">
+	<c:if test="${i.class_no eq '9'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -155,7 +155,7 @@
 	
 		<tr><th>카테고리</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_no eq '6'}">
+	<c:if test="${i.class_no eq '9'}">
 	<tr>
 		<td>${i.class_category}</td>
 	</tr>
@@ -166,8 +166,9 @@
 				</h3>
 			</section>
 
+
 		</div>
-<br>
+	<br>
 <hr> 
 <h3 align="center"> Other categories </h3>
 <br><br>

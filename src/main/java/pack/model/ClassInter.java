@@ -10,7 +10,9 @@ public interface ClassInter {
 	
 	List<ClassDto> selectMachine() throws DataAccessException;
 	List<ClassDto> selectDesign() throws DataAccessException;
-	List<ClassDto> selectEnglish() throws DataAccessException;
+	List<ClassDto> selectProgramming() throws DataAccessException;
+	List<ClassDto> selectMarketing() throws DataAccessException;
+	
 	List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException;
 
 }
