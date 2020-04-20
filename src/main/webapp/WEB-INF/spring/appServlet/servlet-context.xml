@@ -24,8 +24,4 @@
 	<context:component-scan base-package="admin_controller" />
 	<context:component-scan base-package="admin_model" />
 	<context:component-scan base-package="pack" />
-<<<<<<< HEAD
-=======
-	
->>>>>>> branch 'master' of https://github.com/bnb1212/KIC_SpringProJect.git
 </beans:beans>
