@@ -29,8 +29,9 @@ public class Admin_Update_Controller {
 	
 	@RequestMapping(value = "admin_update", method = RequestMethod.POST)
 	public ModelAndView updateProcess(Admin_MemberBean bean) {
+		int a = 1;
 		inter.update(bean);
-		return new ModelAndView("admin_re");
+		return new ModelAndView("admin_memberinit","a",a);
 	}
 	 
 	

@@ -23,5 +23,5 @@ public interface Admin_MemberInit_AnnoInter {
 	public int update(Admin_MemberBean bean);
 	
 	@Delete("delete from member where member_no=#{member_no}")
-	public int delete(Admin_MemberBean bean);
+	public int delete(String no);
 }

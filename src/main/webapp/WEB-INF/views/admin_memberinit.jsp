@@ -64,6 +64,10 @@ function chk(no){
 </table>
 
 <br>
+<c:if test="a.a==1">
+$("#showDiv").empty();
+
+</c:if>
 
 <div id="showDiv">
 

@@ -13,5 +13,5 @@ public interface Admin_MemberInit_Inter {
 	List<Admin_MemberDto> selectPart(String no);
 	Admin_MemberDto selectPart1 (String no);
 	int update(Admin_MemberBean bean);
-	int delete(Admin_MemberBean bean);
+	int delete(String no);
 }
