@@ -16,17 +16,17 @@
 					<div class="row">
 						<div class="col">
 							<div class="login-box well">
-								<form method="post" action="">
+								<form method="post" action="member_login">
 									<h2>로그인</h2>
 									<div class="form-group">
 										<label for="username-email">회원 Email</label> <input
-											name="user_id" value='' id="member-email"
+											name="member_id" value='' id="member-email"
 											placeholder="E-mail address" type="text"
 											class="form-control" />
 									</div>
 									<div class="form-group">
-										<label for="password">비밀번호</label> <input name="password"
-											id="password" placeholder="Password" type="password"
+										<label for="password">비밀번호</label> <input name="member_passwd"
+											id="member_passwd" value='' placeholder="Password" type="password"
 											class="form-control" />
 									</div>
 									<div class="form-group">
