@@ -21,17 +21,20 @@ public class ClassImpl implements ClassInter{
 	}
 	
 
-
-	
-	@Override
-	public List<ClassDto> selectEnglish() throws DataAccessException {
-	
-		return classAnnoInter.selectEnglish();
-	}
 	
 	@Override
 	public List<ClassDto> selectDesign() throws DataAccessException {
 		return classAnnoInter.selectDesign();
+	}
+	
+	@Override
+	public List<ClassDto> selectProgramming() throws DataAccessException {
+		return classAnnoInter.selectProgramming();
+	}
+	
+	@Override
+	public List<ClassDto> selectMarketing() throws DataAccessException {
+		return classAnnoInter.selectMarketing();
 	}
 	
 	@Override

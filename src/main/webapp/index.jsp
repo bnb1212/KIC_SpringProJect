@@ -24,6 +24,12 @@
     function loginProc(){
     	
     }
+    
+    $("#loginBtn").click(function(){
+        $('div.modal').modal({
+                      remote : 'member_login.jsp'
+                });
+    })
     </script>
 <title>Hello, world!</title>
 
@@ -31,6 +37,7 @@
 <body>
 	<header class="container index-header" style="white-space: nowrap;">
 		<section class="row" style="padding: 14px 0">
+		<!-- row -->
 			<div class="col-2">
 				<div class="logo">
 					<a class='logo' href="index.jsp"
@@ -44,18 +51,19 @@
 			</div>
 			<div class="col">
 				<div class="headerbuttons" style="text-align: right; color: black;">
-					<a data-toggle="modal" href="#loginModal">로그인</a>
+					<a id="loginBtn" href="#">로그인</a>
 				</div>
 			</div>
+		<!-- end row -->
 		</section>
 		<section class="row justify-content-center">
 			<ul class="nav justify-content-center">
 				<li class="nav-item"><a class="nav-link active" href="#">전체보기</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="machine">머신러닝</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">프로그래밍</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">디자인</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">마케팅</a></li>
+				<li class="nav-item"><a class="nav-link" href="programming">프로그래밍</a></li>
+				<li class="nav-item"><a class="nav-link" href="design">디자인</a></li>
+				<li class="nav-item"><a class="nav-link" href="marketing">마케팅</a></li>
 			</ul>
 		</section>
 	</header>
@@ -106,7 +114,6 @@
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
 
-<%@ include file="member_login.jsp" %>
 </body>
 
 </html>
