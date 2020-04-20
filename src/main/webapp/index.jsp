@@ -44,9 +44,9 @@
 				<li class="nav-item"><a class="nav-link active" href="#">전체보기</a>
 				</li>
 				<li class="nav-item"><a class="nav-link" href="machine">머신러닝</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">프로그래밍</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">디자인</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">마케팅</a></li>
+				<li class="nav-item"><a class="nav-link" href="programming">프로그래밍</a></li>
+				<li class="nav-item"><a class="nav-link" href="design">디자인</a></li>
+				<li class="nav-item"><a class="nav-link" href="marketing">마케팅</a></li>
 			</ul>
 		</section>
 	</header>
