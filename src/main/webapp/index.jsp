@@ -16,28 +16,26 @@
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+
+<!-- 커스텀 스크립트 입니다. custom script -->
 <script type="text/javascript">
-    $(document).ready(function() {
-    
-    });
-    
-    function loginProc(){
-    	
-    }
-    
-    $("#loginBtn").click(function(){
-        $('div.modal').modal({
-                      remote : 'member_login.jsp'
-                });
-    })
-    </script>
+	$(document).ready(function() {
+		$("#loginBtn").click(function() {
+			$('div.modal').modal();
+		})
+	});
+
+	function loginProc() {
+
+	}
+</script>
 <title>Hello, world!</title>
 
 </head>
 <body>
 	<header class="container index-header" style="white-space: nowrap;">
 		<section class="row" style="padding: 14px 0">
-		<!-- row -->
+			<!-- row -->
 			<div class="col-2">
 				<div class="logo">
 					<a class='logo' href="index.jsp"
@@ -54,7 +52,7 @@
 					<a id="loginBtn" href="#">로그인</a>
 				</div>
 			</div>
-		<!-- end row -->
+			<!-- end row -->
 		</section>
 		<section class="row justify-content-center">
 			<ul class="nav justify-content-center">
@@ -115,5 +113,7 @@
 		crossorigin="anonymous"></script>
 
 </body>
+
+<%@ include file="member_login.jsp"%>
 
 </html>
