@@ -33,4 +33,9 @@ public class Admin_MemberInit_Impl implements Admin_MemberInit_Inter {
 	public int update(Admin_MemberBean bean) {
 		return admin_MemberInit_AnoInter.update(bean);
 	}
+	
+	@Override
+	public int delete(String no) {
+		return admin_MemberInit_AnoInter.delete(no);
+	}
 }
