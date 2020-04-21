@@ -10,6 +10,6 @@
 <a href="admin_memberinit">회원 수정/삭제</a><br>
 <a href="admin_message">메세지 발송</a><br>
 
-<a href="admin_classadd">강의 추가</a>
+<a href="admin_classinit">강의 추가</a>
 </body>
 </html>

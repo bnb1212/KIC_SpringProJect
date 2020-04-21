@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 import admin_model.Admin_MemberInit_Inter;
 
 @Controller
-public class MemberInit_Controller {
+public class Admin_MemberInit_Controller {
 	
 	@Autowired
 	private Admin_MemberInit_Inter admin_MemberInit_Inter; 
