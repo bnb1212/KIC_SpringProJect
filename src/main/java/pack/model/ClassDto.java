@@ -1,3 +1,4 @@
+
 package pack.model;
 
 public class ClassDto {
