@@ -32,7 +32,6 @@
 											<input name="member_passwd" id="member_passwd" 
 											value='' placeholder="Password" type="password"
 											class="form-control" path="pw"/>
-											<form:errors path="pw"/>
 									</div>
 									<div class="form-group">
 										<input type="submit" class="btn btn-outline-success" id="login_submit" value="Login" />
