@@ -26,7 +26,7 @@ public class MemberImpl implements MemberInter {
 
 	@Override
 	public MemberDto selectMemberEmail(String member_email) {
-		return inter.selectPart1(member_email);
+		return inter.selectMemberEmail(member_email);
 	}
 
 	@Override

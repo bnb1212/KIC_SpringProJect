@@ -18,18 +18,18 @@ public class MemberController {
 
 	@Autowired
 	@Qualifier("memberImpl")
-	private MemberInter meminter;
+	private MemberInter inter;
 
 	// 로그인 기능
 	@RequestMapping(value = "member_login", method = RequestMethod.POST)
 	public String loginProcess(HttpSession session,
 			@RequestParam("member_email") String member_email,
 			@RequestParam("member_passwd") String member_passwd) {
-		MemberDto dto = meminter.selectMemberEmail(member_email);
+		MemberDto dto = inter.selectMemberEmail(member_email);
 		
 		if(member_passwd.equals(dto.getMember_passwd())) {
 			session.setAttribute("member_email", member_email);
-			return "admin_main";
+			return "index.jsp";
 		}else {
 			return "admin_login";
 			}

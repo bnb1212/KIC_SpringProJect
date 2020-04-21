@@ -23,7 +23,7 @@
 									<h2>로그인</h2>
 									<div class="form-group">
 										<label for="username-email">회원 Email</label> 
-										<input name="member_id" value='' id="member-email"
+										<input name="member_id" value='' id="member_email"
 											placeholder="E-mail address" type="text"
 											class="form-control" />
 									</div>
