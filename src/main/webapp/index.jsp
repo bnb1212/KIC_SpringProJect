@@ -16,12 +16,28 @@
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+    $(document).ready(function() {
+    
+    });
+    
+    function loginProc(){
+    	
+    }
+    
+    $("#loginBtn").click(function(){
+        $('div.modal').modal({
+                      remote : 'member_login.jsp'
+                });
+    })
+    </script>
 <title>Hello, world!</title>
+
 </head>
 <body>
 	<header class="container index-header" style="white-space: nowrap;">
 		<section class="row" style="padding: 14px 0">
+		<!-- row -->
 			<div class="col-2">
 				<div class="logo">
 					<a class='logo' href="index.jsp"
@@ -35,18 +51,19 @@
 			</div>
 			<div class="col">
 				<div class="headerbuttons" style="text-align: right; color: black;">
-					<a href="#">로그인</a>
+					<a id="loginBtn" href="#">로그인</a>
 				</div>
 			</div>
+		<!-- end row -->
 		</section>
 		<section class="row justify-content-center">
 			<ul class="nav justify-content-center">
 				<li class="nav-item"><a class="nav-link active" href="#">전체보기</a>
 				</li>
-				<li class="nav-item"><a class="nav-link" href="#">머신러닝</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">프로그래밍</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">디자인</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">마케팅</a></li>
+				<li class="nav-item"><a class="nav-link" href="machine">머신러닝</a></li>
+				<li class="nav-item"><a class="nav-link" href="programming">프로그래밍</a></li>
+				<li class="nav-item"><a class="nav-link" href="design">디자인</a></li>
+				<li class="nav-item"><a class="nav-link" href="marketing">마케팅</a></li>
 			</ul>
 		</section>
 	</header>
@@ -81,34 +98,14 @@
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 82px 25px 40px 19px; text-align: center; vertical-align: middle;">
 
-				<p>(주)스터디파이 | 대표이사 김태우</p>
-				<p>주소 | 서울특별시 구로구 구로중앙로 26길 34,1층</p>
-				<p>사업자등록번호 |687-86-00946 통신판매업</p>
-				<p>신고번호 | 제2018-서울구로-1334호</p>
-				<p>사업자등록번호 |687-86-00946 통신판매업</p>
-				<p>전화번호 | 010.4347.9753</p>
+				<p>(주)KIC 스터디 | 대표 4팀</p>
+				<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
+				<p>사업자등록번호 |687-86-12345 통신판매업</p>
+				<p>신고번호 | 제2018-서울구로-1234호</p>
+				<p>전화번호 | 010.1234.5678</p>
 			</div>
 		</section>
 	</footer>
-
-	<%-->
-	<div class="dimmer" style="transition-duration:250ms;
-	position: absolute; top: 0; right: 0;
-	background: #fff; height: 100%; display: -ms-flexbox; display: flex;
-	flex-direction: column; width: 250px;
-	border: 0; margin: 0; ">
-		<header>
-		
-		</header>
-		<ul>
-		
-		</ul>
-		<footer>
-		
-		</footer>
-		
-	</div>
-		--%>
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
@@ -116,6 +113,7 @@
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
+
 </body>
 
 </html>

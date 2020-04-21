@@ -15,16 +15,29 @@
 
 </head>
 <body>
-<h2>머신러닝</h2>
-<c:forEach var="c" items="${datas }">
-${c.class_name }
-</c:forEach>
+	<header class="container index-header" style="white-space: nowrap;">
+		<section class="row">
+			<div class="col-sm pad-horizontal">
+				<div class="gnb">
+					<a class='logo' href="index.jsp"
+						style="display: inline-block; padding: 0 .5rem 8px;"> 로고 </a>
+					<button type="button" class="btn btn-primary" style="float: right">menu</button>
+				</div>
+			</div>
+		</section>
+	</header>
+<h2 align="center">머신러닝</h2>
 
 
-<table border="1" width ="150" style="border-collapse: collapse;">
+	<div class="container" style="background-color: #D7FFF1">
+		<div class="row" >
+
+			<section class="col">
+			<h3>
+				<table border="1"  width= "250"  style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '4'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -34,7 +47,7 @@ ${c.class_name }
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '4'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -43,7 +56,7 @@ ${c.class_name }
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '4'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -60,13 +73,15 @@ ${c.class_name }
 	</c:forEach>
 	
 </table>
-
-
-
-<table border="1" width ="150" style="border-collapse: collapse;">
+</h3>
+			</section>
+			<section class="col">
+				<h3>
+				
+				<table border="1"  width= "250" style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
+	<c:if test="${i.class_no eq '5'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -76,7 +91,7 @@ ${c.class_name }
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
+	<c:if test="${i.class_no eq '5'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -85,7 +100,7 @@ ${c.class_name }
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
+	<c:if test="${i.class_no eq '5'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -94,7 +109,7 @@ ${c.class_name }
 	
 		<tr><th>카테고리</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
+	<c:if test="${i.class_no eq '5'}">
 	<tr>
 		<td>${i.class_category}</td>
 	</tr>
@@ -102,33 +117,17 @@ ${c.class_name }
 	</c:forEach>
 	
 </table>
+				
+				</h3>
+			</section>
 
-
-<table border="1" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th><th>클래스정보</th><th>클래스가격</th><th>카테고리</th></tr>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-		<td>${i.class_info}</td>
-		<td>${i.class_price}</td>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	
-	</c:forEach>
-	
-</table>
-
-
-<br>연습테이블<br><br>
-
-<div style="border: 1px; float: left; width: 33%;">
-
-<table border="1"  width="200" style="border-collapse: collapse;">
+			<section class="col">
+				<h3>
+					
+				<table border="1" width="250" style="border-collapse: collapse;">
 	<tr><th>클래스이름</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '6'}">
 	<tr>
 		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 	</tr>
@@ -138,7 +137,7 @@ ${c.class_name }
 	
 	<tr><th>클래스정보</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '6'}">
 	<tr>
 		<td>${i.class_info}</td>
 	</tr>
@@ -147,7 +146,7 @@ ${c.class_name }
 	
 		<tr><th>클래스가격</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '6'}">
 	<tr>
 		<td>${i.class_price}</td>
 	</tr>
@@ -156,7 +155,7 @@ ${c.class_name }
 	
 		<tr><th>카테고리</th>
 	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
+	<c:if test="${i.class_no eq '6'}">
 	<tr>
 		<td>${i.class_category}</td>
 	</tr>
@@ -164,54 +163,42 @@ ${c.class_name }
 	</c:forEach>
 	
 </table>
+				</h3>
+			</section>
 
-</div>
-<div style="border: 1px; float: left; width: 33%;">
+		</div>
+<br>
+<hr> 
+<h3 align="center"> Other categories </h3>
+<br><br>
 
-<table border="1" width="200" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-	
-	<tr><th>클래스정보</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_info}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>클래스가격</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_price}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>카테고리</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-</table>
-</div>
+		<div class="row">
+			<section class="col">
+			<h4><a href="machine">머신러닝</a></h4>
 
-<div style="border: 1px solid blue; float: left; width: 33%;">
-세번째 영역
-</div>
+			</section>
+			<section class="col">
+			<h4>
+			<a href="design">디자인</a><br>
+			</h4>
+			</section>
+			
+			<section class="col">
+			<h4>
+				<a href="programming">프로그래밍</a><br>
+			</h4>
+			</section>
+			
+			<section class="col">
+			<h4>
+				<a href="marketing">마케팅</a><br>
+			</h4>
+			</section>
+			
+		</div>
+	</div>
+
+
 
 
 	<script

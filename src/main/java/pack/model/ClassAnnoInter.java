@@ -11,10 +11,16 @@ public interface ClassAnnoInter {
 	
 	@Select("select * from class where class_category='머신러닝'")
 	List<ClassDto> selectMachine() throws DataAccessException;
-	@Select("select class_name, class_info, class_limit, class_price, class_category from class where class_category='영어'")
-	List<ClassDto> selectEnglish() throws DataAccessException;
-	@Select("select class_name, class_info, class_limit, class_price, class_category from class where class_category='디자인'")
+	
+	@Select("select * from class where class_category='디자인'")
 	List<ClassDto> selectDesign() throws DataAccessException;
+	
+	@Select("select * from class where class_category='프로그래밍'")
+	List<ClassDto> selectProgramming() throws DataAccessException;
+	
+	@Select("select * from class where class_category='마케팅'")
+	List<ClassDto> selectMarketing() throws DataAccessException;
+	
 	@Select("select * from classinfo where classinfo_class_no=#{classinfo_class_no}")
 	List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException; 
 	
