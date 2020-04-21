@@ -33,7 +33,7 @@
 			</table>
 		</c:when>
 		<c:when test="${fn:length(list) == 0}">
-        신청하신 스터디가 없습니다....
+        신청하신 스터디가 없습니다.
     </c:when>
 	</c:choose>
 <form id="frm" method="post" action="myStudyroom">

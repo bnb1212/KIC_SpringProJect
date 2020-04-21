@@ -9,55 +9,58 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){
-	$(".showData").empty();
-	
-	$(".tt").click(function(){
-	$.ajax({
-		type:"get",
-		url:"videolist",
-		dataType:"json",
-		data:{"clno":$(clno).val(),"sctno":$(this).prev().text()},
-		success:function(videoData){
-			var str = "<table border='1'>";
-			str += "해당 섹션 강의목록<br>";
-			str += "<tr><th>번호</th><th>강의 제목</th>";
-			var list = videoData.datas;
-			var i=1;
-			$(list).each(function(index,obj){
-			str += "<tr>";
-			str +="<td>"+i+"</td>";
-			str += "<td>"+obj["video_title"]+"</td>";
-			str += "</tr>";
-			i++;
-			});
-			str+="</table>";			
-			$(".showData").html(str);
-			
-		},
-		error:function(){
-			$(".showData").text("에러!!!");
-		}
-	})
-	});
-	
-});
+function getlecture(param){
+	if($(".lecture_cover"+param).hasClass("toggled")) {
+		$(".lecture_cover"+param).css("display", "none")
+		$(".lecture_cover"+param).removeClass("toggled")
+	} else {
+		$(".lecture_cover"+param).empty();
+		var clno = ${clno } 
+		$.ajax({
+			type:"get",
+			url:"videolist",
+			dataType:"json",
+			data:{"clno":clno,"sctno":param},
+			success:function(videoData){
+				var list = videoData.datas;
+				var str= "** 해당 섹션 영상 목록 **  총 "+$(list).length+"개<br>";
+				$(list).each(function(index,obj){
+					str += "<span class=&quot;section_title&quot;>";
+					str += obj.video_title;
+					str += "</span><br>";
+				});
+				$(".lecture_cover"+param).html(str);
+			},
+			error : function(){
+				$(".lecture_cover"+param).text("에러!");
+			}
+		})
+		$(".lecture_cover"+param).css("display", "")
+		$(".lecture_cover"+param).addClass("toggled");
+      }
+}
 </script>
 </head>
 <body>
 ${clname }
-<table border="1">
+<br>
+<div class="section_cover">
 	<c:forEach var="m" items="${curries }">
-		<tr>
-			<td>${m.section_no }</td>
-			<td class="tt">${m.goal_title }</td>
-		</tr>
+		<div class="section_header_open" onclick="getlecture(${m.section_no })">
+			<div class="section_header">
+			<span class="section_no">
+				${m.section_no }
+				</span>
+				<span class="section_title">
+				${m.goal_title }
+				</span>
+			</div>
+		</div>
+		<div class="lecture_cover${m.section_no }" style="display:none;">
+		</div>
 	</c:forEach>
-</table><br>
-<div class = "showData"></div>
-<form id="frm">
-<input type="hidden" id="clno" name="clno" value="${clno }">
-</form>
+</div>
+<br>
 </body>
 </html>
 
