@@ -16,18 +16,10 @@
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
 <script src="resources/js/bootstrap.min.js"></script>
-
+<script src="resources/js/login.js"></script>
 <!-- 커스텀 스크립트 입니다. custom script -->
 <script type="text/javascript">
-	$(document).ready(function() {
-		$("#loginBtn").click(function() {
-			$('div.modal').modal();
-		})
-	});
-
-	function loginProc() {
-
-	}
+	
 </script>
 <title>Hello, world!</title>
 
@@ -38,18 +30,27 @@
 			<!-- row -->
 			<div class="col-2">
 				<div class="logo">
-					<a class='logo' href="index.jsp"
-						style="display: inline-block; padding: 0 .5rem 8px;"> 로고 </a>
+					<a class='logo' href="index.jsp"><img style="width:100px; height:100px;" src="resources/images/logo.png"></a>
 				</div>
 			</div>
 			<div class="col">
 				<div class="searchBox">
-					<input type="text" value="search" id="searchInput" />
+					<input type="text" class="form-control" placeholder="search" id="searchInput" />
 				</div>
 			</div>
 			<div class="col">
 				<div class="headerbuttons" style="text-align: right; color: black;">
-					<a id="loginBtn" href="#">로그인</a>
+					<%
+						if (session.getAttribute("member_no") != null){
+							%>
+							<a href='logout'>로그아웃</a>
+							<%
+						}else{
+						%>
+							<a id="loginBtn" href="#">로그인</a>
+							<%
+							}
+							%>
 				</div>
 			</div>
 			<!-- end row -->

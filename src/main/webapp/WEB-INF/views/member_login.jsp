@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!-- 모달 팝업창입니다. 로그인 모달 -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog"
 	aria-labelledby="myModalLabel" aria-hidden="true">
@@ -23,7 +23,7 @@
 									<h2>로그인</h2>
 									<div class="form-group">
 										<label for="username-email">회원 Email</label> 
-										<input name="member_id" value='' id="member_email"
+										<input name="member_email" value='' id="member_email"
 											placeholder="E-mail address" type="text"
 											class="form-control" />
 									</div>
@@ -31,10 +31,11 @@
 										<label for="password">비밀번호</label>
 											<input name="member_passwd" id="member_passwd" 
 											value='' placeholder="Password" type="password"
-											class="form-control" />
+											class="form-control" path="pw"/>
+											<form:errors path="pw"/>
 									</div>
 									<div class="form-group">
-										<input type="submit" class="btn btn-outline-success" value="Login" />
+										<input type="submit" class="btn btn-outline-success" id="login_submit" value="Login" />
 									</div>
 								</form>
 							</div>
@@ -45,7 +46,7 @@
 				<!-- end body -->
 				<!-- modal footer -->
 			<div class="modal-footer">
-				<a href="regist" style="font-size: 0.8rem; text-decoration: none">회원이
+				<a href="member_regist.jsp" style="font-size: 0.8rem; text-decoration: none">회원이
 					아니세요? Sign in</a>
 			</div>
 			<!-- end footer -->

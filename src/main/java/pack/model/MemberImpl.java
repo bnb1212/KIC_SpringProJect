@@ -35,4 +35,9 @@ public class MemberImpl implements MemberInter {
 		
 	}
 
+	@Override
+	public MemberDto loginCheck(MemberBean bean) {
+		return inter.loginCheck(bean);
+	}
+
 }
