@@ -13,12 +13,9 @@
 <link href="<c:url value="resources/vendor/css/bootstrap.css" />"
 	rel="stylesheet">
 	
-<!-- Bootstrap Js -->
-<script src="resources/vendor/js/bootstrap.min.js"></script>
-
 <!-- ADD CSS -->
 <link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
-<link href="<c:url value="resources/css/card_scirpt.css" />"
+<link href="<c:url value="resources/css/card_styles.css" />"
 	rel="stylesheet">
 <link href="<c:url value="resources/css/stylish-portfolio.css" />"
 	rel="stylesheet">
@@ -96,12 +93,17 @@
   <!-- Bootstrap core JavaScript -->
   <script src="resources/vendor/jquery/jquery.min.js"></script>
   <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+<!-- Bootstrap Js -->
+<script src="resources/vendor/js/bootstrap.min.js"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
+  <script src="resources/js/card_scripts.js"></script>
+  <script src="resources/js/login.js"></script>
+  <script src="resources/js/stylish-portfolio.min.js"></script>
 </body>
 
 
