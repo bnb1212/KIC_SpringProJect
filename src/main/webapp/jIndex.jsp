@@ -14,7 +14,7 @@ session.setAttribute("member_no", "1");
 <script type="text/javascript">
 $( document ).ready(function(){
 	$('input').click(function(){
-		if($('#mem_no').val() == 'null' ){ // 로그인 정보 있는지 확인하는 부분
+		if($('#member_no').val() == 'null' ){ // 로그인 정보 있는지 확인하는 부분
 		alert('로그인 후 이용가능합니다.')
 		}else{
 		var frm = $("#category");

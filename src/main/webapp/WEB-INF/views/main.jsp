@@ -20,8 +20,7 @@
 <link href="<c:url value="resources/css/stylish-portfolio.css" />"
 	rel="stylesheet">
 
-<!-- ADD custom script -->
-<script src="resources/js/login.js"></script>
+
 
  <!-- Custom Fonts -->
  <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -92,7 +91,7 @@
 
   <!-- Bootstrap core JavaScript -->
   <script src="resources/vendor/jquery/jquery.min.js"></script>
-  <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="resources/vendor/js/bootstrap.bundle.min.js"></script>
   
 <!-- Bootstrap Js -->
 <script src="resources/vendor/js/bootstrap.min.js"></script>
@@ -104,6 +103,7 @@
   <script src="resources/js/card_scripts.js"></script>
   <script src="resources/js/login.js"></script>
   <script src="resources/js/stylish-portfolio.min.js"></script>
+  
 </body>
 
 

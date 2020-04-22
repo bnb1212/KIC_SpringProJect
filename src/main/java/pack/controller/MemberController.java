@@ -37,7 +37,7 @@ public class MemberController {
 
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("member_logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
 		ModelAndView mv = new ModelAndView("redirect:/");
