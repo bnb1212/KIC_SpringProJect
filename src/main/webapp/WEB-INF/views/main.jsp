@@ -8,24 +8,28 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
 <!-- Bootstrap CSS -->
-<link href="<c:url value="resources/css/bootstrap.css" />"
+<link href="<c:url value="resources/vendor/css/bootstrap.css" />"
 	rel="stylesheet">
+	
+<!-- ADD CSS -->
 <link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
-<link href="<c:url value="resources/css/card_scirpt.css" />"
+<link href="<c:url value="resources/css/card_styles.css" />"
 	rel="stylesheet">
 <link href="<c:url value="resources/css/stylish-portfolio.css" />"
 	rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-	crossorigin="anonymous"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+
+<!-- ADD custom script -->
 <script src="resources/js/login.js"></script>
-<!-- 커스텀 스크립트 입니다. custom script -->
-<script type="text/javascript">
-	
-</script>
-<title>Hello, world!</title>
+
+ <!-- Custom Fonts -->
+ <link href="resources/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+ <link href="resources/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+
+<title>모여라</title>
 
 </head>
 <body>
@@ -64,7 +68,10 @@
 
 				<p>(주)KIC 스터디 | 대표 4팀</p>
 				<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
-				<p><a href="admin_login" style='text-decoration: none; color: black;'>사업자</a>등록번호 |687-86-12345 통신판매업</p>
+				<p>
+					<a href="admin_login" style='text-decoration: none; color: black;'>사업자</a>등록번호
+					|687-86-12345 통신판매업
+				</p>
 				<p>신고번호 | 제2018-서울구로-1234호</p>
 				<p>전화번호 | 010.1234.5678</p>
 			</div>
@@ -73,11 +80,30 @@
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
+
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
 
+  <!-- Bootstrap core JavaScript -->
+  <script src="resources/vendor/jquery/jquery.min.js"></script>
+  <script src="resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+<!-- Bootstrap Js -->
+<script src="resources/vendor/js/bootstrap.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="resources/js/card_scripts.js"></script>
+  <script src="resources/js/login.js"></script>
+  <script src="resources/js/stylish-portfolio.min.js"></script>
 </body>
 
 
