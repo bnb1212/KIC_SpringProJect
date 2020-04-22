@@ -42,5 +42,10 @@ public class ClassImpl implements ClassInter{
 		
 		return classAnnoInter.selectDetail(bean);
 	}
+	
+	@Override
+	public List<CurriDto> selectCurri(String class_no) throws DataAccessException {
+		return classAnnoInter.selectCurri(class_no);
+	}
 
 }
