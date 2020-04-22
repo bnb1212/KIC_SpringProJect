@@ -11,4 +11,9 @@ public class MainController {
 	public String home(Model model) {
 		return "main";
 	}
+	
+	@RequestMapping("imsiindex")
+	public String home2(Model model) {
+		return "imsiindex";
+	}
 }
