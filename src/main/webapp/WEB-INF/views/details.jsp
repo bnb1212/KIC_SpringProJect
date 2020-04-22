@@ -12,6 +12,12 @@
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
 <script src="resources/js/bootstrap.min.js"></script>
+<%--
+$.{dod
+session.
+set
+
+ --%>
 </head>
 <body>
 	<section class="row" style="padding: 14px 0">
