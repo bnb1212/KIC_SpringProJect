@@ -37,4 +37,10 @@ public class StudyDaoImpl implements StudyDaoInter {
 		List<VideoDto> videos = studyAnnoInter.selectVideoPart(map);
 		return videos;
 	}
+	
+	@Override
+	public VideoDto getVideo(String vno) throws DataAccessException {
+		VideoDto video = studyAnnoInter.selectVideo(vno);
+		return video;
+	}
 }

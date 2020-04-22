@@ -10,4 +10,5 @@ public interface StudyDaoInter {
 	List<CurriDto> getClassCurri(String class_no) throws DataAccessException;
 	String getClassName(String class_no) throws DataAccessException;
 	List<VideoDto> getVideoPart(HashMap<String, String> map) throws DataAccessException;
+	VideoDto getVideo(String vno) throws DataAccessException;
 }

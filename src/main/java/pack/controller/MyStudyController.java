@@ -32,9 +32,9 @@ public class MyStudyController{
 		return new ModelAndView("mystudylist","list",inter.getcateClass(map));
 	}
 	
-	@RequestMapping(value="myStudyroom",method=RequestMethod.POST)
+	@RequestMapping(value="myStudy",method=RequestMethod.POST)
 	public ModelAndView list2(@RequestParam("clno") String clno){
-		ModelAndView m = new ModelAndView("mystudyroom","curries",inter.getClassCurri(clno));
+		ModelAndView m = new ModelAndView("mystudy","curries",inter.getClassCurri(clno));
 		m.addObject("clname", inter.getClassName(clno));
 		m.addObject("clno", clno);
 		return m;
@@ -66,4 +66,9 @@ public class MyStudyController{
 		return videoLists;
 	}
 	
+	@RequestMapping(value="myStudyRoom",method=RequestMethod.POST)
+	public ModelAndView list(@RequestParam String vno){
+		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
+		return m;
+	}
 }

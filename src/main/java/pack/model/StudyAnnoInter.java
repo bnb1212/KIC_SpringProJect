@@ -16,6 +16,9 @@ public interface StudyAnnoInter {
 	@Select("select class_name from class where class_no= #{no}")
 	public String selectClassName(String class_no);
 	
-	@Select("select video_title from video where class_no = #{clno} and section_no = #{sctno}")
+	@Select("select video_no,video_title from video where class_no = #{clno} and section_no = #{sctno}")
 	public List<VideoDto> selectVideoPart(HashMap<String, String> map);
+	
+	@Select("select * from video where video_no = #{vno}")
+	public VideoDto selectVideo(String vno);
 }
