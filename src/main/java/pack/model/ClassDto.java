@@ -1,9 +1,9 @@
+
 package pack.model;
 
 public class ClassDto {
-	private String class_no, class_name, class_info, class_price, class_category;
+	private String class_no,class_name,class_info,class_price,class_category;
 	private int class_limit;
-	
 	public String getClass_no() {
 		return class_no;
 	}
@@ -41,5 +41,4 @@ public class ClassDto {
 		this.class_limit = class_limit;
 	}
 	
-
 }
