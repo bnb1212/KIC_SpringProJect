@@ -9,4 +9,6 @@ public interface MemberInter {
 	public List<MemberDto> selectPart(String no);
 	public MemberDto selectMemberEmail(String member_email);
 	public int insertMember(MemberBean bean);
+	public MemberDto loginCheck(MemberBean bean);
+	
 }
