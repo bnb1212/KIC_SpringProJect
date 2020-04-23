@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pack.model.ClassDto;
 import pack.model.ClassInter;
+import pack.model.CurriDto;
 
 @Controller
 public class DatailController {
@@ -21,8 +22,20 @@ public class DatailController {
 	@Qualifier("classImpl")
 	private ClassInter inter;
 	
+	
+	
 	@RequestMapping("detail")
 	public ModelAndView searchProcess(ClassinfoBean bean) {
-		return new ModelAndView("details", "datas", inter.selectDetail(bean));
+		//System.out.println(bean.getClassinfo_class_no());
+		ModelAndView detailModel = new ModelAndView("details");
+		String no = bean.getClassinfo_class_no();
+		
+		detailModel.addObject("datas", inter.selectDetail(bean));
+		detailModel.addObject("curri", inter.selectCurri(no));
+		
+		return detailModel;
+		
 	}
+	
+	
 }

@@ -26,13 +26,18 @@ public class MemberImpl implements MemberInter {
 
 	@Override
 	public MemberDto selectMemberEmail(String member_email) {
-		return inter.selectPart1(member_email);
+		return inter.selectMemberEmail(member_email);
 	}
 
 	@Override
 	public int insertMember(MemberBean bean) {
 		return inter.insertMember(bean);
 		
+	}
+
+	@Override
+	public MemberDto loginCheck(MemberBean bean) {
+		return inter.loginCheck(bean);
 	}
 
 }
