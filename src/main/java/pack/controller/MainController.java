@@ -16,4 +16,9 @@ public class MainController {
 	public String home2(Model model) {
 		return "index";
 	}
+	
+	@RequestMapping("cate")
+	public String cate(Model model) {
+		return "categoryview";
+	}
 }
