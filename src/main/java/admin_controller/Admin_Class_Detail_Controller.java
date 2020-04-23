@@ -16,7 +16,9 @@ public class Admin_Class_Detail_Controller {
 	
 	@RequestMapping("admin_classdetail")
 	public ModelAndView detailProcess(@RequestParam("no") String no) {
-		
-		return new ModelAndView("admin_classdetail","datas",anno.selectPart(no));
+		ModelAndView mav = new ModelAndView("admin_classdetail");
+		mav.addObject("datas", anno.selectPart(no));
+		mav.addObject("videos", anno.selectVideo(no));
+		return mav;
 	}
 }

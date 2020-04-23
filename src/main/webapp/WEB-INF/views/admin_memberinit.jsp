@@ -13,15 +13,16 @@ $(document).ready(function() {
 	
 	
 });
+
 function chk(no){
-	var no = no;
+	var num = no;
 	//alert("a");
 	
 	$("#showDiv").empty();
 	
 	$.ajax({
 		type:"get",
-		url:"admin_memberdetail?no="+no,
+		url:"admin_memberdetail?no="+num,
 		dataType:"json",
 		success:function(memberData){
 			var str = "<table border='1'>";
@@ -38,13 +39,30 @@ function chk(no){
 			str += "</tr>"
 			});
 			str += "</table>";
-			str += "<a href=update?no="+ no +" target=frame>회원 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" ;
-			str += "<a href=admin_delete?no="+ no +">회원 삭제</a>";
+			str += "<a href='#' onclick=update('"+num+"')>회원 수정</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+			str += "<a href='#' onclick=deleteok('"+num+"')>회원 삭제</a>";
 			$("#showDiv").append(str);
 		},error:function(){
 			$("#showDiv").text("에라드래곤");
 		}
 	});
+}
+
+
+
+function update(num) {
+	 url = "admin_update?no="+num;
+		window.open(url, "get", "width=300,height=200,top=400,left=300");
+}
+
+function deleteok(num) { 
+	var ac = confirm("정말 지우시겠습니까?");
+	
+	if(ac){
+	url = "admin_delete?no="+num;
+	window.open(url, "get", "width=300,height=200,top=400,left=300");
+	}
+	
 }
 
 
@@ -57,7 +75,7 @@ function chk(no){
 	<c:forEach var="s" items="${datas}">
 	<tr>
 	  	<td>${s.member_no }</td>
-	  	<td><a href="#" onclick="chk(${s.member_no})">${s.member_name }</a></td>
+	  	<td><a href="#" onclick="chk('${s.member_no}')">${s.member_name }</a></td>
 	  	<td>${s.member_email }</td>
 	</tr>
 	</c:forEach>
@@ -70,9 +88,6 @@ function chk(no){
 </div>
 <br>
 
-<iframe src="about:blank" name="frame" frameborder=0 framespacing=0 marginheight=0 marginwidth=0 scrolling=no vspace=0>
-
-</iframe>
 
 </body>
 </html>

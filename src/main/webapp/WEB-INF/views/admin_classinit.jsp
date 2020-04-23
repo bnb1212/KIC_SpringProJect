@@ -23,6 +23,6 @@
 	</tr>
 	</c:forEach>
 </table>
-<a href="admin_class_insert">강의 추가</a> 
+<a href="admin_class_insert">강의 추가</a>
 </body>
 </html>
