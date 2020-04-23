@@ -19,6 +19,12 @@ $( document ).ready(function(){
 	    }
 	});
 	
+$('#updetplace').on('keyup', function() {
+    if($(this).val().length > 1000) {
+        $(this).val($(this).val().substring(0, 1000));
+    }
+});
+	
 	var vno = ${vno} 
 	detList(vno);
 
@@ -47,7 +53,7 @@ function detList(param){
                 a += '<div class="detArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
                 a += '<div class="detInfo'+value.det_no+'">'+'댓글번호 : '+value.det_no+' / 작성자 : '+value.mno;
                 if(mno == value.mno){
-                a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\');"> 수정 </a>';
+                a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\',\''+value.vno+'\');"> 수정 </a>';
                 a += '<a style="cursor:pointer" onclick="det_delete('+value.det_no+',\''+value.vno+'\');"> 삭제 </a> </div>';
                 }else{
                 a += '</div>';
@@ -75,9 +81,35 @@ function det_delete(det_no,vno){
 	});
 }
 
-function det_update(det_no,content){
+function det_update(det_no,content,vno){
+    var a ='';
+    
+    a += '<div class="input-group">';
+    a += '<textarea id="updetplace" name="updetplace" cols="80" rows="2" style="resize: none;" >'+content+'</textarea>';
+    a += '<input type="button" value="수정" onclick="det_updateProc('+det_no+',\''+vno+'\')">'; //여기에 콘텐츠 바뀐거 넣어보셈..
+    a += '</div>';
+    
+    $('.detContent'+det_no).html(a);
+    
+}
+
+function det_updateProc(det_no,vno){
+	if($('#updetplace').val() == ""){
+		alert("수정하실 내용을 입력해주세요")
+	}else{		
+	$(".detshow").empty();
+	alert($('#updetplace').val())
+	var det_no = det_no;
 	alert(det_no);
-	alert(content);
+	$.ajax({
+        url : 'detupdate',
+        type : 'post',
+        data : {'content' : content, 'det_no' : det_no},
+        success : function(data){
+            if(data == 1) detList(vno); //댓글 수정후 목록 출력 
+        }
+    });
+	}
 }
 
 

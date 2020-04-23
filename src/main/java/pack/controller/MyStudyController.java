@@ -102,7 +102,16 @@ public class MyStudyController{
 	
 	@RequestMapping("detdelete")
 	@ResponseBody
-	public int detInsert(@RequestParam("det_no") String det_no) throws Exception{
+	public int detDelete(@RequestParam("det_no") String det_no) throws Exception{
         return inter.deleteDet(det_no);
+    }
+	
+	@RequestMapping("detupdate")
+	@ResponseBody
+	public int detUpdate(@RequestParam("det_no") String det_no,@RequestParam("content") String content) throws Exception{
+	    Video_detBean bean = new Video_detBean();
+        bean.setContent(content);
+        bean.setDet_no(det_no);
+        return inter.updateDet(bean);
     }
 }

@@ -17,4 +17,5 @@ public interface StudyDaoInter {
 	List<Video_detDto> getdetAll(String vno) throws DataAccessException;
 	int insertDet(Video_detBean bean) throws DataAccessException;
 	int deleteDet(String det_no) throws DataAccessException;
+	int updateDet(Video_detBean bean) throws DataAccessException;
 }

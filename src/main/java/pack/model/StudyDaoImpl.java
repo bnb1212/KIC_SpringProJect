@@ -65,4 +65,9 @@ public class StudyDaoImpl implements StudyDaoInter {
 		return result;
 	}
 	
+	@Override
+	public int updateDet(Video_detBean bean) throws DataAccessException {
+		int result = studyAnnoInter.detUpdate(bean);
+		return result;
+	}
 }

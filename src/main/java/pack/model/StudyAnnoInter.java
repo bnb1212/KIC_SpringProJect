@@ -47,7 +47,7 @@ public interface StudyAnnoInter {
 	public int detInsert(Video_detBean bean);
 	
 	//해당 영상에 달았던 댓글 수정
-	@Update("update video_det set content = #{content} where det_no=#{det_no} and mno=#{mno}")
+	@Update("update video_det set content = #{content} where det_no=#{det_no}")
 	public int detUpdate(Video_detBean bean);
 	
 	//해당 영상에 달았던 댓글 삭제
