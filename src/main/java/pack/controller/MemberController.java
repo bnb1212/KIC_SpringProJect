@@ -37,16 +37,16 @@ public class MemberController {
 			}
 		} catch (Exception e) {
 			System.out.println("error : " + e);
-			return "redirect:/";
+			return "redirect:/main";
 		}
-		return "redirect:/";
+		return "redirect:/main";
 
 	}
 
 	@RequestMapping("member_logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
-		ModelAndView mv = new ModelAndView("redirect:/");
+		ModelAndView mv = new ModelAndView("redirect:/main");
 		return mv;
 	}
 }
