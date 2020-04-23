@@ -15,5 +15,7 @@ public interface ClassInter {
 	
 	List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException;
 	List<CurriDto> selectCurri(String class_no) throws DataAccessException;
-
+	
+	
+	List<ClassDto> selectClass(String class_no) throws DataAccessException;
 }

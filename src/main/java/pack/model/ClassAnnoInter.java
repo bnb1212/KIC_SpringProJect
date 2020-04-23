@@ -27,5 +27,7 @@ public interface ClassAnnoInter {
 	@Select("select * from curri where class_no=#{class_no}")
 	List<CurriDto> selectCurri(String class_no) throws DataAccessException; 
 	
+	@Select("select * from class where class_no=#{class_no}")
+	List<ClassDto> selectClass(String class_no) throws DataAccessException;
 
 }

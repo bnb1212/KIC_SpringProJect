@@ -16,19 +16,11 @@
 
 </head>
 <body>
-	<header class="container index-header" style="white-space: nowrap;">
-		<section class="row">
-			<div class="col-sm pad-horizontal">
-				<div class="gnb">
-					<a class='logo' href="index.jsp"
-						style="display: inline-block; padding: 0 .5rem 8px;"> 로고 </a>
-					<button type="button" class="btn btn-primary" style="float: right">menu</button>
-				</div>
-			</div>
-		</section>
-	</header>
+<%@ include file="pagetop.jsp"%>
+	
 	<h2 align="center">머신러닝</h2>
 	
+	<!--  
 	<div class="container" style="background-color: #D7FFF1">
 		<div class="row">
 	
@@ -39,7 +31,7 @@
 						<tr>
 							<th>클래스이름</th>
 							<c:forEach var="i" items="${datas}">
-						
+							
 									<tr>
 										<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
 									</tr>
@@ -78,6 +70,11 @@
 	</c:choose>
 	</div>
 </div>
+
+
+-->
+
+
 
 	<div class="container" style="background-color: #D7FFF1">
 		<div class="row">

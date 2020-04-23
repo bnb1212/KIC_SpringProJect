@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%session.setAttribute("member_no", "1");//1번 회원 로그인 처리%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,14 +21,8 @@ set
  --%>
 </head>
 <body>
-	<section class="row" style="padding: 14px 0">
-		<div class="col-2">
-			<div class="logo">
-				<a class='logo' href="index.jsp"
-					style="display: inline-block; padding: 0 .5rem 8px;"> 로고 </a>
-			</div>
-		</div>
-	</section>
+<%@ include file="pagetopdetail.jsp"%>
+	
 
 
 
@@ -298,17 +292,30 @@ set
 				</h3>
 			</section>
 		</div>
+		
+		
+		<div class="row" align="center">
 
+			<section class="col">
+				<h1>
+					<table border="1" style="border-collapse: collapse;">
+						<tr>
+						<c:forEach var="i" items="${datas}">
+<a href="cash?class_no=${i.classinfo_class_no}"><img src="resources/img/sinchung.png" width="150" height="100"></a>
+</c:forEach>
+						</tr>
+					</table>
+				</h1>
+			</section>
+		</div>
+<br>
+	
 
 
 	
 	</div>
 	<br><br>
 
-<form action="cash" method="post">
- <!-- 여기서 로그인처리를 해준다음에 넘어가야됨. -->
-	<input type="submit" value="신청하기">
-</form><p/>
 
 
 	<script

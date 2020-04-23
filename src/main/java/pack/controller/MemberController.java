@@ -29,6 +29,9 @@ public class MemberController {
 
 			if (dto != null)
 				session.setAttribute("member_no", dto.getMember_no());
+				session.setAttribute("member_email", dto.getMember_email());
+				session.setAttribute("member_name", dto.getMember_name());
+				session.setAttribute("member_phone", dto.getMember_phone());
 		} catch (Exception e) {
 			System.out.println("error : " + e);
 			return "redirect:/index.jsp";
