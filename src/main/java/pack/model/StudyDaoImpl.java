@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
+import pack.controller.Video_detBean;
+
 @Repository
 public class StudyDaoImpl implements StudyDaoInter {
 
@@ -42,5 +44,17 @@ public class StudyDaoImpl implements StudyDaoInter {
 	public VideoDto getVideo(String vno) throws DataAccessException {
 		VideoDto video = studyAnnoInter.selectVideo(vno);
 		return video;
+	}
+	
+	@Override
+	public List<Video_detDto> getdetAll(String vno) throws DataAccessException {
+		 List<Video_detDto> detlist = studyAnnoInter.detList(vno);
+		 return detlist;
+	}
+	
+	@Override
+	public int insertDet(Video_detBean bean) throws DataAccessException {
+		int result = studyAnnoInter.detInsert(bean);
+		return result;
 	}
 }

@@ -51,8 +51,7 @@ function gostudyroom(param){
 </script>
 </head>
 <body>
-${clname }
-<br>
+<h2>${clname } 스터디과정</h2>
 <div class="section_cover">
 	<c:forEach var="m" items="${curries }">
 		<div class="section_header_open" onclick="getlecture(${m.section_no })">

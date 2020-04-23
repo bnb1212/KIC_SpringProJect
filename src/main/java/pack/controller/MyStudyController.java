@@ -27,11 +27,13 @@ public class MyStudyController{
 	@Qualifier("studyDaoImpl")
 	private StudyDaoInter inter;
 	
+	//내가 신청한 스터디 리스트들 나옴
 	@RequestMapping(value="myStudylist",method=RequestMethod.POST)
 	public ModelAndView list(@RequestParam HashMap<String, String> map){
 		return new ModelAndView("mystudylist","list",inter.getcateClass(map));
 	}
 	
+	//내가 신청한 스터디 커리큘럼페이지
 	@RequestMapping(value="myStudy",method=RequestMethod.POST)
 	public ModelAndView list2(@RequestParam("clno") String clno){
 		ModelAndView m = new ModelAndView("mystudy","curries",inter.getClassCurri(clno));
@@ -40,6 +42,8 @@ public class MyStudyController{
 		return m;
 	}
 	
+	
+	//ajax로 섹션에 해당하는 비디오들 불러오려고 만듬
 	@RequestMapping("videolist")
 	@ResponseBody
 	public Map<String, Object> videoFunc(@RequestParam HashMap<String, String> map){
@@ -66,9 +70,26 @@ public class MyStudyController{
 		return videoLists;
 	}
 	
+	//해당 스터디 스터디룸을 보이기 위해 영상정보 가져옴 + 댓글정보도 가져와야함
 	@RequestMapping(value="myStudyRoom",method=RequestMethod.POST)
 	public ModelAndView list(@RequestParam String vno){
 		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
+		m.addObject("detlist",inter.getdetAll(vno));
 		return m;
 	}
+	
+	
+	
+	//영상에 댓글다는 부분
+	@RequestMapping("detinsert")
+	@ResponseBody
+	public int detInsert(@RequestParam String vno, @RequestParam String content, @RequestParam String mno) throws Exception{
+        
+        Video_detBean bean = new Video_detBean();
+        bean.setContent(content);
+        bean.setVno(vno);
+        bean.setMno(mno);
+      
+        return inter.insertDet(bean);
+    }
 }
