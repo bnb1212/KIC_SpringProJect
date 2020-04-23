@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pack.model.StudyDaoInter;
 import pack.model.VideoDto;
+import pack.model.Video_detDto;
 
 @Controller
 @ComponentScan("pack.model")
@@ -70,20 +71,26 @@ public class MyStudyController{
 		return videoLists;
 	}
 	
-	//해당 스터디 스터디룸을 보이기 위해 영상정보 가져옴 + 댓글정보도 가져와야함
+	//해당 스터디 스터디룸을 보이기 위해 영상정보 가져옴
 	@RequestMapping(value="myStudyRoom",method=RequestMethod.POST)
-	public ModelAndView list(@RequestParam String vno){
+	public ModelAndView list(@RequestParam("vno") String vno){
 		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
-		m.addObject("detlist",inter.getdetAll(vno));
+		m.addObject("vno", vno);
 		return m;
 	}
 	
-	
+	//댓글정보 가져오는 부분
+	@RequestMapping("detlist")
+	@ResponseBody
+	public List<Video_detDto> selectdetAll(@RequestParam("vno") String vno){
+		List<Video_detDto> detlist = inter.getdetAll(vno);
+		return detlist;
+	}
 	
 	//영상에 댓글다는 부분
 	@RequestMapping("detinsert")
 	@ResponseBody
-	public int detInsert(@RequestParam String vno, @RequestParam String content, @RequestParam String mno) throws Exception{
+	public int detInsert(@RequestParam("vno") String vno, @RequestParam("content") String content, @RequestParam("mno") String mno) throws Exception{
         
         Video_detBean bean = new Video_detBean();
         bean.setContent(content);
@@ -91,5 +98,11 @@ public class MyStudyController{
         bean.setMno(mno);
       
         return inter.insertDet(bean);
+    }
+	
+	@RequestMapping("detdelete")
+	@ResponseBody
+	public int detInsert(@RequestParam("det_no") String det_no) throws Exception{
+        return inter.deleteDet(det_no);
     }
 }

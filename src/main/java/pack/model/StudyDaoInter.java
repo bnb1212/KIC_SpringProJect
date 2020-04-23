@@ -13,6 +13,8 @@ public interface StudyDaoInter {
 	String getClassName(String class_no) throws DataAccessException;
 	List<VideoDto> getVideoPart(HashMap<String, String> map) throws DataAccessException;
 	VideoDto getVideo(String vno) throws DataAccessException;
+	//영상댓글부분
 	List<Video_detDto> getdetAll(String vno) throws DataAccessException;
 	int insertDet(Video_detBean bean) throws DataAccessException;
+	int deleteDet(String det_no) throws DataAccessException;
 }

@@ -18,38 +18,82 @@ $( document ).ready(function(){
 	        $(this).val($(this).val().substring(0, 1000));
 	    }
 	});
+	
+	var vno = ${vno} 
+	detList(vno);
+
+	$('#insertbtn').click(function(){ //댓글 등록 버튼 클릭시 
+		if($('#detplace').val() == ""){
+			alert("댓글을 입력해주세요")
+		} else {
+			var content = $('#detplace').val();
+			var vno = $('#vno').val();
+			var mno = $('#mno').val();
+		    det_insert(content,vno,mno); //아래 만들어 놓은 Insert 함수를 호출
+		}
+	});
 })
 
-function det_insert(param){
-	if($('#detplace').val() == ""){
-		alert("댓글을 입력해주세요")
-	} else {
-		var content = $('#detplace').val();
-		$(".detshow").empty();
-		var clno = ${clno } 
-		$.ajax({
-			type:"get",
-			url:"videolist",
-			dataType:"json",
-			data:{"clno":clno,"sctno":param},	
-			success:function(videoData){
-				var list = videoData.datas;
-				var str= "** 해당 섹션 영상 목록 **  총 "+$(list).length+"개<br>";
-				$(list).each(function(index,obj){
-					str += "<div class=unit_item>"
-					str += "<span class=unit_title onclick=gostudyroom("+obj.video_no+")>";
-					str += obj.video_title;
-					str += "</span><br>";
-					str += "</div>";
-				});
-				$(".lecture_cover"+param).html(str);
-			},
-			error : function(){
-				$(".lecture_cover"+param).text("에러!");
+//댓글 보이는 함수
+function detList(param){
+	var mno = ${member_no };
+    $.ajax({
+        url : 'detlist',
+        type : 'get',
+        data : {'vno':param},
+        success : function(detdata){
+            var a =''; 
+            $.each(detdata, function(key, value){ 
+                a += '<div class="detArea" style="border-bottom:1px solid darkgray; margin-bottom: 15px;">';
+                a += '<div class="detInfo'+value.det_no+'">'+'댓글번호 : '+value.det_no+' / 작성자 : '+value.mno;
+                if(mno == value.mno){
+                a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\');"> 수정 </a>';
+                a += '<a style="cursor:pointer" onclick="det_delete('+value.det_no+',\''+value.vno+'\');"> 삭제 </a> </div>';
+                }else{
+                a += '</div>';
+                }
+                a += '<div class="detContent'+value.det_no+'"> <p> 내용 : '+value.content +'</p>';
+                a += '</div></div>';
+            });
+            
+            $(".detshow").html(a);
+        }
+    });
+}
+
+function det_delete(det_no,vno){
+	$(".detshow").empty();
+	$.ajax({
+		type : "post",
+		url : "detdelete",
+		data : {"det_no":det_no},
+		success : function(result) {
+			if (result == 1) {
+				detList(vno);
 			}
-		})
-		
-      }
+		}
+	});
+}
+
+function det_update(det_no,content){
+	alert(det_no);
+	alert(content);
+}
+
+
+function det_insert(content,vno,mno) {
+	$(".detshow").empty();
+	$.ajax({
+		type : "post",
+		url : "detinsert",
+		data : {"vno":vno,"content":content,"mno":mno},
+		success : function(result) {
+			if (result == 1) {
+				detList(vno);
+				$('#detplace').val('');
+			}
+		}
+	});
 }
 </script>
 </head>
@@ -75,38 +119,21 @@ function det_insert(param){
 	</td>
 	<td>
 	<textarea id="detplace" name="detplace" cols="80" rows="2" style="resize: none;" placeholder="댓글을 입력해주세요"></textarea>
-	<form id="formByte" name="formByte" action="detinsproc.jsp" method="post">
+	<form id="formByte" name="formByte">
 	<input type="hidden" id="content" name="content"> 
 	<input type="hidden" id="vno" name="vno" value="${v.video_no }"> 
-	<input type="hidden" id="pid" name="pid" value=""> 
+	<input type="hidden" id="mno" name="mno" value="<%=session.getAttribute("member_no") %>"> 
 	</form>
 	</td>
 	<td>
-	<input type="button" id="button" onclick="det_insert(<%=session.getAttribute("member_no") %>)" value="등록">
+	<input type="button" id="insertbtn" value="등록">
 	</td>
 	</tr>
 	</table>
 </div>
 <br>
 <hr>
-<div id="detshow">
-<c:if test="${empty detlist }">
-<h4>댓글이 없습니다.</h4>
-</c:if>
-<c:if test="${!empty detlist }">
-<table>
-<c:forEach var="det" items="${detlist}">
-	<tr>
-	<td>
-	<img style="width:50px; height:50px;" src="resources/img/face_emoji.png">
-	</td>
-	<td>
-	<c:out value="${det.content}" />
-	</td>
-	</tr>
-</c:forEach>
-</table>
-</c:if>
+<div class="detshow">
 </div>
 </body>
 </html>

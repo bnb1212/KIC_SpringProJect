@@ -46,6 +46,7 @@ public class StudyDaoImpl implements StudyDaoInter {
 		return video;
 	}
 	
+	//영상댓글부분
 	@Override
 	public List<Video_detDto> getdetAll(String vno) throws DataAccessException {
 		 List<Video_detDto> detlist = studyAnnoInter.detList(vno);
@@ -57,4 +58,11 @@ public class StudyDaoImpl implements StudyDaoInter {
 		int result = studyAnnoInter.detInsert(bean);
 		return result;
 	}
+	
+	@Override
+	public int deleteDet(String det_no) throws DataAccessException {
+		int result = studyAnnoInter.detDelete(det_no);
+		return result;
+	}
+	
 }

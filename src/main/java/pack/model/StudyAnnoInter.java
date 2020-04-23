@@ -39,7 +39,7 @@ public interface StudyAnnoInter {
 	public int detCount(String vno);
 	
 	//해당 영상 댓글 목록
-	@Select("select * from video_det where vno = #{vno}")
+	@Select("select * from video_det where vno = #{vno} order by date desc")
 	public List<Video_detDto> detList(String vno);
 	
 	//해당 영상에 댓글 작성
@@ -51,6 +51,6 @@ public interface StudyAnnoInter {
 	public int detUpdate(Video_detBean bean);
 	
 	//해당 영상에 달았던 댓글 삭제
-	@Delete("delete from video_det where det_no = #{det_no} and mno = #{mno}")
-	public int detDelete(HashMap<String, String> map);
+	@Delete("delete from video_det where det_no = #{det_no}")
+	public int detDelete(String det_no);
 }
