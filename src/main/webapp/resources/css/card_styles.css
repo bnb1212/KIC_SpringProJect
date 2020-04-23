@@ -1838,7 +1838,7 @@ pre code {
 
 .form-control::-webkit-input-placeholder {
 	color: #6c757d;
-	opacity: 1;
+	opacity: 0.5;
 }
 
 .form-control::-moz-placeholder {
@@ -1848,17 +1848,17 @@ pre code {
 
 .form-control:-ms-input-placeholder {
 	color: #6c757d;
-	opacity: 1;
+	opacity: 0.5;
 }
 
 .form-control::-ms-input-placeholder {
 	color: #6c757d;
-	opacity: 1;
+	opacity: 0.5;
 }
 
 .form-control::placeholder {
 	color: #6c757d;
-	opacity: 1;
+	opacity: 0.5;
 }
 
 .form-control:disabled, .form-control[readonly] {
@@ -9615,7 +9615,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .floating-label-form-group {
 	position: relative;
-	border-bottom: 1px solid #e9ecef;
+	
 }
 
 .floating-label-form-group input, .floating-label-form-group textarea {

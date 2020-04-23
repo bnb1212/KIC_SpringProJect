@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <script type="text/javascript">
 	function studyListFunc(category) {
 		var frm = $("#category");
@@ -22,22 +23,9 @@
 			<!-- 로그인 버튼 -->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<%
-						if (session.getAttribute("member_no") != null) {
-					%>
-					<li><a
-						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="member_logout">로그아웃</a></li>
-					<%
-						} else {
-					%>
-					<li><a
-						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-						href="#" id="loginBtn">로그인</a></li>
-					<%
-						}
-					%>
-					<!-- 로그인 끝 -->
+					<li>
+					상단 메뉴
+					</li>
 					<!-- 메뉴버튼 -->
 					<li class="nav-item mx-0 mx-lg-1"><a
 						class="menu-toggle rounded" href="#"> <i class="fas fa-bars"></i>
@@ -57,25 +45,19 @@
 			<%
 				if (session.getAttribute("member_no") != null) {
 			%>
-			<li class="sidebar-brand"><% session.getAttribute("member_name"); %> 님 
-				<a class="menu-toggle rounded"
-				href="#"> <i class="fas fa-bars"></i>
-			</a>
-			</li>
-			<li class="sidebar-nav-item">
-			<a class="js-scroll-trigger"
-				href="member_logout">로그아웃</a>
-			</li>
-			<li class="sidebar-nav-item">
-			<a class="js-scroll-trigger"
+			<li class="sidebar-brand"><%=session.getAttribute("member_name")%>
+				님 <a class="menu-toggle rounded" href="#"> <i
+					class="fas fa-bars"></i>
+			</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="member_logout">로그아웃</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
 				href="#mypage">내 정보 보기</a> <!-- 메뉴 버튼 --></li>
 			<%
 				} else {
 			%>
-			<li class="sidebar-brand">
-			<a class="js-scroll-trigger" href="#"
-				id="loginBtn">로그인</a> 
-			<a class="menu-toggle rounded" href="#"> <i
+			<li class="sidebar-brand"><a class="js-scroll-trigger" href="#"
+				id="loginBtn">로그인</a> <a class="menu-toggle rounded" href="#"> <i
 					class="fas fa-bars"></i>
 			</a></li>
 			<%
@@ -100,5 +82,3 @@
 
 <!-- modal login -->
 <%@ include file="member_login.jsp"%>
-
-<script src="resources/js/login.js"></script>
