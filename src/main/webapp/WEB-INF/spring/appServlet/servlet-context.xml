@@ -20,12 +20,8 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
 	<context:component-scan base-package="com.spring.four" />
 	<context:component-scan base-package="admin_controller" />
 	<context:component-scan base-package="admin_model" />
-	<context:component-scan base-package="pack.controller" />
-	<context:component-scan base-package="pack.model" />
 	<context:component-scan base-package="pack" />
-	
 </beans:beans>

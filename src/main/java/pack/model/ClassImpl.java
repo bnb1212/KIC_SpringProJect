@@ -21,13 +21,6 @@ public class ClassImpl implements ClassInter{
 	}
 	
 
-
-	
-	@Override
-	public List<ClassDto> selectEnglish() throws DataAccessException {
-	
-		return classAnnoInter.selectEnglish();
-	}
 	
 	@Override
 	public List<ClassDto> selectDesign() throws DataAccessException {
@@ -35,9 +28,29 @@ public class ClassImpl implements ClassInter{
 	}
 	
 	@Override
+	public List<ClassDto> selectProgramming() throws DataAccessException {
+		return classAnnoInter.selectProgramming();
+	}
+	
+	@Override
+	public List<ClassDto> selectMarketing() throws DataAccessException {
+		return classAnnoInter.selectMarketing();
+	}
+	
+	@Override
 	public List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException {
 		
 		return classAnnoInter.selectDetail(bean);
+	}
+	
+	@Override
+	public List<CurriDto> selectCurri(String class_no) throws DataAccessException {
+		return classAnnoInter.selectCurri(class_no);
+	}
+	
+	@Override
+	public List<ClassDto> selectClass(String class_no) throws DataAccessException {
+		return classAnnoInter.selectClass(class_no);
 	}
 
 }

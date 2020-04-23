@@ -1,217 +1,251 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="<c:url value="resources/css/bootstrap.css" />"
+<link href="<c:url value="resources/vendor/css/bootstrap.css" />"
 	rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 	crossorigin="anonymous"></script>
-<script src="resources/js/bootstrap.min.js"></script>
+<script src="resources/vendor/js/bootstrap.min.js"></script>
 
 </head>
 <body>
-<h2>머신러닝</h2>
-<c:forEach var="c" items="${datas }">
-${c.class_name }
-</c:forEach>
-
-
-<table border="1" width ="150" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-	</tr>
-	</c:if>
-	</c:forEach>
+<%@ include file="pagetop.jsp"%>
 	
+	<h2 align="center">머신러닝</h2>
 	
-	<tr><th>클래스정보</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_info}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
+	<!--  
+	<div class="container" style="background-color: #D7FFF1">
+		<div class="row">
 	
-		<tr><th>클래스가격</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_price}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>카테고리</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-</table>
-
-
-
-<table border="1" width ="150" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-	
-	<tr><th>클래스정보</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_info}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>클래스가격</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_price}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>카테고리</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-</table>
-
-
-<table border="1" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th><th>클래스정보</th><th>클래스가격</th><th>카테고리</th></tr>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-		<td>${i.class_info}</td>
-		<td>${i.class_price}</td>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	
-	</c:forEach>
-	
-</table>
-
-
-<br>연습테이블<br><br>
-
-<div style="border: 1px; float: left; width: 33%;">
-
-<table border="1"  width="200" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-	
-	<tr><th>클래스정보</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_info}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>클래스가격</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_price}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>카테고리</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq '머신러닝심화'}">
-	<tr>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-</table>
-
-</div>
-<div style="border: 1px; float: left; width: 33%;">
-
-<table border="1" width="200" style="border-collapse: collapse;">
-	<tr><th>클래스이름</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-	
-	<tr><th>클래스정보</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_info}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>클래스가격</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_price}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-		<tr><th>카테고리</th>
-	<c:forEach var="i" items="${datas}">
-	<c:if test="${i.class_name eq 'TensorFlow'}">
-	<tr>
-		<td>${i.class_category}</td>
-	</tr>
-	</c:if>
-	</c:forEach>
-	
-</table>
+		<c:choose>
+		<c:when test="${fn:length(datas) > 0}">
+			<section class="col">
+					<table border="1" width="250" style="border-collapse: collapse;">
+						<tr>
+							<th>클래스이름</th>
+							<c:forEach var="i" items="${datas}">
+							
+									<tr>
+										<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
+									</tr>
+							
+							</c:forEach>
+						<tr>
+							<th>클래스정보</th>
+							<c:forEach var="i" items="${datas}">
+								
+									<tr>
+										<td>${i.class_info}</td>
+									</tr>
+							
+							</c:forEach>
+						<tr>
+							<th>클래스가격</th>
+							<c:forEach var="i" items="${datas}">
+							
+									<tr>
+										<td>${i.class_price}</td>
+									</tr>
+								
+							</c:forEach>
+						<tr>
+							<th>카테고리</th>
+							<c:forEach var="i" items="${datas}">
+							
+									<tr>
+										<td>${i.class_category}</td>
+									</tr>
+								
+							</c:forEach>
+					</table>
+	</section>
+		</c:when>
+	</c:choose>
+	</div>
 </div>
 
-<div style="border: 1px solid blue; float: left; width: 33%;">
-세번째 영역
-</div>
+
+-->
+
+
+
+	<div class="container" style="background-color: #D7FFF1">
+		<div class="row">
+
+			<section class="col">
+				<h3>
+					<table border="1" width="250" style="border-collapse: collapse;">
+						<tr>
+							<th>클래스이름</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '4'}">
+									<tr>
+										<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스정보</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '4'}">
+									<tr>
+										<td>${i.class_info}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스가격</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '4'}">
+									<tr>
+										<td>${i.class_price}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>카테고리</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_name eq '머신러닝심화'}">
+									<tr>
+										<td>${i.class_category}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+					</table>
+				</h3>
+			</section>
+			<section class="col">
+				<h3>
+
+					<table border="1" width="250" style="border-collapse: collapse;">
+						<tr>
+							<th>클래스이름</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '5'}">
+									<tr>
+										<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스정보</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '5'}">
+									<tr>
+										<td>${i.class_info}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스가격</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '5'}">
+									<tr>
+										<td>${i.class_price}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>카테고리</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '5'}">
+									<tr>
+										<td>${i.class_category}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+					</table>
+
+				</h3>
+			</section>
+
+			<section class="col">
+				<h3>
+
+					<table border="1" width="250" style="border-collapse: collapse;">
+						<tr>
+							<th>클래스이름</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '6'}">
+									<tr>
+										<td><a href="detail?classinfo_class_no=${i.class_no}">${i.class_name}</a></td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스정보</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '6'}">
+									<tr>
+										<td>${i.class_info}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>클래스가격</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '6'}">
+									<tr>
+										<td>${i.class_price}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+						<tr>
+							<th>카테고리</th>
+							<c:forEach var="i" items="${datas}">
+								<c:if test="${i.class_no eq '6'}">
+									<tr>
+										<td>${i.class_category}</td>
+									</tr>
+								</c:if>
+							</c:forEach>
+					</table>
+				</h3>
+			</section>
+
+		</div>
+		<br>
+		<hr>
+		<h3 align="center">Other categories</h3>
+		<br>
+		<br>
+
+		<div class="row">
+			<section class="col">
+				<h4>
+					<a href="machine">머신러닝</a>
+				</h4>
+
+			</section>
+			<section class="col">
+				<h4>
+					<a href="design">디자인</a><br>
+				</h4>
+			</section>
+
+			<section class="col">
+				<h4>
+					<a href="programming">프로그래밍</a><br>
+				</h4>
+			</section>
+
+			<section class="col">
+				<h4>
+					<a href="marketing">마케팅</a><br>
+				</h4>
+			</section>
+
+		</div>
+	</div>
+
+
 
 
 	<script

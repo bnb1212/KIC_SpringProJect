@@ -1,9 +1,8 @@
 package pack.controller;
 
 public class ClassBean {
-	private String class_no, class_name, class_info, class_price, class_category;
+	private String class_no,class_name,class_info,class_price,class_category;
 	private int class_limit;
-	
 	public String getClass_no() {
 		return class_no;
 	}
@@ -40,5 +39,5 @@ public class ClassBean {
 	public void setClass_limit(int class_limit) {
 		this.class_limit = class_limit;
 	}
-
+	
 }
