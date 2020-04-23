@@ -27,8 +27,12 @@ public class MemberController {
 		try {
 			MemberDto dto = inter.loginCheck(bean);
 
-			if (dto != null)
+			if (dto != null) {
 				session.setAttribute("member_no", dto.getMember_no());
+				session.setAttribute("member_name", dto.getMember_name());
+			} else {
+				return "loginerror";
+			}
 		} catch (Exception e) {
 			System.out.println("error : " + e);
 			return "redirect:/index.jsp";
@@ -37,7 +41,7 @@ public class MemberController {
 
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("member_logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
 		ModelAndView mv = new ModelAndView("redirect:/");
