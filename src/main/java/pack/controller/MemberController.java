@@ -37,9 +37,9 @@ public class MemberController {
 			}
 		} catch (Exception e) {
 			System.out.println("error : " + e);
-			return "redirect:/index.jsp";
+			return "redirect:/";
 		}
-		return "redirect:/index.jsp";
+		return "redirect:/";
 
 	}
 

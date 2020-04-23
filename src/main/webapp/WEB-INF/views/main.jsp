@@ -53,44 +53,60 @@
 		<div class="overlay"></div>
 	</header>
 
-	<main class="container" style="background-color: #D7FFF1">
-
-		<header class="container index-header" style="white-space: nowrap;">
-			<section class="row justify-content-center">
-				<ul class="nav justify-content-center">
-					<li class="nav-item"><a class="nav-link active" href="#">전체보기</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="machine">머신러닝</a></li>
-					<li class="nav-item"><a class="nav-link" href="programming">프로그래밍</a></li>
-					<li class="nav-item"><a class="nav-link" href="design">디자인</a></li>
-					<li class="nav-item"><a class="nav-link" href="marketing">마케팅</a></li>
-				</ul>
-			</section>
-		</header>
-		<section class="row" style="background-color: #8CD790; height: 600px">
-			<div class="col">항목1</div>
-			<div class="col">항목2</div>
-		</section>
-
-		<section class="row" style="background-color: #77AF9C; height: 600px">
-			<div class="col">항목3</div>
-		</section>
-
-		<section class="row" style="background-color: #285943; height: 300px">
-			<div class="col-sm-6 col-md-4 col-lg-3">
-				<a href="machine">머신러닝</a>
-			</div>
-			<div class="col-sm-6 col-md-4 col-lg-3">
-				<a href="machine">디자인</a>
-			</div>
-			<div class="col-sm-6 col-md-4 col-lg-3">
-				<a href="machine">영어</a>
-			</div>
-			<div class="col-sm-6 col-md-4 col-lg-3">
-				<a href="machine">비즈니스</a>
-			</div>
-		</section>
-	</main>
+	<!-- category content -->
+	<section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h4 class="text-secondary mb-0">Course Category</h4>
+        <br>
+        <br>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-3">
+          <a class="portfolio-item" href="machine">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>머신러닝</h2>
+              </span>
+            </span>
+            <img class="img-fluid" src="resources/img/cate_machine_learning.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3">
+          <a class="portfolio-item" href="programming">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>프로그래밍</h2>
+              </span>
+            </span>
+            <img class="img-fluid" src="resources/img/cate_programming.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3">
+          <a class="portfolio-item" href="design">
+            <span class="caption">
+              <span class="caption-content">
+                <h2 class="mb-0">디자인</h2>
+              </span>
+            </span>
+            <img class="img-fluid" src="resources/img/cate_design.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-3">
+          <a class="portfolio-item" href="marketing">
+            <span class="caption">
+              <span class="caption-content">
+                <h2>마케팅</h2>
+                
+              </span>
+            </span>
+            <img class="img-fluid" src="resources/img/cate_maketing.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- category content end -->
 	<footer class="contrainer index-footer">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
@@ -107,10 +123,8 @@
 			</div>
 		</section>
 	</footer>
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-
+	<!-- SCRIPT -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"></script>

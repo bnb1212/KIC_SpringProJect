@@ -18,13 +18,13 @@
 		id="mainNav">
 		<div class="container">
 			<!-- LOGO -->
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">KIC
+			<a class="navbar-brand js-scroll-trigger" href="main">KIC
 				STUDYPRO</a>
 			<!-- 로그인 버튼 -->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li>
-					상단 메뉴
+					검색창
 					</li>
 					<!-- 메뉴버튼 -->
 					<li class="nav-item mx-0 mx-lg-1"><a
