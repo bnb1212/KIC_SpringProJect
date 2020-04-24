@@ -32,6 +32,10 @@ public interface StudyAnnoInter {
 	@Select("select * from video where video_no = #{vno}")
 	public VideoDto selectVideo(String vno); 
 	
+	//이전영상 다음영상 이동을 위해 min,max값 구하기
+	
+	@Select("select min(video_no) as min,max(video_no) as max from video where class_no = #{clno}")
+	public HashMap<String,String> getvnomm(String clno); 
 	
 	//-----영상 댓글부분----
 	//해당 영상 댓글 개수
@@ -53,4 +57,5 @@ public interface StudyAnnoInter {
 	//해당 영상에 달았던 댓글 삭제
 	@Delete("delete from video_det where det_no = #{det_no}")
 	public int detDelete(String det_no);
+	
 }

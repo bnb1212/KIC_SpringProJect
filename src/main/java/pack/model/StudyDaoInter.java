@@ -18,4 +18,7 @@ public interface StudyDaoInter {
 	int insertDet(Video_detBean bean) throws DataAccessException;
 	int deleteDet(String det_no) throws DataAccessException;
 	int updateDet(Video_detBean bean) throws DataAccessException;
+	
+	//이전,이후 영상
+	HashMap<String,String> getvnomm(String clno) throws DataAccessException;; 
 }

@@ -19,12 +19,6 @@ $( document ).ready(function(){
 	    }
 	});
 	
-$('#updetplace').on('keyup', function() {
-    if($(this).val().length > 1000) {
-        $(this).val($(this).val().substring(0, 1000));
-    }
-});
-	
 	var vno = ${vno} 
 	detList(vno);
 
@@ -67,6 +61,7 @@ function detList(param){
     });
 }
 
+//댓글 삭제하기
 function det_delete(det_no,vno){
 	$(".detshow").empty();
 	$.ajax({
@@ -81,6 +76,7 @@ function det_delete(det_no,vno){
 	});
 }
 
+//수정하기를 누르면 댓글 수정할 수 있게 요소 바꿔준다.
 function det_update(det_no,content,vno){
     var a ='';
     var b = '';
@@ -92,7 +88,7 @@ function det_update(det_no,content,vno){
     a += '<div class="input-group">';
     a += '<form id="upform" name="upform">';
     //a += '<input type="text" class="form-control" id="content_'+det_no+'" value="'+content+'"/>';
-    a += '<textarea id="upcon_'+det_no+'" name="updetplace" cols="80" rows="2" style="resize: none;">'+content+'</textarea>';
+    a += '<textarea id="upcon_'+det_no+'" name="upcon" cols="80" rows="2" style="resize: none;">'+content+'</textarea>';
     //a += '<input type="hidden" class="form-control" id="content_'+det_no+'"/>';
     a += '<input type="button" value="수정" onclick="det_updateProc('+det_no+',\''+vno+'\')">'; //여기에 콘텐츠 바뀐거 넣어보셈..
     a += '</form></div>';
@@ -102,9 +98,13 @@ function det_update(det_no,content,vno){
     
 }
 
+//수정내용 확인 후 처리
 function det_updateProc(det_no,vno){
 	if($('#upcon_'+det_no).val() == ""){
 		alert("수정하실 내용을 입력해주세요")
+	}else if($('#upcon_'+det_no).val().length > 1000){
+		$('#upcon_'+det_no).val($('#upcon_'+det_no).val().substring(0, 1000));
+		alert("1000자 이하로 입력해주세요")
 	}else{
 	//var content = $('#content_'+det_no).val();
 	//alert(content)
@@ -125,7 +125,7 @@ function det_updateProc(det_no,vno){
 	}
 }
 
-
+//댓글 추가 처리
 function det_insert(content,vno,mno) {
 	$(".detshow").empty();
 	$.ajax({
@@ -140,9 +140,26 @@ function det_insert(content,vno,mno) {
 		}
 	});
 }
+
+function prev(vno,clno){
+	$.ajax({
+		type : "post",
+		url : "prevnext",
+		data : {"clno":clno},
+		success : function(map) {
+			
+			alert('dd')
+		}
+	});
+}
+
 </script>
 </head>
 <body>
+<form id="back" method="post" action="myStudy">
+<input type="hidden" id="clno" name="clno" value=${clno }>
+<input type="submit" value="목록으로">
+</form>
 <c:set var="v" value="${video }" />
 <div style="text-align: left;">
 <h2>${v.order_no}. ${v.video_title }</h2>
@@ -153,6 +170,10 @@ function det_insert(content,vno,mno) {
 <div style="text-align: left;">
 <h3>강의설명</h3>
 <span>${v.video_info}</span>
+</div>
+<div>
+<button>이전</button>
+<button>다음</button>
 </div>
 <br>
 <h4>댓글</h4>

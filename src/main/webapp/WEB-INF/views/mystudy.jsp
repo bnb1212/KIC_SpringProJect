@@ -46,6 +46,9 @@ function gostudyroom(param){
 	var frm = $("#frm");
 	var vno = $("#vno")
 	vno.val(param)
+	var c = ${clno}
+	var clno = $("#clno")
+	clno.val(c)
 	$("#frm").submit();
 }
 </script>
@@ -71,6 +74,7 @@ function gostudyroom(param){
 <br>
 <form id="frm" method="post" action="myStudyRoom">
 <input type="hidden" id="vno" name="vno">
+<input type="hidden" id="clno" name="clno">
 </form>
 </body>
 </html>

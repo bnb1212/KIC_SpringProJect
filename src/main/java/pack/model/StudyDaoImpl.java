@@ -70,4 +70,10 @@ public class StudyDaoImpl implements StudyDaoInter {
 		int result = studyAnnoInter.detUpdate(bean);
 		return result;
 	}
+	
+	@Override
+	public HashMap<String, String> getvnomm(String clno) throws DataAccessException {
+		HashMap<String, String> map = studyAnnoInter.getvnomm(clno);
+		return map;
+	}
 }

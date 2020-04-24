@@ -35,7 +35,7 @@ public class MyStudyController{
 	}
 	
 	//내가 신청한 스터디 커리큘럼페이지
-	@RequestMapping(value="myStudy",method=RequestMethod.POST)
+	@RequestMapping(value="myStudy")
 	public ModelAndView list2(@RequestParam("clno") String clno){
 		ModelAndView m = new ModelAndView("mystudy","curries",inter.getClassCurri(clno));
 		m.addObject("clname", inter.getClassName(clno));
@@ -73,9 +73,10 @@ public class MyStudyController{
 	
 	//해당 스터디 스터디룸을 보이기 위해 영상정보 가져옴
 	@RequestMapping(value="myStudyRoom",method=RequestMethod.POST)
-	public ModelAndView list(@RequestParam("vno") String vno){
+	public ModelAndView list(@RequestParam("vno") String vno,@RequestParam("clno") String clno){
 		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
 		m.addObject("vno", vno);
+		m.addObject("clno",clno);
 		return m;
 	}
 	
@@ -100,12 +101,14 @@ public class MyStudyController{
         return inter.insertDet(bean);
     }
 	
+	//댓글 삭제
 	@RequestMapping("detdelete")
 	@ResponseBody
 	public int detDelete(@RequestParam("det_no") String det_no) throws Exception{
         return inter.deleteDet(det_no);
     }
 	
+	//댓글 수정
 	@RequestMapping("detupdate")
 	@ResponseBody
 	public int detUpdate(@RequestParam("det_no") String det_no,@RequestParam("content") String content) throws Exception{
@@ -114,4 +117,12 @@ public class MyStudyController{
         bean.setDet_no(det_no);
         return inter.updateDet(bean);
     }
+	
+	@RequestMapping("prevnext")
+	@ResponseBody
+	public HashMap<String, String> getvnomm(@RequestParam("clno") String clno){
+		HashMap<String, String> map = inter.getvnomm(clno);
+		return map;
+		
+	}
 }
