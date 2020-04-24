@@ -7,6 +7,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import pack.controller.ClassinfoBean;
+import pack.controller.InsertBean;
 
 @Repository
 public class ClassImpl implements ClassInter{
@@ -51,6 +52,19 @@ public class ClassImpl implements ClassInter{
 	@Override
 	public List<ClassDto> selectClass(String class_no) throws DataAccessException {
 		return classAnnoInter.selectClass(class_no);
+	}
+	
+	
+	@Override
+	public List<MemberDto> selectMember(String member_no) throws DataAccessException {
+		
+		return classAnnoInter.selectMember(member_no);
+	}
+	
+	@Override
+	public void insertClass(InsertBean insertBean) throws DataAccessException {
+		 classAnnoInter.insertClass(insertBean);
+		 return;
 	}
 
 }

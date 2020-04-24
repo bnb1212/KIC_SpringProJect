@@ -49,4 +49,6 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView("redirect:/main");
 		return mv;
 	}
+	
+	
 }
