@@ -21,4 +21,9 @@ public class MainController {
 	public String cate(Model model) {
 		return "categoryview";
 	}
+
+	@RequestMapping(value= "admin_login", method=RequestMethod.GET)
+	public String home3(Model model) {
+		return "admin_login";
+	}
 }

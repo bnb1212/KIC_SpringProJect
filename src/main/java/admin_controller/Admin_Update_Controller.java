@@ -21,7 +21,7 @@ public class Admin_Update_Controller {
 	private Admin_MemberInit_AnnoInter inter;
 	
 	
-	@RequestMapping(value = "update", method = RequestMethod.GET)
+	@RequestMapping(value = "admin_update", method = RequestMethod.GET)
 	public ModelAndView goUpdate(@RequestParam("no") String no) {
 		Admin_MemberDto dto = inter.selectPart1(no);
 		return new ModelAndView("admin_update","datas", dto);
@@ -29,8 +29,21 @@ public class Admin_Update_Controller {
 	
 	@RequestMapping(value = "admin_update", method = RequestMethod.POST)
 	public ModelAndView updateProcess(Admin_MemberBean bean) {
-		inter.update(bean);
-		return new ModelAndView("admin_re");
+		try {
+			int a = inter.update(bean);
+			
+			if(a > 0) {
+				return new ModelAndView("admin_re");
+				
+			}else {
+				return null;
+				
+			}
+			
+		} catch (Exception e) {
+			return new ModelAndView("error");
+		}
+		
 	}
 	 
 	
