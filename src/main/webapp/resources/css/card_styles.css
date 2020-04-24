@@ -4857,7 +4857,7 @@ none
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	min-width: 0;
+	min-width: 200px;
 	word-wrap: break-word;
 	background-color: #fff;
 	background-clip: border-box;
@@ -9953,39 +9953,6 @@ body {
 	height: 3.5rem;
 	background-color: rgba(33, 37, 41, 0.5);
 	line-height: 3.1rem;
-}
-
-
-.masthead {
-	padding-top: calc(6rem + 74px);
-	padding-bottom: 6rem;
-}
-
-.masthead .masthead-heading {
-	font-size: 2.75rem;
-	line-height: 2.75rem;
-}
-
-.masthead .masthead-subheading {
-	font-size: 1.25rem;
-}
-
-.masthead .masthead-avatar {
-	width: 15rem;
-}
-
-@media ( min-width : 992px) {
-	.masthead {
-		padding-top: calc(6rem + 104px);
-		padding-bottom: 6rem;
-	}
-	.masthead .masthead-heading {
-		font-size: 4rem;
-		line-height: 3.5rem;
-	}
-	.masthead .masthead-subheading {
-		font-size: 1.5rem;
-	}
 }
 
 .portfolio .portfolio-item {

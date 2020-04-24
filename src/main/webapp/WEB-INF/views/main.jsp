@@ -35,7 +35,7 @@
       </div>
       <div class="row no-gutters">
         <div class="col-lg-3">
-          <a class="portfolio-item" href="machine">
+          <a class="portfolio-item" href="category/machine">
             <span class="caption">
               <span class="caption-content">
                 <h2>머신러닝</h2>

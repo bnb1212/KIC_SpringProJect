@@ -21,6 +21,9 @@ public interface ClassAnnoInter {
 	@Select("select * from class where class_category='마케팅'")
 	List<ClassDto> selectMarketing() throws DataAccessException;
 	
+	@Select("select * from class where class_category=#{category}")
+	List<ClassDto> selectCategory(String category) throws DataAccessException;
+	
 	@Select("select * from classinfo where classinfo_class_no=#{classinfo_class_no}")
 	List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException; 
 	
