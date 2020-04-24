@@ -19,6 +19,7 @@ public class Admin_Class_Detail_Controller {
 		ModelAndView mav = new ModelAndView("admin_classdetail");
 		mav.addObject("datas", anno.selectPart(no));
 		mav.addObject("videos", anno.selectVideo(no));
+		mav.addObject("curri", anno.selectCurri(no));
 		return mav;
 	}
 }

@@ -9,6 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import org.springframework.dao.DataAccessException;
 
 import admin_controller.Admin_ClassBean;
+import admin_controller.Admin_CurriBean;
 import admin_controller.Admin_VideoBean;
 
 public interface Admin_ClassInit_AnooInter {
@@ -54,5 +55,21 @@ public interface Admin_ClassInit_AnooInter {
 	
 	@Delete("delete from video where video_no=#{video_no}")
 	public int videodelete(String video_no);
+	
+	
+	@Select("select * from curri where curri_class_no = #{class_no}")
+	public List<Admin_CurriDto> selectCurri(String no);
+	
+	@Select("select * from curri where section_no = #{section_no}")
+	public Admin_CurriDto selcetCurriPart(String no);
+	
+	@Update("update curri set curri_class_no=#{curri_class_no}, goal_title=#{goal_title } where section_no=#{section_no} ")
+	public int curriupdate(Admin_CurriBean bean);
+	
+	@Insert("insert into curri(curri_class_no, section_no, goal_title) values(#{curri_class_no}, #{section_no}, #{goal_title})")
+	public int curriinsert(Admin_CurriBean bean);
+
+	@Delete("delete from curri where section_no = #{section_no} and curri_class_no=#{curri_class_no}")
+	public int curridelete(Admin_CurriBean bean);
 }
 

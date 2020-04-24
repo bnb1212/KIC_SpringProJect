@@ -13,7 +13,14 @@
 		 url = "admin_video_delete";
 			window.open(url, "get", "width=300,height=200,top=400,left=300");
 	}
+	 
+	 function curridel(no) {
+		 var num = no
+		 url = "admin_curri_delete?no="+num;
+			window.open(url, "get", "width=300,height=200,top=400,left=300");
+	}
 
+	 
 
 </script>
 </head>
@@ -132,6 +139,24 @@
 		</table>
 		
 		<a href="admin_video_insert?no=${datas.class_no}">영상 추가</a> &nbsp;&nbsp;&nbsp;  <a href="#" onclick="delvideo()">영상 삭제</a>
+	</form>
+	<hr>
+	<br>
+	<form>
+		<table border="1">
+			<tr>
+				<th>강의 번호</th><th>세션 번호</th><th>목표 제목</th>
+			</tr>
+				<c:forEach var="s" items="${curri }">
+				<tr>
+					<td>${s.curri_class_no }</td>
+					<c:set var="classNo" value="${s.curri_class_no }" />
+					<td><a href="admin_curri_update?no=${s.section_no }">${s.section_no }</a></td>
+					<td>${s.goal_title }</td>
+				</tr>
+				</c:forEach>
+		</table>
+				<a href="admin_curri_insert?no=${datas.class_no }">커리큘럼 추가</a> <a href="#" onclick="curridel(${classNo})">커리큘럼 삭제</a>
 	</form>
 
 </body>

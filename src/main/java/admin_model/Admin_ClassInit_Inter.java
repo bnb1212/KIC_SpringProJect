@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import admin_controller.Admin_ClassBean;
+import admin_controller.Admin_CurriBean;
 import admin_controller.Admin_VideoBean;
 
 
@@ -24,4 +25,10 @@ public interface Admin_ClassInit_Inter {
 	Admin_VideoDto selectVideoPart(String no);
 	int videoupdate(Admin_VideoBean bean);
 	int videodelete(String video_no);
+	
+	List<Admin_CurriDto> selectCurri(String no);
+	Admin_CurriDto selcetCurriPart(String no);
+	int curriupdate(Admin_CurriBean bean);
+	int curriinsert(Admin_CurriBean bean);
+	int curridelete(Admin_CurriBean bean);
 }

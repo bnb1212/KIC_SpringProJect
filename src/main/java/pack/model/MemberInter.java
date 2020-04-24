@@ -10,5 +10,6 @@ public interface MemberInter {
 	public MemberDto selectMemberEmail(String member_email);
 	public int insertMember(MemberBean bean);
 	public MemberDto loginCheck(MemberBean bean);
+	public int idcheck(String member_email);
 	
 }

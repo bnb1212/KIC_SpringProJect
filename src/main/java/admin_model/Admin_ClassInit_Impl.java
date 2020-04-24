@@ -7,6 +7,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
 import admin_controller.Admin_ClassBean;
+import admin_controller.Admin_CurriBean;
 import admin_controller.Admin_VideoBean;
 
 @Repository
@@ -85,6 +86,32 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	@Override
 	public int videodelete(String video_no) {
 		return admin_ClassInit_AnooInter.videodelete(video_no);
+	}
+	
+	@Override
+	public List<Admin_CurriDto> selectCurri(String no) {
+		return admin_ClassInit_AnooInter.selectCurri(no);
+	}
+	
+	@Override
+	public Admin_CurriDto selcetCurriPart(String no) {
+		return admin_ClassInit_AnooInter.selcetCurriPart(no);
+	}
+	
+	@Override
+	public int curriupdate(Admin_CurriBean bean) {
+		return admin_ClassInit_AnooInter.curriupdate(bean);
+	}
+	
+	
+	@Override
+	public int curriinsert(Admin_CurriBean bean) {
+		return admin_ClassInit_AnooInter.curriinsert(bean);
+	}
+	
+	@Override
+	public int curridelete(Admin_CurriBean bean) {
+		return admin_ClassInit_AnooInter.curridelete(bean);
 	}
 	
 }
