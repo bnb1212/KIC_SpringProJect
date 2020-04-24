@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 
 import pack.controller.ClassinfoBean;
+import pack.controller.InsertBean;
 
 public interface ClassInter {
 	
@@ -18,4 +19,7 @@ public interface ClassInter {
 	
 	
 	List<ClassDto> selectClass(String class_no) throws DataAccessException;
+	List<MemberDto> selectMember(String member_no) throws DataAccessException;
+	
+	void insertClass(InsertBean insertBean) throws DataAccessException;
 }

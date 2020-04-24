@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class Admin_LoginController {
 	
-	@RequestMapping(value = "admin_login", method = RequestMethod.GET)
-	public String goLogin() {
-		return "admin_login";
-	}
+//	@RequestMapping(value = "admin_login", method = RequestMethod.GET)
+//	public String goLogin() {
+//		return "admin_login";
+//	}
 	
 	@RequestMapping(value = "admin_login", method = RequestMethod.POST)
 	public String loginProcess(HttpSession session,

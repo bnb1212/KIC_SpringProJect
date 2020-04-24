@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<<<<<<< HEAD
+=======
+
+>>>>>>> branch 'master' of https://github.com/bnb1212/KIC_SpringProJect.git
 <% response.sendRedirect("main"); %>
 </body>
 </html>
