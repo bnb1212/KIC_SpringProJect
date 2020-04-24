@@ -4,9 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Category</title>
+<%@ include file="css_scripts.jsp" %>
 </head>
 <body>
-<% response.sendRedirect("cate"); %>
+<%@ include file="pagetop.jsp"%>
+
+
+
 </body>
 </html>

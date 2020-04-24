@@ -1,81 +1,100 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!-- sidebar navigation -->
+	
+<script type="text/javascript">
+	function studyListFunc(category) {
+		var frm = $("#category");
+		var cate = $("#cate_name");
+		cate.val(category)
+		$("#category").submit();
+	}
+</script>
 
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#page-top">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav>
-  
 <!-- header -->
-<header class="container index-header" style="white-space: nowrap;">
-	<section class="row" style="padding: 14px 0">
-		<!-- row -->
-		<div class="col-2">
-			<div class="logo">
-				<a class='logo' href="index.jsp"><img
-					style="width: 100px; height: 100px;"
-					src="resources/img/logo.png"></a>
+<body id="page-top">
+	<!-- Navigation-->
+	<nav
+		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
+		id="mainNav">
+		<div class="container">
+			<!-- LOGO -->
+			<a class="navbar-brand js-scroll-trigger" href="main">KIC
+				STUDYPRO</a>
+			<!-- 로그인 버튼 -->
+			<div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav ml-auto">
+					<li>
+					검색창
+					</li>
+					<!-- 메뉴버튼 -->
+					<li class="nav-item mx-0 mx-lg-1"><a href="#" class="menu-toggle rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i></a><li>
+				</ul>
 			</div>
 		</div>
-		<div class="col">
-			<div class="searchBox">
-				<input type="text" class="form-control" placeholder="search"
-					id="searchInput" />
-			</div>
-		</div>
-		<div class="col">
-			<div class="headerbuttons" style="text-align: right; color: black; padding-top:20px;">
-				<%
-					if (session.getAttribute("member_no") != null) {
-				%>
-				<a href='logout'>로그아웃</a>
-				&nbsp;&nbsp;
-				<button class="btn btn-dark btn-sm" >menu</button>
-				<%
-					} else {
-				%>
-				<a id="loginBtn" href="#">로그인</a>
-				<%
-					}
-				%>
-			</div>
-		</div>
-		<!-- end row -->
-	</section>
-	<section class="row justify-content-center">
-		<ul class="nav justify-content-center">
-			<li class="nav-item"><a class="nav-link active" href="#">전체보기</a>
-			</li>
-			<li class="nav-item"><a class="nav-link" href="machine">머신러닝</a></li>
-			<li class="nav-item"><a class="nav-link" href="programming">프로그래밍</a></li>
-			<li class="nav-item"><a class="nav-link" href="design">디자인</a></li>
-			<li class="nav-item"><a class="nav-link" href="marketing">마케팅</a></li>
-		</ul>
-	</section>
-</header>
+	</nav>
+
+</body>
 <!-- end header -->
+
+<!-- sidebar navigation -->
+<nav id="sidebar-wrapper">
+	<form id="category" method="post" action="myStudylist">
+		<ul class="sidebar-nav">
+			<%
+				if (session.getAttribute("member_no") != null) {
+			%>
+			<li class="sidebar-brand"><%=session.getAttribute("member_name")%>
+				님 <a class="menu-toggle rounded" href="#"> <i
+					class="fas fa-bars"></i>
+			</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="member_logout">로그아웃</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="#mypage">내 정보 보기</a></li> 
+			<!-- 메뉴 버튼 -->
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="#" onclick='studyListFunc("머신러닝")'>머신러닝</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="#" onclick='studyListFunc("프로그래밍")'>프로그래밍</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="#" onclick='studyListFunc("디자인")'>디자인</a></li>
+			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
+				href="#" onclick='studyListFunc("마케팅")'>마케팅</a></li>
+			<li><input type="hidden" id="cate_name" name="cate">
+			<li><input type="hidden" id="mem_no" name="mem"
+				value="<%=session.getAttribute("member_no")%>"></li>
+			<%
+				} else {
+			%>
+			<li class="sidebar-brand"><a class="js-scroll-trigger" href="#"
+				id="loginBtn">로그인</a> <a class="menu-toggle rounded" href="#"> <i
+					class="fas fa-bars"></i>
+			</a></li>
+			<%
+				}
+			%>
+		</ul>
+	</form>
+</nav>
+
+<div id="nav_space">
+
+</div>
 
 <!-- modal login -->
 <%@ include file="member_login.jsp"%>
+
+<!-- Bootstrap core JavaScript -->
+<script src="resources/vendor/jquery/jquery.min.js"></script>
+<script src="resources/vendor/js/bootstrap.bundle.min.js"></script>
+
+<!-- Bootstrap Js -->
+<script src="resources/vendor/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="resources/js/card_scripts.js"></script>
+<script src="resources/js/login.js"></script>
+<script src="resources/js/stylish-portfolio.min.js"></script>
