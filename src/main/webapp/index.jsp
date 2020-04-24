@@ -8,6 +8,6 @@
 </head>
 <body>
 
-<% response.sendRedirect("cate"); %>
+<% response.sendRedirect("main"); %>
 </body>
 </html>
