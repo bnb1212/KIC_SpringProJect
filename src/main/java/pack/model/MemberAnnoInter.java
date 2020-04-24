@@ -22,7 +22,7 @@ public interface MemberAnnoInter {
 	@Select("select * from member where member_email=#{member_email}")
 	public MemberDto selectMemberEmail(String member_email);
 	
-	@Insert("insert member_email, member_name, member_passwd, member_phone into member values(#{member_name}, #{member_email}, #{member_passwd}, #{member_phone}")
+	@Insert("insert member_email, member_name, member_passwd, member_phone into member values(#{member_email}, #{member_name}, #{member_passwd}, #{member_phone}")
 	public int insertMember(MemberBean bean);
 	
 	

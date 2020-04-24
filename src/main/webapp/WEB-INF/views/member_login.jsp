@@ -18,30 +18,29 @@
 				<div class="container">
 					<div class="row">
 						<div class="col">
-							<div class="login-box well">
-								<form method="post" action="member_login">
+							<div class="control-group">
+								<form id='loginform' novalidate="novalidate" method="post" action="member_login">
 									<h2>로그인</h2>
-									<div class="form-group">
-										<label for="username-email">회원 Email</label> 
-										<input name="member_email" value='' id="member_email"
-											placeholder="E-mail address" type="text"
-											class="form-control" />
-									</div>
-									<div class="form-group">
-										<label for="password">비밀번호</label>
-											<input name="member_passwd" id="member_passwd" 
-											value='' placeholder="Password" type="password"
-											class="form-control" path="pw"/>
-									</div>
-									<div class="form-group">
-										<input type="submit" class="btn btn-outline-success" id="login_submit" value="Login" />
-									</div>
+									<div class="control-group">
+									<div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>회원 Email</label><input class="form-control" name="member_email" id="member_email" type="email" placeholder="E-mail address" required="required" data-validation-required-message="이메일을 입력해주세요" />
+                                    <p class="help-block text-danger"></p>
+                            	</div>
+									  </div>
+									  <div class="control-group">
+									<div class="form-group floating-label-form-group controls mb-0 pb-2">
+                                    <label>Password</label><input class="form-control" name="member_passwd" id="member_passwd" type="password" placeholder="Password" required="required" data-validation-required-message="비밀번호를 입력해주세요" />
+                                    <p class="help-block text-danger"></p>
+                                	</div>
+                                	</div>
+									 <div id="success"></div>
+									<input type="submit" class="btn btn-outline-success" id="login_submit" value="Login" />
 								</form>
+									</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 				<!-- end body -->
 				<!-- modal footer -->
 			<div class="modal-footer">
@@ -49,6 +48,7 @@
 					아니세요? Sign in</a>
 			</div>
 			<!-- end footer -->
+			</div>
 		</div>
 	</div>
-</div>
+

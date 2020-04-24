@@ -27,21 +27,28 @@ public class MemberController {
 		try {
 			MemberDto dto = inter.loginCheck(bean);
 
-			if (dto != null)
+			if (dto != null) {
 				session.setAttribute("member_no", dto.getMember_no());
+				session.setAttribute("member_name", dto.getMember_name());
+				session.setAttribute("member_email", dto.getMember_email());
+				session.setAttribute("member_phone", dto.getMember_phone());
+			} else {
+				return "loginerror";
+			}
 		} catch (Exception e) {
 			System.out.println("error : " + e);
-			return "redirect:/index.jsp";
+			return "redirect:/";
 		}
-		return "redirect:/index.jsp";
+		return "redirect:/";
 
 	}
 
-	@RequestMapping("logout")
+	@RequestMapping("member_logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
 		ModelAndView mv = new ModelAndView("redirect:/");
 		return mv;
 	}
-
+	
+	
 }

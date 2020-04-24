@@ -1,36 +1,32 @@
 package pack.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 import org.springframework.web.servlet.ModelAndView;
 
-import pack.model.ClassDto;
 import pack.model.ClassInter;
-import pack.model.CurriDto;
+
 
 @Controller
-public class DatailController {
+public class CashController {
 	
+
 	@Autowired
 	@Qualifier("classImpl")
 	private ClassInter inter;
 	
 	
-	
-	@RequestMapping("detail")
-	public ModelAndView searchProcess(ClassinfoBean bean) {
+	@RequestMapping("cash")
+	public ModelAndView searchProcess(ClassBean bean) {
 		//System.out.println(bean.getClassinfo_class_no());
-		ModelAndView detailModel = new ModelAndView("details");
-		String no = bean.getClassinfo_class_no();
+		ModelAndView detailModel = new ModelAndView("cash");
+		String no = bean.getClass_no();
 		
-		detailModel.addObject("datas", inter.selectDetail(bean));
+		detailModel.addObject("class_no", inter.selectClass(no));
 		detailModel.addObject("curri", inter.selectCurri(no));
 		
 		return detailModel;
@@ -38,4 +34,5 @@ public class DatailController {
 	}
 	
 	
+
 }

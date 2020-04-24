@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#loginBtn").click(function() {
 		$('div.modal').modal();
-	})
+	});
 });
 
 $(function() {
@@ -19,6 +19,6 @@ $(function() {
 			$("#member_passwd").focus();
 			return false;
 		}
-
+		$('#loginform').submit();
 	});
 });
