@@ -13,6 +13,7 @@ function pclose1(){
 </script>
 </head>
 <body>
-수정완료<br>
+	성공하셨습니다.<br>
+	<a href="" onclick="opener.location.reload(); window.close()">닫기</a>
 </body>
 </html>

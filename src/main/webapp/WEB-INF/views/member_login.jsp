@@ -44,7 +44,7 @@
 				<!-- end body -->
 				<!-- modal footer -->
 			<div class="modal-footer">
-				<a href="member_regist.jsp" style="font-size: 0.8rem; text-decoration: none">회원이
+				<a href="member_regist" style="font-size: 0.8rem; text-decoration: none">회원이
 					아니세요? Sign in</a>
 			</div>
 			<!-- end footer -->

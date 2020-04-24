@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>어드민 인덱스</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<a href="admin_login">어드민 가보자아아</a>
+	에러 발생 에러 발생
+	<a href="#" onclick="window.close()"><br>창 닫기</a>
 </body>
 </html>

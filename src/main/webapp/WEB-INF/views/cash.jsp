@@ -4,17 +4,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
 <link href="<c:url value="resources/vendor/css/bootstrap.css" />"
 	rel="stylesheet">
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-	crossorigin="anonymous"></script>
-<script src="resources/vendor/js/bootstrap.min.js"></script>
+
+<!-- ADD CSS -->
+<link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
+<link href="<c:url value="resources/css/card_styles.css" />"
+	rel="stylesheet">
+<link href="<c:url value="resources/css/stylish-portfolio.css" />"
+	rel="stylesheet">
+
+
+
+<!-- Custom Fonts -->
+<link href="resources/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
+<link
+	href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet">
+
+
+<title>모여라</title>
 </head>
 <body>
 <%@ include file="pagetopdetail.jsp"%>
+	<br><br><br><br><br><br>
 
 	<div class="container" style="background-color: darkgray">
 		<div class="row" align="center">
@@ -213,11 +236,10 @@
 		<div class="row" align="center">
 			<section class="col">
 				<h5>
-				<form id="category" method="post" action="main">
-				
-					<input type="submit" value="결제완료">
-				
-				</form>
+					<c:forEach var="i" items="${class_no}">
+					<a href="join?class_no=${i.class_no}" onclick="return confirm('정말로 결제하시겠습니까 ?');"><img src="resources/img/cashimg.png" width="150" height="100"><br>결제하기</a>
+
+					</c:forEach>
 				</h5>
 			</section>
 		</div>
@@ -249,11 +271,29 @@
 </table>
 -->
 
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+		crossorigin="anonymous"></script>
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
 		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
 		crossorigin="anonymous"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="resources/vendor/jquery/jquery.min.js"></script>
+	<script src="resources/vendor/js/bootstrap.bundle.min.js"></script>
+
+	<!-- Bootstrap Js -->
+	<script src="resources/vendor/js/bootstrap.min.js"></script>
+
+	<!-- Plugin JavaScript -->
+	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="resources/js/card_scripts.js"></script>
+	<script src="resources/js/login.js"></script>
+	<script src="resources/js/stylish-portfolio.min.js"></script>
 
 
 </body>
