@@ -2,10 +2,13 @@ package pack.model;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 import org.springframework.dao.DataAccessException;
 
 import pack.controller.ClassinfoBean;
+import pack.controller.InsertBean;
 
 public interface ClassAnnoInter {
 	
@@ -29,5 +32,10 @@ public interface ClassAnnoInter {
 	
 	@Select("select * from class where class_no=#{class_no}")
 	List<ClassDto> selectClass(String class_no) throws DataAccessException;
-
+	
+	@Select("select * from member where member_no=#{member_no}")
+	List<MemberDto> selectMember(String member_no) throws DataAccessException;
+	
+	@Update("update member set member_class_no=#{class_no} where member_no=#{member_no}")
+	void insertClass(InsertBean bean) throws DataAccessException;
 }

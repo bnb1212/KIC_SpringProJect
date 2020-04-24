@@ -327,8 +327,8 @@
 			%>
 		<hr>
 		<hr>
-					[로그인 후에 신청할 수 있습니다. 로그인을 해주세요.]
-		
+		<a  href="void(0);" onclick="alert('로그인 후 신청하실 수 있습니다.');return false;"><img src="resources/img/sinchung.png" width="150" height="100"></a>
+
 			<%
 				}
 			%>
