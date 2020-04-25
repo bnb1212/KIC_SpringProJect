@@ -16,9 +16,15 @@ public interface MemberAnnoInter {
 	@Select("select * from member where member_no=#{member_no}")
 	public List<MemberDto> selectPart(String no);
 	
-	@Select("select * from member where member_no=#{member_no}")
-	public MemberDto selectPart1(String no);
+	@Select("select * from member where member_email=#{member_email} and member_passwd=#{member_passwd}")
+	public MemberDto loginCheck(MemberBean Bean);
 	
-	@Insert("insert member_email, member_name, member_passwd, member_phone into member values(#{member_name}, #{member_email}, #{member_passwd}, #{member_phone}")
+	@Select("select * from member where member_email=#{member_email}")
+	public MemberDto selectMemberEmail(String member_email);
+	
+	@Insert("insert into member (member_email, member_passwd, member_name, member_phone)  values(#{member_email}, #{member_passwd}, #{member_name}, #{member_phone})")
 	public int insertMember(MemberBean bean);
+	
+	@Select("select * from member where member_email=#{member_email}")
+	public int idcheck(String member_email);
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import pack.model.MemberDto;
 import pack.model.MemberInter;
@@ -18,21 +19,63 @@ public class MemberController {
 
 	@Autowired
 	@Qualifier("memberImpl")
-	private MemberInter meminter;
+	private MemberInter inter;
 
 	// 로그인 기능
 	@RequestMapping(value = "member_login", method = RequestMethod.POST)
-	public String loginProcess(HttpSession session,
-			@RequestParam("member_email") String member_email,
-			@RequestParam("member_passwd") String member_passwd) {
-		MemberDto dto = meminter.selectMemberEmail(member_email);
-		
-		if(member_passwd.equals(dto.getMember_passwd())) {
-			session.setAttribute("member_email", member_email);
-			return "admin_main";
-		}else {
-			return "admin_login";
+	public String loginProcess(HttpSession session, MemberBean bean) {
+
+		try {
+			MemberDto dto = inter.loginCheck(bean);
+
+			if (dto != null) {
+				session.setAttribute("member_no", dto.getMember_no());
+				session.setAttribute("member_name", dto.getMember_name());
+				session.setAttribute("member_email", dto.getMember_email());
+				session.setAttribute("member_phone", dto.getMember_phone());
+			} else {
+				return "loginerror";
 			}
+		} catch (Exception e) {
+			System.out.println("error : " + e);
+			return "redirect:/main";
+		}
+		return "redirect:/main";
+
+	}
+
+	@RequestMapping("member_logout")
+	public ModelAndView logout(HttpSession session) {
+		session.invalidate();
+		ModelAndView mv = new ModelAndView("redirect:/main");
+		return mv;
+	}
+
+	@RequestMapping(value = "member_regist",method = RequestMethod.GET)
+	public ModelAndView goreg() {
+		return new ModelAndView("member_regist");
+		
+	}
 	
+	@RequestMapping(value = "member_regist",method = RequestMethod.POST)
+	public ModelAndView regProcess(MemberBean bean) {
+		inter.insertMember(bean);
+		return new ModelAndView("redirect:/main");
+		
+	}
+	
+	@RequestMapping(value = "member_idcheck",method = RequestMethod.GET)
+	public ModelAndView goidcheck(@RequestParam("id") String member_email) {
+		try {
+			int aa = inter.idcheck(member_email);
+			if(aa > 0) {
+				return new ModelAndView("member_idcheck","data",1);
+			}
+		} catch (Exception e) {
+			return new ModelAndView("member_idcheck","data",0);
+		}
+			return new ModelAndView();
+			
+		
 	}
 }
