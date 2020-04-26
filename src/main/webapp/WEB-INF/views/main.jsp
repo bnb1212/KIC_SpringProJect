@@ -19,8 +19,7 @@
 			<h4 class="mb-5">
 				<em>최고의 전문가들이 여러분의 길잡이가 되어드립니다.</em>
 			</h4>
-			<a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find
-				Out More</a>
+
 		</div>
 		<div class="overlay"></div>
 	</header>
@@ -35,7 +34,7 @@
       </div>
       <div class="row no-gutters">
         <div class="col-lg-3">
-          <a class="portfolio-item" href="category/machine">
+          <a class="portfolio-item" href="machine">
             <span class="caption">
               <span class="caption-content">
                 <h2>머신러닝</h2>
@@ -82,7 +81,7 @@
 	<footer class="contrainer index-footer">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
-				style="font-size: 1rem; padding: 82px 25px 40px 19px; text-align: center; vertical-align: middle;">
+				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
 
 				<p>(주)KIC 스터디 | 대표 4팀</p>
 				<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
