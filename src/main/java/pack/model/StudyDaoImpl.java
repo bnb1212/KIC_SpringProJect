@@ -72,8 +72,14 @@ public class StudyDaoImpl implements StudyDaoInter {
 	}
 	
 	@Override
-	public HashMap<String, String> getvnomm(String clno) throws DataAccessException {
-		HashMap<String, String> map = studyAnnoInter.getvnomm(clno);
-		return map;
+	public String getmin(String clno) throws DataAccessException {
+		String min = studyAnnoInter.getmin(clno);
+		return min;
+	}
+	
+	@Override
+	public String getmax(String clno) throws DataAccessException {
+		String max = studyAnnoInter.getmax(clno);
+		return max;
 	}
 }

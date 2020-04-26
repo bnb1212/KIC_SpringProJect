@@ -118,11 +118,18 @@ public class MyStudyController{
         return inter.updateDet(bean);
     }
 	
-	@RequestMapping("prevnext")
+	//이전,다음으로 이동
+	@RequestMapping("prev")
 	@ResponseBody
-	public HashMap<String, String> getvnomm(@RequestParam("clno") String clno){
-		HashMap<String, String> map = inter.getvnomm(clno);
-		return map;
-		
+	public String getmin(@RequestParam("gclno") String clno){
+		String min = inter.getmin(clno);
+		return min;
+	}
+	
+	@RequestMapping("next")
+	@ResponseBody
+	public String getmax(@RequestParam("gclno") String clno){
+		String max = inter.getmax(clno);
+		return max;
 	}
 }

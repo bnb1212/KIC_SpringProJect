@@ -38,6 +38,7 @@
 	</c:choose>
 <form id="frm" method="post" action="myStudy">
 <input type="hidden" id="clno" name="clno">
+<input type="hidden" id="vno" name="vno">
 </form>
 
 </body>

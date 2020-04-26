@@ -34,8 +34,11 @@ public interface StudyAnnoInter {
 	
 	//이전영상 다음영상 이동을 위해 min,max값 구하기
 	
-	@Select("select min(video_no) as min,max(video_no) as max from video where class_no = #{clno}")
-	public HashMap<String,String> getvnomm(String clno); 
+	@Select("select min(video_no) as min from video where class_no = #{clno}")
+	public String getmin(String clno); 
+	
+	@Select("select max(video_no) as max from video where class_no = #{clno}")
+	public String getmax(String clno); 
 	
 	//-----영상 댓글부분----
 	//해당 영상 댓글 개수

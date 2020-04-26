@@ -141,18 +141,53 @@ function det_insert(content,vno,mno) {
 	});
 }
 
-function prev(vno,clno){
+function prev(){
+	var c = ${clno};
+	var v = ${vno};
+
 	$.ajax({
 		type : "post",
-		url : "prevnext",
-		data : {"clno":clno},
-		success : function(map) {
-			
-			alert('dd')
+		url : "prev",
+		data : {"gclno":c},
+		success : function(result) {
+			if (result == v ) {
+				alert('해당 스터디의 첫번째 영상입니다.')
+			}
+			else{
+				var gost = $('#gost')
+				var gcl = $('#gclno')
+				gcl.val(c)
+				var gvn = $('#gvno')
+				gvn.val(v-1)
+				gost.submit();
+			}
 		}
 	});
 }
 
+function next(){
+	var c = ${clno};
+	var v = ${vno};
+
+	$.ajax({
+		type : "post",
+		url : "next",
+		data : {"gclno":c},
+		success : function(result) {
+			if (result == v ) {
+				alert('해당 스터디의 마지막 영상입니다.')
+			}
+			else{
+				var gost = $('#gost')
+				var gcl = $('#gclno')
+				gcl.val(c)
+				var gvn = $('#gvno')
+				gvn.val(v+1)
+				gost.submit();
+			}
+		}
+	});
+}
 </script>
 </head>
 <body>
@@ -172,8 +207,12 @@ function prev(vno,clno){
 <span>${v.video_info}</span>
 </div>
 <div>
-<button>이전</button>
-<button>다음</button>
+<button onclick="prev()">이전</button>
+<button onclick="next()">다음</button>
+<form id="gost" method="post" action="myStudyRoom">
+<input type="hidden" id="gclno" name="clno">
+<input type="hidden" id="gvno" name="vno">
+</form>
 </div>
 <br>
 <h4>댓글</h4>
