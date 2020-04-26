@@ -15,7 +15,7 @@ public class ClassImpl implements ClassInter{
 	@Autowired
 	private ClassAnnoInter classAnnoInter;
 	
-	
+	// 카테고리 선택 후 넘겨주기
 	@Override
 	public List<ClassDto> selectCategory(String category) throws DataAccessException {
 		return classAnnoInter.selectCategory(category);

@@ -14,8 +14,23 @@ public class CategoryController {
 	private ClassImpl inter;
 	
 	@RequestMapping("machine")
-	public ModelAndView machine() {
-	ModelAndView mav = new ModelAndView("categoryview", "courses", inter.selectCategory("machine"));
+	public ModelAndView machinelist() {
+	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("머신러닝"));
+	return mav;
+	}
+	@RequestMapping("programming")
+	public ModelAndView programmingList() {
+	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("프로그래밍"));
+	return mav;
+	}
+	@RequestMapping("design")
+	public ModelAndView designList() {
+	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("디자인"));
+	return mav;
+	}
+	@RequestMapping("marketing")
+	public ModelAndView marketingList() {
+	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("마케팅"));
 	return mav;
 	}
 }
