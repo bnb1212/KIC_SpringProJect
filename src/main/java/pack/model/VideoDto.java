@@ -1,7 +1,7 @@
 package pack.model;
 
 public class VideoDto {
-	private String video_no,video_url,class_no,section_no,upload_date,video_title,video_info;
+	private String video_no,video_url,class_no,section_no,order_no,upload_date,video_title,video_info;
 
 	public String getVideo_no() {
 		return video_no;
@@ -33,6 +33,14 @@ public class VideoDto {
 
 	public void setSection_no(String section_no) {
 		this.section_no = section_no;
+	}
+	
+	public String getOrder_no() {
+		return order_no;
+	}
+
+	public void setOrder_no(String order_no) {
+		this.order_no = order_no;
 	}
 
 	public String getUpload_date() {

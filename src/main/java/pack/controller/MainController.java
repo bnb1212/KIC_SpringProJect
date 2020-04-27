@@ -23,8 +23,8 @@ public class MainController {
 		return "categoryview";
 	}
 
-	@RequestMapping(value= "admin_login", method=RequestMethod.GET)
+	@RequestMapping(value= "admin_index", method=RequestMethod.GET)
 	public String home3(Model model) {
-		return "admin_login";
+		return "admin/admin_index";
 	}
 }

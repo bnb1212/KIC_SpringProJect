@@ -15,13 +15,17 @@ public class ClassImpl implements ClassInter{
 	@Autowired
 	private ClassAnnoInter classAnnoInter;
 	
+	// 카테고리 선택 후 넘겨주기
+	@Override
+	public List<ClassDto> selectCategory(String category) throws DataAccessException {
+		return classAnnoInter.selectCategory(category);
+	}
 	@Override
 	public List<ClassDto> selectMachine() throws DataAccessException {
 		
 		return classAnnoInter.selectMachine();
 	}
 	
-
 	
 	@Override
 	public List<ClassDto> selectDesign() throws DataAccessException {

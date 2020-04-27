@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
+
+<%--사이드바 메뉴 내 강의목록 넘어가기 --%>
 <script type="text/javascript">
 	function studyListFunc(category) {
 		var frm = $("#category");
@@ -43,8 +44,9 @@
 			<%
 				if (session.getAttribute("member_no") != null) {
 			%>
-			<li class="sidebar-brand"><%=session.getAttribute("member_name")%>
-				님 <a class="menu-toggle rounded" href="#"> <i
+			<li class="sidebar-brand">
+			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			<%=session.getAttribute("member_name")%> 님 <a class="menu-toggle rounded" href="#"> <i
 					class="fas fa-bars"></i>
 			</a></li>
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"

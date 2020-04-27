@@ -25,12 +25,12 @@ public class MachineController {
 	@Qualifier("classImpl")
 	private ClassInter inter;
 	
-	@RequestMapping("machine")
-	public Model process(Model model) {
-		List<ClassDto> list = inter.selectMachine();
-		model.addAttribute("datas", list);
-		return model;
-	}
+//	@RequestMapping("machine")
+//	public Model process(Model model) {
+//		List<ClassDto> list = inter.selectMachine();
+//		model.addAttribute("datas", list);
+//		return model;
+//	}
 /*
  * 
 	@RequestMapping(value = "machine", method = RequestMethod.GET)
