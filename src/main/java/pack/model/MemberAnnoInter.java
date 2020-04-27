@@ -27,5 +27,4 @@ public interface MemberAnnoInter {
 	
 	@Select("select * from member where member_email=#{member_email}")
 	public int idcheck(String member_email);
-	
 }

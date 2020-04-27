@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("admin_login"); %>
+
+<% response.sendRedirect("main"); %>
 </body>
 </html>

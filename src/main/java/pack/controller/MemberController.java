@@ -50,7 +50,7 @@ public class MemberController {
 		ModelAndView mv = new ModelAndView("redirect:/main");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "member_regist",method = RequestMethod.GET)
 	public ModelAndView goreg() {
 		return new ModelAndView("member_regist");
