@@ -63,17 +63,22 @@ function detList(param){
 
 //댓글 삭제하기
 function det_delete(det_no,vno){
-	$(".detshow").empty();
-	$.ajax({
-		type : "post",
-		url : "detdelete",
-		data : {"det_no":det_no},
-		success : function(result) {
-			if (result == 1) {
-				detList(vno);
+	var result = confirm('정말 삭제하시겠습니까?'); 
+	if(result) {
+		
+		$(".detshow").empty();
+		$.ajax({
+			type : "post",
+			url : "detdelete",
+			data : {"det_no":det_no},
+			success : function(result) {
+				if (result == 1) {
+					detList(vno);
+				}
 			}
-		}
-	});
+		});
+		} 
+		else { }
 }
 
 //수정하기를 누르면 댓글 수정할 수 있게 요소 바꿔준다.
