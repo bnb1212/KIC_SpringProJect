@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import admin_controller.Admin_MemberBean;
+import admin_controller.AdminMemberBean;
 
 @Repository
 public class Admin_MemberInit_Impl implements Admin_MemberInit_Inter {
@@ -30,7 +30,7 @@ public class Admin_MemberInit_Impl implements Admin_MemberInit_Inter {
 	} 
 	
 	@Override
-	public int update(Admin_MemberBean bean) {
+	public int update(AdminMemberBean bean) {
 		return admin_MemberInit_AnoInter.update(bean);
 	}
 	

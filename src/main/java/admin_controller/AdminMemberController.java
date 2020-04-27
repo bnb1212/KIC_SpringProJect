@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -24,7 +25,7 @@ public class AdminMemberController {
 	
 	@RequestMapping("admin_memberinit")
 	public ModelAndView memberall() {
-		return new ModelAndView("admin_memberinit","datas",inter.selectList());
+		return new ModelAndView("admin/admin_memberinit2","datas",inter.selectList());
 	}
 	
 	
@@ -54,36 +55,32 @@ public class AdminMemberController {
 		
 	}
 	// ============= update ===========
-	@RequestMapping(value = "admin_update", method = RequestMethod.GET)
-	public ModelAndView goUpdate(@RequestParam("no") String no) {
-		Admin_MemberDto dto = inter.selectPart1(no);
-		return new ModelAndView("admin/admin_update","datas", dto);
-	}
-	
 	@RequestMapping(value = "admin_update", method = RequestMethod.POST)
-	public ModelAndView updateProcess(Admin_MemberBean bean) {
+	public String updateProcess(AdminMemberBean bean) {
 		try {
 			int a = inter.update(bean);
-			
 			if(a > 0) {
-				return new ModelAndView("admin/admin_re");
-				
+				return "redirect:/admin_memberinit";
 			}else {
-				return null;
-				
-			}
-			
+				System.out.println("DB 에러");
+				return "admin/404";	
+			}	
 		} catch (Exception e) {
-			return new ModelAndView("admin/error");
+			System.out.println("실패");
+			return "admin/404";
 		}
-		
 	}
 	 
 	// ============= delete ===========
 	@RequestMapping(value = "admin_delete", method = RequestMethod.GET)
-	public ModelAndView delete(@RequestParam("no") String no) {
+	public String delete(@RequestParam("member_no") String no) {
 		
 		inter.delete(no);
-		return new ModelAndView("admin/admin_re");
+		return "redirect:/admin_memberinit";
+	}
+	
+	@RequestMapping("404")
+	public String home2(Model model) {
+		return "admin/404";
 	}
 }

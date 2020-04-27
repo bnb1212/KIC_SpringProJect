@@ -23,7 +23,7 @@ public class AdminCurriController {
 	}
 
 	@RequestMapping(value = "admin_curri_insert", method = RequestMethod.POST)
-	public ModelAndView insertProcess(Admin_CurriBean bean) {
+	public ModelAndView insertProcess(AdminCurriBean bean) {
 		anno.curriinsert(bean);
 		return new ModelAndView("redirect:/admin_classinit");
 	}
@@ -36,7 +36,7 @@ public class AdminCurriController {
 	}
 
 	@RequestMapping(value = "admin_curri_update", method = RequestMethod.POST)
-	public ModelAndView goUpdete(Admin_CurriBean bean) {
+	public ModelAndView goUpdete(AdminCurriBean bean) {
 		anno.curriupdate(bean);
 		return new ModelAndView("redirect:/admin_classinit");
 	}
@@ -49,7 +49,7 @@ public class AdminCurriController {
 	}
 
 	@RequestMapping(value = "admin_curri_delete", method = RequestMethod.POST)
-	public String deleteProcess(Admin_CurriBean bean) {
+	public String deleteProcess(AdminCurriBean bean) {
 		try {
 			int aa = anno.curridelete(bean);
 
