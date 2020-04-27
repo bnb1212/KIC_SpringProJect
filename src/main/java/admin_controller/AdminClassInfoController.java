@@ -23,7 +23,7 @@ public class AdminClassInfoController {
 	}
 	
 	@RequestMapping(value = "admin_class_info_insert",method = RequestMethod.POST)
-	public String InsertProcess(Admin_ClassBean bean) {
+	public String InsertProcess(AdminClassBean bean) {
 		try {
 			int a = anno.classInsert(bean);
 			
@@ -54,7 +54,7 @@ public class AdminClassInfoController {
 	}
 	
 	@RequestMapping(value = "admin_class_info_update", method = RequestMethod.POST)
-	public String updateProcess(Admin_ClassBean bean) {
+	public String updateProcess(AdminClassBean bean) {
 
 		anno.classinfoupdate(bean);
 		return "redirect:/admin_classinit";

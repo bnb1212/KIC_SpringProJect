@@ -24,7 +24,7 @@ public class AdminMemberController {
 	
 	@RequestMapping("admin_memberinit")
 	public ModelAndView memberall() {
-		return new ModelAndView("admin_memberinit","datas",inter.selectList());
+		return new ModelAndView("admin/admin_memberinit2","datas",inter.selectList());
 	}
 	
 	
@@ -61,7 +61,7 @@ public class AdminMemberController {
 	}
 	
 	@RequestMapping(value = "admin_update", method = RequestMethod.POST)
-	public ModelAndView updateProcess(Admin_MemberBean bean) {
+	public ModelAndView updateProcess(AdminMemberBean bean) {
 		try {
 			int a = inter.update(bean);
 			

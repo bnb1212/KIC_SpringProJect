@@ -14,6 +14,7 @@
 <body>
 	<%@ include file="pagetop.jsp"%>
 
+	<%--header start --%>
 	<header class="masthead d-flex">
 		<div class="container text-center my-auto" style="margin-bottom: 2vh">
 			<div class="row">
@@ -34,7 +35,7 @@
 		</div>
 		<div class="overlay"></div>
 	</header>
-	
+	<%-- header end --%>
 	<section class="showCategory">
 		<div class="container">
 			<div class="row">
