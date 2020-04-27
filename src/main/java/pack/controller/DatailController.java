@@ -2,6 +2,9 @@ package pack.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -25,7 +28,7 @@ public class DatailController {
 	
 	
 	@RequestMapping("detail")
-	public ModelAndView searchProcess(ClassinfoBean bean) {
+	public ModelAndView searchDetail(ClassinfoBean bean) {
 		//System.out.println(bean.getClassinfo_class_no());
 		ModelAndView detailModel = new ModelAndView("details");
 		String no = bean.getClassinfo_class_no();

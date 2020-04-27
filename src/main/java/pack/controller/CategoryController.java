@@ -1,5 +1,8 @@
 package pack.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +32,7 @@ public class CategoryController {
 	return mav;
 	}
 	@RequestMapping("marketing")
-	public ModelAndView marketingList() {
+	public ModelAndView marketingList(HttpServletRequest request, HttpServletResponse response) {
 	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("마케팅"));
 	return mav;
 	}

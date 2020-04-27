@@ -327,7 +327,10 @@
 			%>
 		<hr>
 		<hr>
+		<!--  
 		<a  href="void(0);" onclick="alert('로그인 후 신청하실 수 있습니다.');return false;"><img src="resources/img/sinchung.png" width="150" height="100"></a>
+-->
+	<a href="cash?class_no=${i.classinfo_class_no}"><img src="resources/img/sinchung.png" width="150" height="100"></a>
 
 			<%
 				}
