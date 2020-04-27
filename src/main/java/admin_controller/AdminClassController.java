@@ -42,7 +42,7 @@ public class AdminClassController {
 	}
 	
 	@RequestMapping(value = "admin_class_insert", method = RequestMethod.POST)
-	public ModelAndView insertProcess(Admin_ClassBean bean) {
+	public ModelAndView insertProcess(AdminClassBean bean) {
 		anno.insert(bean);
 		return new ModelAndView("redirect:/admin_classinit");
 	}
@@ -55,7 +55,7 @@ public class AdminClassController {
 	}
 	
 	@RequestMapping(value = "admin_class_update", method = RequestMethod.POST)
-	public ModelAndView ClassUpdateProcess(Admin_ClassBean bean) {
+	public ModelAndView ClassUpdateProcess(AdminClassBean bean) {
 			anno.update(bean);
 		return new ModelAndView("redirect:/admin_classinit");
 	}

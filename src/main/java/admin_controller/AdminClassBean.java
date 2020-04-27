@@ -1,6 +1,6 @@
 package admin_controller;
 
-public class Admin_ClassBean {
+public class AdminClassBean {
 	private String class_no, class_name, class_info, class_limit, class_price, class_category;
 	private String classinfo_no, classinfo_for, classinfo_fors_one, classinfo_forc_one, classinfo_fors_two, classinfo_forc_two,
 	classinfo_fors_three, classinfo_forc_three, classinfo_goal, classinfo_goals_one, classinfo_goalc_one, classinfo_goals_two,

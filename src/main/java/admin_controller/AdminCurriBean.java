@@ -1,6 +1,6 @@
 package admin_controller;
 
-public class Admin_CurriBean {
+public class AdminCurriBean {
 	private String curri_class_no,section_no,goal_title;
 
 	public String getCurri_class_no() {
