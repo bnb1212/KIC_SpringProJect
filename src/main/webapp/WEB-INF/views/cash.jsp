@@ -278,7 +278,7 @@
 	</div>
 --%>
 	</main>
-	<footer class="contrainer index-footer">
+	<footer class="contrainer index-footer" data-aos="zoom-in-up" data-aos-duration="800">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">

@@ -45,7 +45,7 @@ function detList(param){
         success : function(detdata){
             var a =''; 
             $.each(detdata, function(key, value){ 
-                a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;">';
+                a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;" data-aos="zoom-in-up" data-aos-duration="800" data-aos-offset="-50">';
                 a += '<div class="detInfo'+value.det_no+'">'+'작성자 : '+value.member_name+' / 작성시간 : '+value.date+'&emsp;';
                 if(mno == value.mno){
                 a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\',\''+value.vno+'\');"> 수정 /  </a>';
