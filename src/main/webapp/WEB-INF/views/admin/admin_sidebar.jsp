@@ -22,7 +22,7 @@
 
 	<!-- Nav Item - Dashboard -->
 	<li class="nav-item active"><a class="nav-link"
-		href="admin/index.html"> <i class="fas fa-fw fa-tachometer-alt"></i>
+		href="admin_index"> <i class="fas fa-fw fa-tachometer-alt"></i>
 			<span>대시보드</span></a></li>
 
 	<!-- Divider -->
@@ -39,7 +39,7 @@
 		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
 			data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
-				<a class="collapse-item" href="buttons.html"><i class="far fa-address-book"></i>&nbsp;회원 정보 처리</a> 
+				<a class="collapse-item" href="admin_memberinit"><i class="far fa-address-book"></i>&nbsp;회원 정보 처리</a> 
 				<a class="collapse-item" href="cards"><i class="far fa-envelope"></i>&nbsp;회원 메시지</a>
 			</div>
 		</div></li>

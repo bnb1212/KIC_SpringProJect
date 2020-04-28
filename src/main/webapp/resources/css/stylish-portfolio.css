@@ -39,6 +39,7 @@ h4,
 h5,
 h6 {
   font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .text-faded {
@@ -100,6 +101,21 @@ h6 {
   background-size: cover;
 }
 
+.detailpage{
+	min-height: 20rem;
+	 background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-detail.jpg") !important;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+}
+
+.cashpage{
+	min-height: 20rem;
+	 background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cashhead.jpg") !important;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+}
 .masthead h1 {
   font-size: 4rem;
   margin: 0;
@@ -135,6 +151,8 @@ h6 {
   margin: 0;
   padding: 0;
   list-style: none;
+  text-decoration: none;
+  background: #7378D9;
 }
 
 .sidebar-nav li.sidebar-nav-item a {
@@ -357,6 +375,9 @@ a:hover, a:focus, a:active {
   background-color: #1D809F !important;
 }
 
+.bg-navbar{
+  background-color:	
+}
 .text-primary {
   color: #1D809F !important;
 }

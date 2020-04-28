@@ -1,6 +1,6 @@
 package admin_controller;
 
-public class Admin_MemberBean {
+public class AdminMemberBean {
 	private String member_no, member_email, member_name, member_passwd, member_class_no, member_phone;
 
 	public String getMember_no() {

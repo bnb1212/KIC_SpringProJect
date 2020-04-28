@@ -23,7 +23,7 @@ public class AdminVideoController {
 	}
 	
 	@RequestMapping(value = "admin_video_insert", method = RequestMethod.POST)
-	public ModelAndView insertProcess(Admin_VideoBean bean) {
+	public ModelAndView insertProcess(AdminVideoBean bean) {
 		anno.videoinsert(bean);
 		return new ModelAndView("redirect:/admin_classinit");
 	}
@@ -36,7 +36,7 @@ public class AdminVideoController {
 	}
 	
 	@RequestMapping(value = "admin_video_update", method = RequestMethod.POST)
-	public String UpdateProcess(Admin_VideoBean bean) {
+	public String UpdateProcess(AdminVideoBean bean) {
 		anno.videoupdate(bean);
 		return "redirect:/admin_classinit";
 	}

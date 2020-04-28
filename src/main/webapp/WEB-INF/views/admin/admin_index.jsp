@@ -1,4 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--
+<a href="admin_memberinit">회원 수정/삭제</a><br>
+<a href="admin_message">메세지 발송</a><br>
+
+<a href="admin_classinit">강의 추가</a>
+ --%>
 
 <!DOCTYPE html>
 <html>
@@ -379,16 +386,6 @@
 
 			</div>
 			<!-- End of Main Content -->
-
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-				<div class="container my-auto">
-					<div class="copyright text-center my-auto">
-						<span>Copyright &copy; Your Website 2019</span>
-					</div>
-				</div>
-			</footer>
-			<!-- End of Footer -->
 
 		</div>
 		<!-- End of Content Wrapper -->

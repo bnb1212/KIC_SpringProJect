@@ -1,6 +1,6 @@
 package admin_controller;
 
-public class Admin_VideoBean {
+public class AdminVideoBean {
 	private String video_no,video_url, video_class_no, section_no, order_no, upload_date,video_title,video_info;
 
 	public String getVideo_no() {

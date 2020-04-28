@@ -1,5 +1,7 @@
 package pack.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,7 @@ public class JoinController {
 	private ClassInter inter;
 	
 	@RequestMapping("join")
-	public ModelAndView searchProcess(HttpSession session,ClassBean bean) {
+	public ModelAndView searchJoin(HttpSession session,ClassBean bean) {
 		//System.out.println(bean.getClassinfo_class_no());
 		ModelAndView detailModel = new ModelAndView("join");
 		

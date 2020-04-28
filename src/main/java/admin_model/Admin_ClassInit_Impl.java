@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Repository;
 
-import admin_controller.Admin_ClassBean;
-import admin_controller.Admin_CurriBean;
-import admin_controller.Admin_VideoBean;
+import admin_controller.AdminClassBean;
+import admin_controller.AdminCurriBean;
+import admin_controller.AdminVideoBean;
 
 @Repository
 public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
@@ -27,7 +27,7 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int update(Admin_ClassBean bean) {
+	public int update(AdminClassBean bean) {
 		return admin_ClassInit_AnooInter.update(bean);
 	}
 	
@@ -37,12 +37,12 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int insert(Admin_ClassBean bean) {
+	public int insert(AdminClassBean bean) {
 		return admin_ClassInit_AnooInter.insert(bean);
 	}
 	
 	@Override
-	public int classInsert(Admin_ClassBean bean) {
+	public int classInsert(AdminClassBean bean) {
 		return admin_ClassInit_AnooInter.classInsert(bean);
 	}
 	
@@ -52,7 +52,7 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int classinfoupdate(Admin_ClassBean bean) {
+	public int classinfoupdate(AdminClassBean bean) {
 		return admin_ClassInit_AnooInter.classinfoupdate(bean);
 	}
 	
@@ -68,7 +68,7 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int videoinsert(Admin_VideoBean bean) {
+	public int videoinsert(AdminVideoBean bean) {
 		return admin_ClassInit_AnooInter.videoinsert(bean);
 	}
 	
@@ -79,7 +79,7 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int videoupdate(Admin_VideoBean bean) {
+	public int videoupdate(AdminVideoBean bean) {
 		return admin_ClassInit_AnooInter.videoupdate(bean);
 	}
 	
@@ -99,18 +99,18 @@ public class Admin_ClassInit_Impl implements Admin_ClassInit_Inter{
 	}
 	
 	@Override
-	public int curriupdate(Admin_CurriBean bean) {
+	public int curriupdate(AdminCurriBean bean) {
 		return admin_ClassInit_AnooInter.curriupdate(bean);
 	}
 	
 	
 	@Override
-	public int curriinsert(Admin_CurriBean bean) {
+	public int curriinsert(AdminCurriBean bean) {
 		return admin_ClassInit_AnooInter.curriinsert(bean);
 	}
 	
 	@Override
-	public int curridelete(Admin_CurriBean bean) {
+	public int curridelete(AdminCurriBean bean) {
 		return admin_ClassInit_AnooInter.curridelete(bean);
 	}
 	
