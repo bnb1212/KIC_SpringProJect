@@ -45,8 +45,8 @@ public interface StudyAnnoInter {
 	@Select("select count(*) from video_det where vno = #{vno}")
 	public int detCount(String vno);
 	
-	//해당 영상 댓글 목록
-	@Select("select * from video_det where vno = #{vno} order by date desc")
+	//해당 영상 댓글 목록 
+	@Select("select det_no,member_name,content,parent,seq,date,vno,mno from video_det join member on video_det.mno = member.member_no where vno = #{vno} and parent=\"\" order by date desc")
 	public List<Video_detDto> detList(String vno);
 	
 	//해당 영상에 댓글 작성
@@ -61,4 +61,15 @@ public interface StudyAnnoInter {
 	@Delete("delete from video_det where det_no = #{det_no}")
 	public int detDelete(String det_no);
 	
+	//답글 가져오기
+	@Select("select det_no,member_name,content,parent,seq,date,vno,mno from video_det join member on video_det.mno = member.member_no where parent= #{parent} order by seq asc")
+	public List<Video_detDto> dapdetList(String parent);
+	
+	//답글 달기위해서 해당 댓글 넘버의 가장 큰 시퀀스를 찾아야함
+	@Select("select IFNULL(max(seq), 0) from video_det where parent=#{parent}")
+	public int getseq(String parent);
+	
+	//답글 insert
+	@Insert("insert into video_det(content,parent,seq,date,vno,mno) values(#{content},#{parent},#{seq},now(),#{vno},#{mno})")
+	public int insertdapdet(Video_detBean bean);
 }

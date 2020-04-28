@@ -82,4 +82,22 @@ public class StudyDaoImpl implements StudyDaoInter {
 		String max = studyAnnoInter.getmax(clno);
 		return max;
 	}
+	
+	@Override
+	public List<Video_detDto> getdapdetAll(String parent) throws DataAccessException {
+		List<Video_detDto> list = studyAnnoInter.dapdetList(parent);
+		return list;
+	}
+	
+	@Override
+	public int getseq(String parent) throws DataAccessException {
+		int seq = studyAnnoInter.getseq(parent);
+		return seq;
+	}
+	
+	@Override
+	public int insdap(Video_detBean bean) throws DataAccessException {
+		int result = studyAnnoInter.insertdapdet(bean);
+		return result;
+	}
 }

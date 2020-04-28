@@ -18,6 +18,10 @@ public interface StudyDaoInter {
 	int insertDet(Video_detBean bean) throws DataAccessException;
 	int deleteDet(String det_no) throws DataAccessException;
 	int updateDet(Video_detBean bean) throws DataAccessException;
+	//영상댓글의 답글 부분
+	List<Video_detDto> getdapdetAll(String parent) throws DataAccessException;
+	int getseq(String parent) throws DataAccessException; 
+	int insdap(Video_detBean bean) throws DataAccessException;
 	
 	//이전,이후 영상
 	String getmin(String clno) throws DataAccessException;
