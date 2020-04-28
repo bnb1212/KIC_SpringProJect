@@ -1,5 +1,8 @@
 package pack.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -21,7 +24,7 @@ public class CashController {
 	
 	
 	@RequestMapping("cash")
-	public ModelAndView searchProcess(ClassBean bean) {
+	public ModelAndView searchProcess(HttpServletRequest request, HttpServletResponse response,ClassBean bean) {
 		//System.out.println(bean.getClassinfo_class_no());
 		ModelAndView detailModel = new ModelAndView("cash");
 		String no = bean.getClass_no();

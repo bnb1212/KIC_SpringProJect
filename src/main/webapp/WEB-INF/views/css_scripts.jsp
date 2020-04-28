@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,6 +26,10 @@
 	rel="stylesheet" type="text/css">
 <link
 	href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet">
+
+<link
+	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean"
 	rel="stylesheet">
 
 <!-- SCRIPT -->
