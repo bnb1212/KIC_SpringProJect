@@ -9,6 +9,14 @@
 		cate.val(category)
 		$("#category").submit();
 	}
+	
+	function myinfo(no) {
+		
+		category.action = "myinfo";
+		category.submit(no);
+		
+	}
+	
 </script>
 
 <!-- header -->
@@ -36,7 +44,6 @@
 
 </body>
 <!-- end header -->
-
 <!-- sidebar navigation -->
 <nav id="sidebar-wrapper">
 	<form id="category" method="post" action="myStudylist">
@@ -51,8 +58,10 @@
 			</a></li>
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
 				href="member_logout">로그아웃</a></li>
+			
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
-				href="#mypage">내 정보 보기</a></li> 
+				href="#" onclick="myinfo(<%=session.getAttribute("member_no")%>)" >내 정보 보기</a></li>
+			 
 			<!-- 메뉴 버튼 -->
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
 				href="#" onclick='studyListFunc("머신러닝")'>머신러닝</a></li>
