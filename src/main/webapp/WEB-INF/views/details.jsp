@@ -13,6 +13,8 @@
 
 <title>모여라</title>
 <%@ include file="css_scripts.jsp"%>
+<script>
+</script>
 </head>
 <body>
 	<%@ include file="pagetop.jsp"%>
@@ -68,7 +70,7 @@
 
 	<div class="container-fluid">
 		<!-- FOR WHO -->
-		<div class="row infocontent">
+		<div class="row infocontent" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 			<div class="col" style="text-align: center;">
 				<h2>
 					FOR WHO
@@ -76,9 +78,9 @@
 					<p>이런분들을 위한 스터디에요!</p>
 			</div>
 		</div>
-		<div class="row infocontent" align="center">
+		<div class="row infocontent" align="center" >
 			<div class="col">
-				<div class="box">
+				<div class="box" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 					<h4>${datas.classinfo_fors_one }</h4>
 					<p>${datas.classinfo_forc_one }</p>
 					<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
@@ -89,16 +91,17 @@
 			</div>
 		</div>
 		<!-- GOAL -->
+		<div  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 		<div class="row infocontent"
-			style="padding: 40px; background-color: #464D73; color: #F2F2F2;" id="goal">
+			style="padding: 40px; background-color: #464D73; color: #F2F2F2;" id="goal" >
 			<div class="col" style="text-align: center;">
 				<h2>GOAL</h2>
 				<p>스터디 학습목표</p>
 			</div>
 		</div>
 		<div class="row infocontent"
-			style="background-color: #464D73; color: #F2F2F2">
-			<div class="col" style="text-align: center;">
+			style="background-color: #464D73; color: #F2F2F2" >
+			<div class="col" style="text-align: center;" >
 				<h4>${datas.classinfo_fors_one }</h4>
 				<p>${datas.classinfo_forc_one }</p>
 				<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
@@ -109,6 +112,7 @@
 		</div>
 
 		<!-- CURRICURUM -->
+		<div data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 		<div class="row infocontent" id="curriculum">
 			<div class="col" style="text-align: center;">
 				<h2>CURRICULUM</h2>
@@ -126,14 +130,16 @@
 				</ul>
 			</div>
 		</div>
+		</div>
 		<!-- price -->
+		<div  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 		<div class="row infocontent" style="background-color: #D9A566">
 			<div class="col" style="text-align: center;">
 				<h1 style="color: #402318">지금 특가! 서두르세요!</h1>
 			</div>
 		</div>
 		<div class="row infocontent text-center"
-			style="background-color: #D9A566">
+			style="background-color: #D9A566" >
 
 			<div class="col-lg-4 mx-auto">
 				<h4 style="display: inline; color:red;">
@@ -147,8 +153,9 @@
 
 		</div>
 		</div>
+		</div>
 		<!-- footer Start-->
-		<footer class="contrainer index-footer">
+		<footer class="contrainer index-footer" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 			<section class="row" style="background-color: #8CD790;">
 				<div class="col-sm common"
 					style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">

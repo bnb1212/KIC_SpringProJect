@@ -7,16 +7,14 @@
 <meta charset="UTF-8">
 <title>Category</title>
 <%@ include file="css_scripts.jsp"%>
-<script type="text/javascript">
-	
-</script>
+
 </head>
 <body>
 	<%@ include file="pagetop.jsp"%>
 
 	<%--header start --%>
 	<header class="masthead d-flex">
-		<div class="container text-center my-auto" style="margin-bottom: 2vh">
+		<div class="container text-center my-auto" style="margin-bottom: 2vh"  data-aos="fade-right" data-aos-duration="1000">
 			<div class="row">
 				<div class="col">
 					<h2 class="mb-1">
@@ -53,7 +51,7 @@
 					<div class="row">				
 				</c:if>
 				--%>
-					<div class="col-lg-3">
+					<div class="col-lg-3"  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
 						<div class="card card-block" style="padding: 0.5rem;">
 							<img class="card-img-top" data-src="holder.js/100px180/"
 								alt="100%x180"
@@ -79,7 +77,7 @@
 		</div>
 	</section>
 
-	<footer class="contrainer index-footer">
+	<footer class="contrainer index-footer" data-aos="fade-up">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
