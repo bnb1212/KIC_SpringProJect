@@ -25,7 +25,7 @@
 									<div class="form-group floating-label-form-group controls mb-0 pb-2">
                                     <label>회원 Email</label><input class="form-control" name="member_email" id="member_email" type="email" placeholder="E-mail address" required="required" data-validation-required-message="이메일을 입력해주세요" />
                                     <p class="help-block text-danger"></p>
-                                	</div>
+                            	</div>
 									  </div>
 									  <div class="control-group">
 									<div class="form-group floating-label-form-group controls mb-0 pb-2">
@@ -44,7 +44,7 @@
 				<!-- end body -->
 				<!-- modal footer -->
 			<div class="modal-footer">
-				<a href="member_regist.jsp" style="font-size: 0.8rem; text-decoration: none">회원이
+				<a href="member_regist" style="font-size: 0.8rem; text-decoration: none">회원이
 					아니세요? Sign in</a>
 			</div>
 			<!-- end footer -->

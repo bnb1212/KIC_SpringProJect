@@ -36,7 +36,7 @@
         신청하신 스터디가 없습니다.
     </c:when>
 	</c:choose>
-<form id="frm" method="post" action="myStudyroom">
+<form id="frm" method="post" action="myStudy">
 <input type="hidden" id="clno" name="clno">
 </form>
 

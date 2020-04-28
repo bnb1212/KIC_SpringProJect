@@ -4,8 +4,8 @@ public class Admin_ClassDto {
 	private String class_no, class_name, class_info, class_limit, class_price, class_category;
 	private String classinfo_no, classinfo_for, classinfo_fors_one, classinfo_forc_one, classinfo_fors_two, classinfo_forc_two,
 	classinfo_fors_three, classinfo_forc_three, classinfo_goal, classinfo_goals_one, classinfo_goalc_one, classinfo_goals_two,
-	classinfo_goalc_two, classinfo_subtitle_three, classinfo_content_three, classinfo_class_no;
-
+	classinfo_goalc_two, classinfo_subtitle_three, classinfo_content_three, classinfo_class_no; 
+		
 	public String getClass_no() {
 		return class_no;
 	}
@@ -181,7 +181,5 @@ public class Admin_ClassDto {
 	public void setClassinfo_class_no(String classinfo_class_no) {
 		this.classinfo_class_no = classinfo_class_no;
 	}
-	
-	
-	
+
 }

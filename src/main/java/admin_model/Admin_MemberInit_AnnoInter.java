@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import admin_controller.Admin_MemberBean;
+import admin_controller.AdminMemberBean;
 
 
 public interface Admin_MemberInit_AnnoInter {
@@ -19,8 +19,8 @@ public interface Admin_MemberInit_AnnoInter {
 	@Select("select * from member where member_no=#{member_no}")
 	public Admin_MemberDto selectPart1(String no);
 	
-	@Update("update member set member_name=#{member_name},member_email=#{member_email},member_passwd=#{member_passwd},member_class_no=#{member_class_no},member_phone=#{member_phone} where member_no=#{member_no}")
-	public int update(Admin_MemberBean bean);
+	@Update("update member set member_name=#{member_name}, member_class_no=#{member_class_no},member_phone=#{member_phone} where member_no=#{member_no}")
+	public int update(AdminMemberBean bean);
 	
 	@Delete("delete from member where member_no=#{member_no}")
 	public int delete(String no);
