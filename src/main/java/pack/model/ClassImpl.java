@@ -20,6 +20,13 @@ public class ClassImpl implements ClassInter{
 	public List<ClassDto> selectCategory(String category) throws DataAccessException {
 		return classAnnoInter.selectCategory(category);
 	}
+	
+	@Override
+	public List<ClassDto> selectCategoryAll() throws DataAccessException {
+		return classAnnoInter.selectCategoryAll();
+	}
+	
+	/*
 	@Override
 	public List<ClassDto> selectMachine() throws DataAccessException {
 		
@@ -41,11 +48,10 @@ public class ClassImpl implements ClassInter{
 	public List<ClassDto> selectMarketing() throws DataAccessException {
 		return classAnnoInter.selectMarketing();
 	}
-	
+	*/
 	@Override
-	public List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException {
-		
-		return classAnnoInter.selectDetail(bean);
+	public ClassinfoDto selectDetail(String class_no) throws DataAccessException {
+		return classAnnoInter.selectDetail(class_no);
 	}
 	
 	@Override
@@ -63,6 +69,11 @@ public class ClassImpl implements ClassInter{
 	public List<MemberDto> selectMember(String member_no) throws DataAccessException {
 		
 		return classAnnoInter.selectMember(member_no);
+	}
+	
+	@Override
+	public ClassDto selectCatePart(String class_no) throws DataAccessException{
+		return classAnnoInter.selectCatePart(class_no);
 	}
 	
 	@Override

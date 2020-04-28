@@ -1,7 +1,15 @@
 package pack.model;
 
 public class CurriDto {
-	private String class_no, section_no, goal_title;
+	private String curri_no, class_no, section_no, goal_title;
+
+	public String getCurri_no() {
+		return curri_no;
+	}
+
+	public void setCurri_no(String curri_no) {
+		this.curri_no = curri_no;
+	}
 
 	public String getClass_no() {
 		return class_no;

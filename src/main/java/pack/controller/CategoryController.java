@@ -21,6 +21,13 @@ public class CategoryController {
 	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("머신러닝"));
 	return mav;
 	}
+	
+	@RequestMapping("category")
+	public ModelAndView alllist() {
+		ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategoryAll());
+		return mav;
+	}
+	
 	@RequestMapping("programming")
 	public ModelAndView programmingList() {
 	ModelAndView mav = new ModelAndView("categoryview", "list", inter.selectCategory("프로그래밍"));

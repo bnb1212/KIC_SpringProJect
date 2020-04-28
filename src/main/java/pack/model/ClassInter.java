@@ -9,13 +9,18 @@ import pack.controller.InsertBean;
 
 public interface ClassInter {
 	
+	/*
 	List<ClassDto> selectMachine() throws DataAccessException;
 	List<ClassDto> selectDesign() throws DataAccessException;
 	List<ClassDto> selectProgramming() throws DataAccessException;
 	List<ClassDto> selectMarketing() throws DataAccessException;
+	*/
 	List<ClassDto> selectCategory(String category) throws DataAccessException;
+	List<ClassDto> selectCategoryAll() throws DataAccessException;
 	
-	List<ClassinfoDto> selectDetail(ClassinfoBean bean) throws DataAccessException;
+	ClassDto selectCatePart(String class_no) throws DataAccessException;
+	
+	ClassinfoDto selectDetail(String class_no) throws DataAccessException;
 	List<CurriDto> selectCurri(String class_no) throws DataAccessException;
 	
 	

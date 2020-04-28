@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import pack.model.ClassDto;
 import pack.model.ClassInter;
+import pack.model.ClassinfoDto;
 import pack.model.CurriDto;
 
 @Controller
@@ -28,13 +29,16 @@ public class DatailController {
 	
 	
 	@RequestMapping("detail")
-	public ModelAndView searchDetail(ClassinfoBean bean) {
+	public ModelAndView searchDetail(@RequestParam("classinfo_class_no") String no) {
 		//System.out.println(bean.getClassinfo_class_no());
 		ModelAndView detailModel = new ModelAndView("details");
-		String no = bean.getClassinfo_class_no();
+		ClassDto dto = inter.selectCatePart(no);
+		ClassinfoDto dto2 = inter.selectDetail(no);
+		List<CurriDto> list = inter.selectCurri(no);
 		
-		detailModel.addObject("datas", inter.selectDetail(bean));
-		detailModel.addObject("curri", inter.selectCurri(no));
+		detailModel.addObject("classes", dto);
+		detailModel.addObject("datas", dto2);
+		detailModel.addObject("curr", list);
 		
 		return detailModel;
 		

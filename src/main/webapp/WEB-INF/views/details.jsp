@@ -4,378 +4,165 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Bootstrap CSS -->
-<link href="<c:url value="resources/vendor/css/bootstrap.css" />"
-	rel="stylesheet">
-
-<!-- ADD CSS -->
-<link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
-<link href="<c:url value="resources/css/card_styles.css" />"
-	rel="stylesheet">
-<link href="<c:url value="resources/css/stylish-portfolio.css" />"
-	rel="stylesheet">
-
-
-
-<!-- Custom Fonts -->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css">
-<link
-	href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
-	rel="stylesheet">
-
-
 <title>모여라</title>
+<%@ include file="css_scripts.jsp"%>
 </head>
 <body>
-<%@ include file="pagetopdetail.jsp"%>
-	<br><br><br><br><br><br>
+	<%@ include file="pagetop.jsp"%>
+	<!-- header Start -->
+	<header class="masthead d-flex detailpage" style="margin-bottom: 0;">
+		<div class="container text-center my-auto" style="margin-bottom: 2vh">
+			<div class="row">
+				<div class="col">
+					<h2 class="mb-1" style="color: #fff">${classes.class_name }</h2>
+				</div>
+			</div>
+			<div class="row" style="padding: 2.5em">
+				<div class="col">
 
-
-
-	<div class="container" style="background-color: Yellow">
-		<div class="row" align="center">
-
-			<section class="col">
-				<h1>
-					<table border="1" style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>${i.classinfo_for}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h1>
-			</section>
-
-
+					<a class="btn btn-primary js-scroll-trigger" href="machine"
+						style="opacity: .9">머신러닝</a> <a
+						class="btn btn-primary js-scroll-trigger" href="programming"
+						style="opacity: .9">프로그래밍</a> <a
+						class="btn btn-primary js-scroll-trigger" href="design"
+						style="opacity: .9">디자인</a> <a
+						class="btn btn-primary js-scroll-trigger" href="marketing"
+						style="opacity: .9">마케팅</a>
+				</div>
+			</div>
 		</div>
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>-< ${i.classinfo_fors_one} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
+		<div class="overlay"></div>
+	</header>
+	<!-- header End  -->
+	<!-- navbar Start -->
+	<nav class="navbar navbar-expand-lg  text-uppercase" id="SubNav">
+		<div class="container">
+			<div class="collapse navbar-collapse" id="navbarResponsive"
+				style="border-bottom: 1px solid black;">
+				<ul class="navbar-nav nav-pills mx-auto">
+					<li><a
+						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						href="#goal">Goal</a></li>
+					<li><a
+						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						href="#curriculum">Curriculum</a></li>
+					<!-- 메뉴버튼 -->
+					<li class="nav-item mx-0 mx-lg-1"><a href="#"
+						class="menu-toggle rounded" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation"> <i
+							class="fas fa-bars"></i></a>
+					<li>
+				</ul>
+			</div>
 		</div>
+	</nav>
+	<!-- navbar End -->
 
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_forc_one}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
-			</section>
+	<div class="container-fluid">
+		<!-- FOR WHO -->
+		<div class="row infocontent">
+			<div class="col" style="text-align: center;">
+				<h2>
+					FOR WHO
+					</h4>
+					<p>이런분들을 위한 스터디에요!</p>
+			</div>
 		</div>
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>-< ${i.classinfo_fors_two} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
+		<div class="row infocontent" align="center">
+			<div class="col">
+				<div class="box">
+					<h4>${datas.classinfo_fors_one }</h4>
+					<p>${datas.classinfo_forc_one }</p>
+					<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
+					<p>${datas.classinfo_forc_two }</p>
+					<h4 style="margin-top: 40px;">${datas.classinfo_fors_three }</h4>
+					<p>${datas.classinfo_forc_three }</p>
+				</div>
+			</div>
 		</div>
-
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_forc_two}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
-			</section>
+		<!-- GOAL -->
+		<div class="row infocontent"
+			style="padding: 40px; background-color: #464D73; color: #F2F2F2;" id="goal">
+			<div class="col" style="text-align: center;">
+				<h2>GOAL</h2>
+				<p>스터디 학습목표</p>
+			</div>
 		</div>
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>-< ${i.classinfo_fors_three} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
+		<div class="row infocontent"
+			style="background-color: #464D73; color: #F2F2F2">
+			<div class="col" style="text-align: center;">
+				<h4>${datas.classinfo_fors_one }</h4>
+				<p>${datas.classinfo_forc_one }</p>
+				<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
+				<p>${datas.classinfo_forc_two }</p>
+				<h4 style="margin-top: 40px;">${datas.classinfo_fors_three }</h4>
+				<p>${datas.classinfo_forc_three }</p>
+			</div>
 		</div>
 
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_forc_three}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
-			</section>
+		<!-- CURRICURUM -->
+		<div class="row infocontent" id="curriculum">
+			<div class="col" style="text-align: center;">
+				<h2>CURRICULUM</h2>
+				<p>검증된 커리큘럼을 소개합니다</p>
+
+			</div>
 		</div>
-
-
-	</div>
-
-
-
-	<br>
-	<br>
-
-
-
-
-	<div class="container" style="background-color: green">
-		<div class="row" align="center">
-
-			<section class="col">
-				<h1>
-					<table border="1" style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>${i.classinfo_goal}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h1>
-			</section>
+		${curri.goal_title}
+		<div class="row infocontent text-center">
+			<div class="col-lg-4 mx-auto">
+				<ul class='list-group'>
+					<c:forEach var="i" items="${curr}">
+						<li class="list-group-item">${i.goal_title}</li>
+					</c:forEach>
+				</ul>
+			</div>
 		</div>
-
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>-< ${i.classinfo_goals_one} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
+		<!-- price -->
+		<div class="row infocontent" style="background-color: #D9A566">
+			<div class="col" style="text-align: center;">
+				<h1 style="color: #402318">지금 특가! 서두르세요!</h1>
+			</div>
 		</div>
+		<div class="row infocontent text-center"
+			style="background-color: #D9A566">
 
+			<div class="col-lg-4 mx-auto">
+				<h4 style="display: inline; color:red;">
+					<del>${classes.class_price + 10000}</del>
+					&nbsp;&nbsp;&nbsp;
+				</h4>
+				<h2 style="display: inline;">${classes.class_price }</h2>
+				&nbsp;&nbsp;&nbsp; <a class="btn btn-primary"
+					href="cash?classinfo_class_no=${datas.classinfo_class_no}">신청하기</a>
+			</div>
 
-
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_goalc_one}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
-			</section>
 		</div>
-
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>-< ${i.classinfo_goals_two} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
 		</div>
+		<!-- footer Start-->
+		<footer class="contrainer index-footer">
+			<section class="row" style="background-color: #8CD790;">
+				<div class="col-sm common"
+					style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
 
-
-
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_goalc_two}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
+					<p>(주)KIC 스터디 | 대표 4팀</p>
+					<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
+					<p>
+						<a href="admin_login" style='text-decoration: none; color: black;'>사업자</a>등록번호
+						|687-86-12345 통신판매업
+					</p>
+					<p>신고번호 | 제2018-서울구로-1234호</p>
+					<p>전화번호 | 010.1234.5678</p>
+				</div>
 			</section>
-		</div>
-
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<td>-< ${i.classinfo_subtitle_three} >-</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
-		</div>
-
-
-
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${datas}">
-							<tr>
-								<br>
-								<td>${i.classinfo_content_three}</td>
-							</tr>
-						</c:forEach>
-					</table>
-				</h5>
-			</section>
-		</div>
-	</div>
-
-
-
-	<br>
-	<br>
-
-
-	<div class="container" style="background-color: Mistyrose">
-		<div class="row" align="center">
-
-			<section class="col">
-				<h1>
-					<table border="1" style="border-collapse: collapse;">
-						<tr>[ CURRICULUM ]
-						</tr>
-					</table>
-				</h1>
-			</section>
-		</div>
-<br>
-
-		<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${curri}">
-							
-								<tr>
-									<td>●${i.goal_title}</td>
-									
-								</tr>
-						
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
-		</div>
-		
-		
-		<div class="row" align="center">
-
-			<section class="col">
-				<h3>
-					<table border="1" style="border-collapse: collapse;">
-						<tr>
-						<c:forEach var="i" items="${datas}">
-						
-				<%
-				if (session.getAttribute("member_no") != null) {
-			%>
-		<a href="cash?class_no=${i.classinfo_class_no}"><img src="resources/img/sinchung.png" width="150" height="100"></a>
-			<%
-				} else {
-			%>
-		<hr>
-		<hr>
-		<!--  
-		<a  href="void(0);" onclick="alert('로그인 후 신청하실 수 있습니다.');return false;"><img src="resources/img/sinchung.png" width="150" height="100"></a>
--->
-	<a href="cash?class_no=${i.classinfo_class_no}"><img src="resources/img/sinchung.png" width="150" height="100"></a>
-
-			<%
-				}
-			%>
-							
-
-</c:forEach>
-							
-						</tr>
-					</table>
-				</h3>
-			</section>
-		</div>
-<br>
-	
-
-
-	
-	</div>
-	<br><br>
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Bootstrap Js -->
-	<script src="resources/vendor/js/bootstrap.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Custom scripts for this template -->
-	<script src="resources/js/card_scripts.js"></script>
-	<script src="resources/js/login.js"></script>
-	<script src="resources/js/stylish-portfolio.min.js"></script>
-
-
+		</footer>
 </body>
 </html>
