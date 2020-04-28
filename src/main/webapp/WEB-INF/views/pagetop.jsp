@@ -20,7 +20,7 @@
 </script>
 
 <!-- header -->
-<body id="page-top">
+<div id="page-top">
 	<!-- Navigation-->
 	<nav
 		class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
@@ -32,9 +32,8 @@
 			<!-- 로그인 버튼 -->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li>
-					검색창
-					</li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">사이트 소개</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="category">전체 카테고리</a></li>
 					<!-- 메뉴버튼 -->
 					<li class="nav-item mx-0 mx-lg-1"><a href="#" class="menu-toggle rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i></a><li>
 				</ul>
@@ -42,7 +41,7 @@
 		</div>
 	</nav>
 
-</body>
+</div>
 <!-- end header -->
 <!-- sidebar navigation -->
 <nav id="sidebar-wrapper">
@@ -51,8 +50,7 @@
 			<%
 				if (session.getAttribute("member_no") != null) {
 			%>
-			<li class="sidebar-brand">
-			<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+			<li class="sidebar-brand" style="color:#fff;">
 			<%=session.getAttribute("member_name")%> 님 <a class="menu-toggle rounded" href="#"> <i
 					class="fas fa-bars"></i>
 			</a></li>

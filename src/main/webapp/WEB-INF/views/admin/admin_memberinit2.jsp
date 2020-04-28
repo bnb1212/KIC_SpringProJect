@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>SB Admin 2 - Blank</title>
+<title>회원 관리</title>
 
 <!-- Custom fonts for this template-->
 <link href="resources/vendor/fontawesome-free/css/all.min.css"
@@ -30,16 +30,8 @@
 <!-- Custom styles for this page -->
 <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css"
 	rel="stylesheet">
-	
-<script type="text/javascript">
-$(document).ready(function (){
-	$('btn btn-link upmodal').click(function(event){
-	event.preventDefault();
-	
-	});
-	});
 
-</script>
+
 </head>
 
 <body id="page-top">
@@ -84,19 +76,19 @@ $(document).ready(function (){
 									<tbody>
 										<c:forEach var="s" items="${datas}">
 											<tr>
-												<td>${s.member_no }</td>
-												 
-												<td><button data-toggle="modal"
-													data-target=".bs-example-modal-lg" 
-													class="btn btn-link upmodal">
-													${s.member_email }</button>
-													</td>
-												<td>${s.member_name }
-												<input name="memberUpName" type="hidden" value="${s.member_name }"></td>
-												<td>${s.member_class_no }
-												<input name="memberUpClass" type="hidden" value="${s.member_class_no }"></td>
-												<td>${s.member_phone }
-												<input name="memberUpPhone" type="hidden" value="${s.member_phone }"></td>
+												<td>
+													<button class="btn btn-link upmodal" name="upModal" value="${s.member_no }">${s.member_no }</button>
+												</td>
+												<td>${s.member_email }</td>
+												<td>${s.member_name }<input
+													name="memberUpName${s.member_no }" type="hidden"
+													value="${s.member_name }"></td>
+												<td>${s.member_class_no }<input
+													name="memberUpClass${s.member_no }" type="hidden"
+													value="${s.member_class_no }"></td>
+												<td>${s.member_phone }<input
+													name="memberUpPhone${s.member_no }" type="hidden"
+													value="${s.member_phone }"></td>
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -175,39 +167,37 @@ $(document).ready(function (){
 								<form class="user" action='admin_update' method="post">
 									<div class="form-group row">
 										<div class="col">
-											<input type="text" class="form-control form-control-user"
+											<input type="hidden" id="updateMemberNo" name="member_no">
+											<input type="text" class="form-control form-control-user" name="member_name"
 												id="updateMemberName" placeholder="회원 이름">
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col">
-											<input type="text" class="form-control form-control-user"
-												id="updateMemberCourse" placeholder="회원이 수강중인 코스">
+											<input type="text" class="form-control form-control-user" name="member_class_no"
+												id="updateMemberClassNo" placeholder="회원이 수강중인 코스">
 										</div>
 									</div>
 									<div class="form-group row">
 										<div class="col">
-											<input type="text" class="form-control form-control-user"
-												id="updateMemberPhoneNumber" placeholder="PhoneNumber">
+											<input type="text" class="form-control form-control-user" name="member_phone"
+												id="updateMemberPhone" placeholder="PhoneNumber">
 										</div>
 									</div>
 									<button type='submit'
 										class="btn btn-primary btn-user btn-block">
 										<i class="fas fa-pen"></i> 회원수정
 									</button>
+									<a href="admin_delete?member_no=" class="btn btn-danger btn-user btn-block" name="memberDeleteBtn">
+										<i class="fas fa-exclamation-triangle" ></i> 회원 삭제</a>
 									<hr>
-									<a href="admin_delete"
-										class="btn btn-danger btn-user btn-block"> <i
-										class="fas fa-exclamation-triangle"></i> 회원 삭제
-									</a>
 								</form>
+
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						
-					</div>
 				</div>
+				<div class="modal-footer"></div>
 			</div>
 		</div>
 	</div>
@@ -227,6 +217,40 @@ $(document).ready(function (){
 
 	<!-- Page level custom scripts -->
 	<script src="resources/js/demo/datatables-demo.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			$("button[name=upModal]").click(function() {
+				var mem_no = $(this).val();
+				var mem_name = $("input[name='memberUpName"+mem_no+"']").val();
+				var mem_class_no = $("input[name='memberUpClass"+mem_no+"']").val();
+				var mem_phone = $("input[name='memberUpPhone"+mem_no+"']").val();
+				
+				$("#updateMemberNo").val(mem_no); 
+				$("#updateMemberName").val(mem_name); 
+				$("#updateMemberClassNo").val(mem_class_no);
+				$("#updateMemberPhone").val(mem_phone);
+
+				// == delete ==
+				$("#memberDeleteBtn").click(memDelete(mem_no));
+				
+				$('div#updateMemberModal').modal();
+			});
+			
+			$("button")
+		});
+		
+		function memDelete(no){
+				$("#deleteMemberNo").val(mem_no);
+				alert(mem_no);
+				$(this).submit();
+			}else
+				return false;
+			}		
+		}
+		
+	</script>
 </body>
 
 </html>

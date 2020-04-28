@@ -1,5 +1,8 @@
 package pack.controller;
 
+import java.io.PrintWriter;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,7 @@ public class MemberController {
 
 	// 로그인 기능
 	@RequestMapping(value = "member_login", method = RequestMethod.POST)
-	public String loginProcess(HttpSession session, MemberBean bean) {
+	public String loginProcess(HttpSession session, MemberBean bean, HttpServletResponse response) {
 
 		try {
 			MemberDto dto = inter.loginCheck(bean);
@@ -34,7 +37,15 @@ public class MemberController {
 				session.setAttribute("member_email", dto.getMember_email());
 				session.setAttribute("member_phone", dto.getMember_phone());
 			} else {
+				response.setContentType("text/html; charset=utf-8");
+				PrintWriter out = response.getWriter();
+//				out.print("<script language='javascript'>");
+//				out.print("alert('로그인 후에 사용 할 수 있습니다');");
+//				out.print("</script>");
+				out.println("<script>alert('아이디와 비밀번호를 확인해주세요.');location.href='main';</script>");
+				out.flush();
 				
+				return "loginerror";
 			}
 		} catch (Exception e) {
 			System.out.println("error : " + e);
@@ -53,7 +64,7 @@ public class MemberController {
 
 	@RequestMapping(value = "member_regist",method = RequestMethod.GET)
 	public ModelAndView goreg() {
-		return new ModelAndView("member_regist2");
+		return new ModelAndView("member_regist");
 		
 	}
 	

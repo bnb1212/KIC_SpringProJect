@@ -31,7 +31,10 @@ public class MyStudyController{
 	//내가 신청한 스터디 리스트들 나옴
 	@RequestMapping(value="myStudylist",method=RequestMethod.POST)
 	public ModelAndView list(@RequestParam HashMap<String, String> map){
-		return new ModelAndView("mystudylist","list",inter.getcateClass(map));
+		ModelAndView m = new ModelAndView("mystudylist","list",inter.getcateClass(map));
+		m.addObject("catename",map.get("cate"));
+		return m;
+		
 	}
 	
 	//내가 신청한 스터디 커리큘럼페이지
@@ -77,6 +80,7 @@ public class MyStudyController{
 		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
 		m.addObject("vno", vno);
 		m.addObject("clno",clno);
+		m.addObject("detcnt", inter.detcnt(vno));
 		return m;
 	}
 	
@@ -101,6 +105,27 @@ public class MyStudyController{
         return inter.insertDet(bean);
     }
 	
+	//댓글에 답글다는 부분
+	@RequestMapping("dapdetinsert")
+	@ResponseBody
+	public int dapdetInsert(@RequestParam("det_no") String det_no,@RequestParam("vno") String vno, @RequestParam("content") String content, @RequestParam("mno") String mno) throws Exception{
+        int seq = inter.getseq(det_no);
+        Video_detBean bean = new Video_detBean();
+        int result = 0;
+        if(seq == 0) {
+        	seq = 2;
+        }else {
+        	seq = seq+1; 
+        }
+        bean.setContent(content);
+        bean.setVno(vno);
+        bean.setMno(mno);
+        bean.setSeq(Integer.toString(seq));
+        bean.setParent(det_no);
+        result = inter.insdap(bean);
+        return result;
+    }
+	
 	//댓글 삭제
 	@RequestMapping("detdelete")
 	@ResponseBody
@@ -118,11 +143,46 @@ public class MyStudyController{
         return inter.updateDet(bean);
     }
 	
-	@RequestMapping("prevnext")
+	//이전,다음으로 이동
+	@RequestMapping("prev")
 	@ResponseBody
-	public HashMap<String, String> getvnomm(@RequestParam("clno") String clno){
-		HashMap<String, String> map = inter.getvnomm(clno);
-		return map;
+	public String getmin(@RequestParam("gclno") String clno){
+		String min = inter.getmin(clno);
+		return min;
+	}
+	
+	@RequestMapping("next")
+	@ResponseBody
+	public String getmax(@RequestParam("gclno") String clno){
+		String max = inter.getmax(clno);
+		return max;
+	}
+	
+	//답글 가져오기
+	@RequestMapping("dapdetlist")
+	@ResponseBody
+	public Map<String, Object> selectdapdetAll(@RequestParam("parent") String parent){
+		List<Map<String, String>> daplist = new ArrayList<Map<String,String>>();
+		Map<String, String> data = null;
 		
+		List<Video_detDto> dapList =  inter.getdapdetAll(parent); //모델과 통신
+		for(Video_detDto vd: dapList) {
+			data = new HashMap<String, String>();
+			
+			data.put("det_no",vd.getDet_no());
+			data.put("member_name",vd.getMember_name());
+			data.put("content",vd.getContent());
+			data.put("parent",vd.getParent());
+			data.put("seq",vd.getSeq());
+			data.put("date",vd.getDate());
+			data.put("vno",vd.getVno());
+			data.put("mno",vd.getMno());
+			daplist.add(data);
+		}
+		
+		Map<String, Object> dapLists = new HashMap<String, Object>();
+		dapLists.put("datas", daplist);
+		
+		return dapLists;
 	}
 }

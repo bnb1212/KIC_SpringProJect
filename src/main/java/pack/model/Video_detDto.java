@@ -1,7 +1,7 @@
 package pack.model;
 
 public class Video_detDto {
-	private String det_no,content,parent,seq,date,vno,mno;
+	private String det_no,member_name,content,parent,seq,date,vno,mno;
 
 	public String getDet_no() {
 		return det_no;
@@ -9,6 +9,14 @@ public class Video_detDto {
 
 	public void setDet_no(String det_no) {
 		this.det_no = det_no;
+	}
+	
+	public String getMember_name() {
+		return member_name;
+	}
+
+	public void setMember_name(String member_name) {
+		this.member_name = member_name;
 	}
 
 	public String getContent() {
