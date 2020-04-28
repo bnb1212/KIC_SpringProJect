@@ -14,7 +14,7 @@
 	data-offset="300" id="home-section">
 	<%@ include file="pagetop.jsp"%>
 
-
+	<div class="head-wrapper">
 	<header class="masthead d-flex">
 		<div class="container text-center my-auto">
 			<div class="intro-text"  data-aos="fade-right" data-aos-duration="1000">
@@ -28,7 +28,7 @@
 		</div>
 		<div class="overlay"></div>
 	</header>
-
+	</div>
 	<!-- category content -->
 	<section class="content-section" id="portfolio">
 		<div class="container">

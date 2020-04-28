@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
     AOS.init();
 });
-$(document).fucntion()
+
 	function studyListFunc(category) {
 		var frm = $("#category");
 		var cate = $("#cate_name");

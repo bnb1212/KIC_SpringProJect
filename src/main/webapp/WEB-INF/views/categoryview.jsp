@@ -13,31 +13,34 @@
 	<%@ include file="pagetop.jsp"%>
 
 	<%--header start --%>
-	<header class="masthead d-flex">
-		<div class="container text-center my-auto" style="margin-bottom: 2vh"  data-aos="fade-right" data-aos-duration="1000">
-			<div class="row">
-				<div class="col">
-					<h2 class="mb-1">
-						스터디프로 Category<br>고품질의 강의가 준비되어있습니다.
-					</h2>
+	<div class="head-wrapper">
+		<header class="masthead d-flex">
+			<div class="container text-center my-auto" style="margin-bottom: 2vh"
+				data-aos="fade-right" data-aos-duration="1000">
+				<div class="row">
+					<div class="col">
+						<h2 class="mb-1">
+							스터디프로 Category<br>고품질의 강의가 준비되어있습니다.
+						</h2>
+					</div>
 				</div>
-			</div>
-			<div class="row" style="padding: 2.5em">
-				<div class="col">
+				<div class="row" style="padding: 2.5em">
+					<div class="col">
 
-					<a class="btn btn-primary js-scroll-trigger" href="machine"
-						style="opacity: .9">머신러닝</a> <a
-						class="btn btn-primary js-scroll-trigger" href="programming"
-						style="opacity: .9">프로그래밍</a> <a
-						class="btn btn-primary js-scroll-trigger" href="design"
-						style="opacity: .9">디자인</a> <a
-						class="btn btn-primary js-scroll-trigger" href="marketing"
-						style="opacity: .9">마케팅</a>
+						<a class="btn btn-primary js-scroll-trigger" href="machine"
+							style="opacity: .9">머신러닝</a> <a
+							class="btn btn-primary js-scroll-trigger" href="programming"
+							style="opacity: .9">프로그래밍</a> <a
+							class="btn btn-primary js-scroll-trigger" href="design"
+							style="opacity: .9">디자인</a> <a
+							class="btn btn-primary js-scroll-trigger" href="marketing"
+							style="opacity: .9">마케팅</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="overlay"></div>
-	</header>
+			<div class="overlay"></div>
+		</header>
+	</div>
 	<%-- header end --%>
 	<section class="showCategory">
 		<div class="container">
@@ -51,7 +54,8 @@
 					<div class="row">				
 				</c:if>
 				--%>
-					<div class="col-lg-3"  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
+					<div class="col-lg-3" data-aos="zoom-in-up" data-aos-duration="800"
+						data-aos-easing="ease-in-out">
 						<div class="card card-block" style="padding: 0.5rem;">
 							<img class="card-img-top" data-src="holder.js/100px180/"
 								alt="100%x180"
@@ -59,8 +63,12 @@
 								data-holder-rendered="true"
 								style="height: 180px; width: 100%; display: block;">
 							<div class="card-block">
-								<div style="height:8vh; padding-top:1em; margin-bottom:1em;"><h4 class="card-title">${s.class_name }</h4></div>
-								<div style="height:15vh"><p>${s.class_info }</p></div>
+								<div style="height: 8vh; padding-top: 1em; margin-bottom: 1em;">
+									<h4 class="card-title">${s.class_name }</h4>
+								</div>
+								<div style="height: 15vh">
+									<p>${s.class_info }</p>
+								</div>
 								<a href="detail?classinfo_class_no=${s.class_no }"
 									class="btn btn-outline-primary">상세보기</a>
 							</div>
