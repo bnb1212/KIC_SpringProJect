@@ -80,6 +80,7 @@ public class MyStudyController{
 		ModelAndView m = new ModelAndView("mystudyroom","video",inter.getVideo(vno));
 		m.addObject("vno", vno);
 		m.addObject("clno",clno);
+		m.addObject("detcnt", inter.detcnt(vno));
 		return m;
 	}
 	

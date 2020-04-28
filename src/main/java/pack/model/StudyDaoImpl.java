@@ -100,4 +100,10 @@ public class StudyDaoImpl implements StudyDaoInter {
 		int result = studyAnnoInter.insertdapdet(bean);
 		return result;
 	}
+	
+	@Override
+	public int detcnt(String vno) throws DataAccessException {
+		int dcnt = studyAnnoInter.detCount(vno);
+		return dcnt;
+	}
 }

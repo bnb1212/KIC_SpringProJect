@@ -27,10 +27,9 @@ $( document ).ready(function(){
 			alert("댓글을 입력해주세요")
 		} else {
 			var content = $('#detplace').val();
-			var vno = $('#dvno').val();
-			alert(vno)
-			var mno = $('#dmno').val();
-		    dapdet_insert(content,vno,mno); //아래 만들어 놓은 Insert 함수를 호출
+			var vno = $('#vno').val();
+			var mno = $('#mno').val();
+		    det_insert(content,vno,mno); //아래 만들어 놓은 Insert 함수를 호출
 		}
 	});
 	
@@ -90,21 +89,14 @@ function det_delete(det_no,vno){
 //수정하기를 누르면 댓글 수정할 수 있게 요소 바꿔준다.
 function det_update(det_no,content,vno){
     var a ='';
-    var b = '';
-    //b += '<div class="detInfo'+value.det_no+'">';
-    b += '<div>';
-    a += '<input type="button" value="수정 취소" onclick="detList('+vno+')">';
-    b += '</div>';
-    
     a += '<div class="input-group">';
+    a += '<table><tr><td rowspan="2">'
     a += '<form id="upform" name="upform">';
-    //a += '<input type="text" class="form-control" id="content_'+det_no+'" value="'+content+'"/>';
-    a += '<textarea id="upcon_'+det_no+'" name="upcon" cols="80" rows="2" style="resize: none;">'+content+'</textarea>';
-    //a += '<input type="hidden" class="form-control" id="content_'+det_no+'"/>';
-    a += '<input type="button" value="수정" onclick="det_updateProc('+det_no+',\''+vno+'\')">'; //여기에 콘텐츠 바뀐거 넣어보셈..
-    a += '</form></div>';
+    a += '<textarea id="upcon_'+det_no+'" name="upcon" cols="80" rows="2" style="resize: none;">'+content+'</textarea></td>';
+    a += '<td><input type="button" value="수정 취소" onclick="detList('+vno+')"></td>'; //여기에 콘텐츠 바뀐거 넣어보셈..
+    a += '<tr><td><input type="button" value="수정하기" onclick="det_updateProc('+det_no+',\''+vno+'\')"></form></td></tr></table></div>';
     
-    $('.detInfo'+det_no).html(b);
+    $('.detInfo'+det_no).empty();
     $('.detContent'+det_no).html(a);
     
 }
@@ -204,10 +196,10 @@ function next(){
 
 //답글등록을 눌렀을때
 function insertdap(param){
-		if($('#dapdetplace').val() == ""){
+		if($('#dapdetplace'+param).val() == ""){
 			alert("답글을 입력해주세요")
 		} else {
-			var content = $('#dapdetplace').val();
+			var content = $('#dapdetplace'+param).val();
 			var vno = $('#dvno').val();
 			var mno = $('#dmno').val();
 			var det_no = param
@@ -226,7 +218,7 @@ function dapdet_insert(det_no,content,vno,mno){
 			if (result == 1) {
 				$(".detshow").empty();
 				detList(vno);
-				$('#dapdetplace').val('');
+				$('#dapdetplace'+det_no).val('');
 			}
 		}
 	});
@@ -235,21 +227,16 @@ function dapdet_insert(det_no,content,vno,mno){
 //수정하기를 누르면 답글 수정할 수 있게 요소 바꿔준다.
 function dapdet_update(det_no,content,vno){
     var a ='';
-    var b = '';
-    //b += '<div class="detInfo'+value.det_no+'">';
-    b += '<div>';
-    a += '<input type="button" value="수정 취소" onclick="detList('+vno+')">';
-    b += '</div>';
     
     a += '<div class="dinput-group">';
+    a += '<table><tr><td rowspan="2">'
     a += '<form id="dupform" name="dupform">';
-    //a += '<input type="text" class="form-control" id="content_'+det_no+'" value="'+content+'"/>';
     a += '<textarea id="dupcon_'+det_no+'" name="dupcon" cols="80" rows="2" style="resize: none;">'+content+'</textarea>';
-    //a += '<input type="hidden" class="form-control" id="content_'+det_no+'"/>';
-    a += '<input type="button" value="수정" onclick="dapdet_updateProc('+det_no+',\''+vno+'\')">'; 
+    a += '<td><input type="button" value="수정 취소" onclick="detList('+vno+')"></td>';
+    a += '<tr><td><input type="button" value="수정하기" onclick="dapdet_updateProc('+det_no+',\''+vno+'\')"></form></td></tr></table></div>';
     a += '</form></div>';
     
-    $('.dapdetInfo'+det_no).html(b);
+    $('.dapdetInfo'+det_no).empty();
     $('.dapdetContent'+det_no).html(a);
     
 }
@@ -286,7 +273,7 @@ function showdap(param){
 	} else {
 	var aa="";
 	aa += '<table><tr><td><i class="far fa-smile-wink" style="font-size:50px; margin-right: 10px;"></i></td>';
-    aa += '<td><textarea id="dapdetplace" name="dapdetplace" cols="120" rows="2" placeholder="답글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>';
+    aa += '<td><textarea id="dapdetplace'+param+'" name="dapdetplace" cols="120" rows="2" placeholder="답글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>';
     aa += '<td><form id="dap" name="dap">';
     aa += '<input type="hidden" id="dapcont" name="dapcont">'; 
     aa += '<input type="hidden" id="dvno" name="dvno" value='+${vno}+'>'; 
@@ -365,12 +352,19 @@ function showdap(param){
 </form>
 </div><%--row end --%>
 <br>
+<div class="row">
+<div class="col" style="text-align: left;">
 <h4>댓글</h4>
+</div>
+<div class="col" style="text-align: right;">
+<h4>총 ${detcnt}개</h4> 
+</div>
+</div>
 <div class="container" style="margin-top:20px;">
 <table>
 <tr>
-<td><i class="far fa-smile-wink" style="font-size:50px; margin-right: 10px;"></i></td>
-<td><textarea id="detplace" name="detplace" cols="120" rows="2" placeholder="댓글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>
+<td><i class="far fa-smile-wink" style="font-size:50px; margin-right: 10px; color: #ced4da"></i></td>
+<td><textarea id="detplace" name="detplace" class="form-control" cols="120" rows="2" placeholder="댓글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>
 <td><form id="formByte" name="formByte">
 	<input type="hidden" id="content" name="content"> 
 	<input type="hidden" id="vno" name="vno" value="${v.video_no }"> 

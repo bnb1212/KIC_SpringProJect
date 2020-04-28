@@ -42,7 +42,7 @@ public interface StudyAnnoInter {
 	
 	//-----영상 댓글부분----
 	//해당 영상 댓글 개수
-	@Select("select count(*) from video_det where vno = #{vno}")
+	@Select("select ifnull(count(*),0) from video_det where vno = #{vno}")
 	public int detCount(String vno);
 	
 	//해당 영상 댓글 목록 
