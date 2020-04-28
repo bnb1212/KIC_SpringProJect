@@ -108,6 +108,14 @@ h6 {
 	 background-repeat: no-repeat;
 	 background-position: center center;
 }
+
+.cashpage{
+	min-height: 20rem;
+	 background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/cashhead.jpg") !important;
+	 background-size: cover;
+	 background-repeat: no-repeat;
+	 background-position: center center;
+}
 .masthead h1 {
   font-size: 4rem;
   margin: 0;

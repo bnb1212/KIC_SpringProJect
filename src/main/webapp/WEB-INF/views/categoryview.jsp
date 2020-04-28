@@ -61,8 +61,8 @@
 								data-holder-rendered="true"
 								style="height: 180px; width: 100%; display: block;">
 							<div class="card-block">
-								<h4 class="card-title">${s.class_name }</h4>
-								<p class="card-text">${s.class_info }</p>
+								<div style="height:8vh; padding-top:1em; margin-bottom:1em;"><h4 class="card-title">${s.class_name }</h4></div>
+								<div style="height:15vh"><p>${s.class_info }</p></div>
 								<a href="detail?classinfo_class_no=${s.class_no }"
 									class="btn btn-outline-primary">상세보기</a>
 							</div>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import pack.model.ClassDto;
 import pack.model.ClassInter;
 
 
@@ -24,13 +25,13 @@ public class CashController {
 	
 	
 	@RequestMapping("cash")
-	public ModelAndView searchProcess(HttpServletRequest request, HttpServletResponse response,ClassBean bean) {
+	public ModelAndView searchProcess(HttpServletRequest request, HttpServletResponse response, String no) {
 		//System.out.println(bean.getClassinfo_class_no());
 		ModelAndView detailModel = new ModelAndView("cash");
-		String no = bean.getClass_no();
+		ClassDto dto = inter.selectCatePart(no);
+		 
+		detailModel.addObject("classdata", dto);
 		
-		detailModel.addObject("class_no", inter.selectClass(no));
-		detailModel.addObject("curri", inter.selectCurri(no));
 		
 		return detailModel;
 		
