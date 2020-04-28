@@ -6,6 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	document.getElementById("idok").onclick = function checkok(){
+	opener.document.getElementById("idDuplication").value = "idCheck";
+	opener.document.regForm.member_passwd.focus();
+	window.close();
+	}
+}
+
+</script>
+
 </head>
 <body>
 <c:choose>
@@ -17,7 +28,7 @@
 	
 	<c:otherwise>
 	사용 가능한 id입니다.<p/>
-	<a href="#" onclick="opener.document.regForm.member_passwd.focus(); window.close()">닫기</a>
+	<button id="idok">닫기</button>
 
 	</c:otherwise>
 	

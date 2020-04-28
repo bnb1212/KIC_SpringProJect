@@ -72,8 +72,38 @@ public class StudyDaoImpl implements StudyDaoInter {
 	}
 	
 	@Override
-	public HashMap<String, String> getvnomm(String clno) throws DataAccessException {
-		HashMap<String, String> map = studyAnnoInter.getvnomm(clno);
-		return map;
+	public String getmin(String clno) throws DataAccessException {
+		String min = studyAnnoInter.getmin(clno);
+		return min;
+	}
+	
+	@Override
+	public String getmax(String clno) throws DataAccessException {
+		String max = studyAnnoInter.getmax(clno);
+		return max;
+	}
+	
+	@Override
+	public List<Video_detDto> getdapdetAll(String parent) throws DataAccessException {
+		List<Video_detDto> list = studyAnnoInter.dapdetList(parent);
+		return list;
+	}
+	
+	@Override
+	public int getseq(String parent) throws DataAccessException {
+		int seq = studyAnnoInter.getseq(parent);
+		return seq;
+	}
+	
+	@Override
+	public int insdap(Video_detBean bean) throws DataAccessException {
+		int result = studyAnnoInter.insertdapdet(bean);
+		return result;
+	}
+	
+	@Override
+	public int detcnt(String vno) throws DataAccessException {
+		int dcnt = studyAnnoInter.detCount(vno);
+		return dcnt;
 	}
 }

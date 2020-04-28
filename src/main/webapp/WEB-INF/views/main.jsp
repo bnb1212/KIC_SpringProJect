@@ -4,81 +4,80 @@
 <!doctype html>
 <html>
 <head>
-<%@ include file="css_scripts.jsp" %>
+<%@ include file="css_scripts.jsp"%>
 <title>모여라</title>
+<script>
 
+</script>
 </head>
-<body>
+<body data-spy="scroll" data-target=".site-navbar-target"
+	data-offset="300" id="home-section">
 	<%@ include file="pagetop.jsp"%>
+
 
 	<header class="masthead d-flex">
 		<div class="container text-center my-auto">
-			<h2 class="mb-1">
-				머신러닝 스터디 <br>지금 함께하세요
-			</h2>
-			<h4 class="mb-5">
-				<em>최고의 전문가들이 여러분의 길잡이가 되어드립니다.</em>
-			</h4>
-
+			<div class="intro-text"  data-aos="fade-right" data-aos-duration="1000">
+				<h2 class="mb-1">
+					머신러닝 스터디 <br>지금 함께하세요
+				</h2>
+				<h4 class="mb-5">
+					<em>최고의 전문가들이 여러분의 길잡이가 되어드립니다.</em>
+				</h4>
+			</div>
 		</div>
 		<div class="overlay"></div>
 	</header>
 
 	<!-- category content -->
 	<section class="content-section" id="portfolio">
-    <div class="container">
-      <div class="content-section-heading text-center">
-        <h4 class="text-secondary mb-0">Course Category</h4>
-        <br>
-        <br>
-      </div>
-      <div class="row no-gutters">
-        <div class="col-lg-3">
-          <a class="portfolio-item" href="machine">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>머신러닝</h2>
-              </span>
-            </span>
-            <img class="img-fluid" src="resources/img/cate_machine_learning.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3">
-          <a class="portfolio-item" href="programming">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>프로그래밍</h2>
-              </span>
-            </span>
-            <img class="img-fluid" src="resources/img/cate_programming.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3">
-          <a class="portfolio-item" href="design">
-            <span class="caption">
-              <span class="caption-content">
-                <h2 class="mb-0">디자인</h2>
-              </span>
-            </span>
-            <img class="img-fluid" src="resources/img/cate_design.jpg" alt="">
-          </a>
-        </div>
-        <div class="col-lg-3">
-          <a class="portfolio-item" href="marketing">
-            <span class="caption">
-              <span class="caption-content">
-                <h2>마케팅</h2>
-                
-              </span>
-            </span>
-            <img class="img-fluid" src="resources/img/cate_maketing.jpg" alt="">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+		<div class="container">
+			<div class="content-section-heading text-center">
+				<h4 class="text-secondary mb-0" data-aos="zoom-in-up" data-aos-duration="800">Course Category</h4>
+				<br> <br>
+			</div>
+			<div class="row no-gutters" data-aos="flip-right" data-aos-duration="800">
+				<div class="col-lg-3">
+					<a class="portfolio-item" href="machine"> <span class="caption">
+							<span class="caption-content">
+								<h2>머신러닝</h2>
+						</span>
+					</span> <img class="img-fluid"
+						src="resources/img/cate_machine_learning.jpg" alt="">
+					</a>
+				</div>
+				<div class="col-lg-3">
+					<a class="portfolio-item" href="programming"> <span
+						class="caption"> <span class="caption-content">
+								<h2>프로그래밍</h2>
+						</span>
+					</span> <img class="img-fluid" src="resources/img/cate_programming.jpg"
+						alt="">
+					</a>
+				</div>
+				<div class="col-lg-3">
+					<a class="portfolio-item" href="design"> <span class="caption">
+							<span class="caption-content">
+								<h2 class="mb-0">디자인</h2>
+						</span>
+					</span> <img class="img-fluid" src="resources/img/cate_design.jpg" alt="">
+					</a>
+				</div>
+				<div class="col-lg-3">
+					<a class="portfolio-item" href="marketing"> <span
+						class="caption"> <span class="caption-content">
+								<h2>마케팅</h2>
+
+						</span>
+					</span> <img class="img-fluid" src="resources/img/cate_maketing.jpg"
+						alt="">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 	<!-- category content end -->
-	<footer class="contrainer index-footer">
+	<footer class="contrainer index-footer" data-aos="fade-up" data-aos-duration="800">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
