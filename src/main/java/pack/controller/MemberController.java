@@ -64,7 +64,7 @@ public class MemberController {
 
 	@RequestMapping(value = "member_regist",method = RequestMethod.GET)
 	public ModelAndView goreg() {
-		return new ModelAndView("member_regist");
+		return new ModelAndView("member_regist2");
 		
 	}
 	

@@ -54,7 +54,8 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</nav>
-
+	<div class="head-wrapper">
+	</div>
 </div>
 <!-- end header -->
 <!-- sidebar navigation -->
@@ -91,9 +92,8 @@ $(document).ready(function(){
 				} else {
 			%>
 			<li class="sidebar-brand"><a class="js-scroll-trigger" href="#"
-				id="loginBtn">로그인</a> <a class="menu-toggle rounded" href="#"> <i
-					class="fas fa-bars"></i>
-			</a></li>
+				id="loginBtn">로그인</a>
+			</li>
 			<%
 				}
 			%>

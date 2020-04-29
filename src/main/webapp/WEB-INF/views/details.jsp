@@ -22,7 +22,6 @@
 <body>
 	<%@ include file="pagetop.jsp"%>
 	<!-- header Start -->
-	<div class="head-wrapper">
 		<header class="masthead d-flex detailpage" style="margin-bottom: 0;">
 			<div class="container text-center my-auto" style="margin-bottom: 2vh">
 				<div class="row">
@@ -46,7 +45,6 @@
 			</div>
 			<div class="overlay"></div>
 		</header>
-	</div>
 	<!-- header End  -->
 	<!-- navbar Start -->
 	<nav class="navbar navbar-expand-lg  text-uppercase" id="SubNav">

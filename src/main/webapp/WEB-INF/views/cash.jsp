@@ -12,7 +12,6 @@
 	<%@ include file="pagetop.jsp"%>
 
 	<!-- header start-->
-	<div class="head-wrapper">
 		<header class="masthead d-flex cashpage">
 			<div class="container text-center my-auto" style="margin-bottom: 2vh">
 				<div class="row">
@@ -27,7 +26,6 @@
 			</div>
 			<div class="overlay"></div>
 		</header>
-	</div>
 	<!-- header end -->
 	<!-- cash body -->
 	<main class="container">

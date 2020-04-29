@@ -56,7 +56,7 @@
 
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">회원관리</h1>
-					<p />
+					<p class="mb-4">회원 번호를 클릭하여 수정/삭제가 가능합니다 </p>
 
 
 					<!-- DataTales Example -->

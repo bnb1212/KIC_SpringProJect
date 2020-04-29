@@ -13,7 +13,7 @@
 	<%@ include file="pagetop.jsp"%>
 
 	<%--header start --%>
-	<div class="head-wrapper">
+
 		<header class="masthead d-flex">
 			<div class="container text-center my-auto" style="margin-bottom: 2vh"
 				data-aos="fade-right" data-aos-duration="1000">
