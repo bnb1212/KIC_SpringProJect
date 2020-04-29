@@ -31,15 +31,14 @@
 	<main class="container">
 		<section class="row product-info-wrap bg-alternative">
 			<div class="product-info col-sm pad-horizontal type-klass">
-				<div class="primary-area">${classdata.class_name }</div>
+				<div class="primary-area"></div>
 				<div class="secondary-area">
-					${infodata.classinfo_subtitle_three }</div>
+					</div>
 			</div>
 		</section>
 		<div class="row">
 			<div class="col" style="text-align: center; padding: 3em">
 				<h3 style="display: inline">신청자 정보</h3>
-				<a href="mypage?mem" style="float: right;"> 정보수정 </a>
 			</div>
 		</div>
 		<section class="row info-summary">

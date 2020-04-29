@@ -76,7 +76,7 @@
 											<th style="min-width: 3em;">인원</th>
 											<th>가격</th>
 											<th style="min-width: 4em;">카테고리</th>
-											<th colspan="2" style="min-width: 8em;">추가</th>
+										
 										</tr>
 									</thead>
 									<tbody>
@@ -90,11 +90,8 @@
 												<td>${s.class_limit }</td>
 												<td>${s.class_price }</td>
 												<td>${s.class_category }</td>
-												<td><a class="btn btn-success" href="admin_class_update?no=${s.class_no}">강의
-														수정</a> <a class="btn btn-warning" href="admin_class_delete?no=${s.class_no}">강의
-														삭제</a></td>
-												<td>
-													<a class="btn btn-secondary" href="admin_curri_insert?no=${s.class_no }">커리큘럼 추가</a></td>
+											
+													
 											</tr>
 										</c:forEach>
 									</tbody>
