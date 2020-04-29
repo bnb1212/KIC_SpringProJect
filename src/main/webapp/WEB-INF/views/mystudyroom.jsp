@@ -30,6 +30,7 @@ $( document ).ready(function(){
 		}
 	});
 	
+	AOS.init();
 })
 
 //댓글 보이기
@@ -42,7 +43,7 @@ function detList(param){
         success : function(detdata){
             var a =''; 
             $.each(detdata, function(key, value){ 
-            	a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px; ">';
+            	a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;" data-aos="zoom-in" data-aos-offset="-50">';
             	a += '<table style="margin-left:25px;">';
             	a += '<tr><td rowspan="2" style="vertical-align:top"><i class="far fa-user-circle fa-3x" style="margin-right: 10px; color: #ced4da; "></td>';
             	a += '<td style="width:885px;"><div class="detInfo'+value.det_no+'">'+'작성자 : '+value.member_name+'&nbsp;&nbsp;&nbsp; 작성시간 : '+value.date+'&emsp;';

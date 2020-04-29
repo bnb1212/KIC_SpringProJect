@@ -27,7 +27,7 @@
 <link
 	href="<c:url value="resources/fonts/flaticon/font/flaticon.css" />"
 	rel="stylesheet">
-<link href="<c:url value="resources/css/style.css" />" rel="stylesheet">
+
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
