@@ -76,7 +76,7 @@
 											<th style="min-width: 3em;">인원</th>
 											<th>가격</th>
 											<th style="min-width: 4em;">카테고리</th>
-										
+
 										</tr>
 									</thead>
 									<tbody>
@@ -86,18 +86,25 @@
 
 												<td>${s.class_name }</td>
 												<td><p>${s.class_info }</p>
-												<p><a href="admin_classdetail?no=${s.class_no }" class="btn btn-outline-success">상세보기</a></p></td>
+													<p>
+														<a href="admin_classdetail?no=${s.class_no }"
+															class="btn btn-outline-success">상세보기</a>
+													</p></td>
 												<td>${s.class_limit }</td>
 												<td>${s.class_price }</td>
 												<td>${s.class_category }</td>
-											
-													
+
+
 											</tr>
 										</c:forEach>
 									</tbody>
 								</table>
 							</div>
+							<div class="pull-right">
+								<a class="btn btn-outline-success" href="admin_class_insert">강의
+								추가</a></div>
 						</div>
+
 					</div>
 
 				</div>
@@ -149,82 +156,6 @@
 		</div>
 	</div>
 
-	<!-- insert video modal -->
-	<div class="modal fade bs-example-modal-lg videoDiv"
-		id="updateMemberModal" tabindex="-1" role="dialog"
-		aria-labelledby="updateModalPage" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">영상 추가</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<div class='content'>
-						<div class="row">
-							<div class="col-lg">
-								<form class="user" action='class_update' method="post">
-									<div class="form-group row">
-										<div class="col">
-											<input type="hidden" id="updateClassNo" name="class_no">
-											<input type="text" class="form-control form-control-user"
-												name="class_name" id="updateClassName" placeholder="강의 이름">
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col">
-											<textarea class="form-control form-control-user"
-												name="class_info" id="updateClassInfo" placeholder="강의정보"
-												rows="2"></textarea>
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col">
-											<input type="text" class="form-control form-control-user"
-												name="class_limit" id="updateClassLimit" placeholder="인원">
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col">
-											<input class="form-control form-control-user"
-												name="class_price" id="updateClassPrice" placeholder="가격">
-											</textarea>
-										</div>
-									</div>
-									<div class="form-group row">
-										<div class="col">
-											<select class="form-control form-control-user"
-												name="class_limit" id="updateClassCate">
-												<option>머신러닝</option>
-												<option>프로그래밍</option>
-												<option>디자인</option>
-												<option>마케팅</option>
-
-											</select>
-										</div>
-									</div>
-									<button type='submit'
-										class="btn btn-primary btn-user btn-block">
-										<i class="fas fa-pen"></i> 강의수정
-									</button>
-									<button class="btn btn-danger btn-user btn-block"
-										id="memberDeleteBtn" value="">
-										<i class="fas fa-exclamation-triangle"></i> 강의 삭제
-									</button>
-									<hr>
-								</form>
-
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="modal-footer"></div>
-			</div>
-		</div>
-	</div>
 
 	<!-- insert video modal end -->
 	<!-- Bootstrap core JavaScript-->

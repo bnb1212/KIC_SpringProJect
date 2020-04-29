@@ -11,25 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdminMainController {
 	
-	// =========== Site Mapping =========
-	
-	@RequestMapping("cards")
-	public String cards(Model model) {
-		return "admin/cards";
-	}
-	
-	@RequestMapping("buttons")
-	public String home2(Model model) {
-		return "buttons";
-	}
-	
-	@RequestMapping("charts")
-	public String home3(Model model) {
-		return "charts";
-	}
-	
-	
-	
 	
 	// ============= Login ===============
 	@RequestMapping(value = "admin_login", method = RequestMethod.GET)
