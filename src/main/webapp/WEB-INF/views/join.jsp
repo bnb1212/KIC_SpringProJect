@@ -1,243 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<!-- Bootstrap CSS -->
-<link href="<c:url value="resources/vendor/css/bootstrap.css" />"
-	rel="stylesheet">
-
-<!-- ADD CSS -->
-<link href="<c:url value="resources/css/custom.css" />" rel="stylesheet">
-<link href="<c:url value="resources/css/card_styles.css" />"
-	rel="stylesheet">
-<link href="<c:url value="resources/css/stylish-portfolio.css" />"
-	rel="stylesheet">
-
-
-
-<!-- Custom Fonts -->
-<link href="resources/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
-<link
-	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-	rel="stylesheet" type="text/css">
-<link
-	href="resources/vendor/simple-line-icons/css/simple-line-icons.css"
-	rel="stylesheet">
-
-
+<%@ include file="css_scripts.jsp"%>
 <title>모여라</title>
+</head>
 <body>
-<%@ include file="pagetopdetail.jsp"%>
-	<br><br><br><br><br><br>
+	<%@ include file="pagetop.jsp"%>
 
-
-	<div class="container" style="background-color: powderBlue">
-		<div class="row" align="center">
-
-			<section class="col">
-				<h1>
-					<table  style="border-collapse: collapse;">
-						
-								<td>결제완료</td>
-						
-					</table>
-				</h1>
-			</section>
-
-
+	<!-- header start-->
+		<header class="masthead d-flex cashpage">
+			<div class="container text-center my-auto" style="margin-bottom: 2vh">
+				<div class="row">
+					<div class="col" style="color: #fff">
+						<h2 class="mb-1">결제완료</h2>
+						<p>성공적으로 처리되었습니다.</p>
+					</div>
+				</div>
+				<div class="row" style="padding: 2.5em">
+					<div class="col"></div>
+				</div>
+			</div>
+			<div class="overlay"></div>
+		</header>
+	<!-- header end -->
+	<!-- cash body -->
+	<main class="container">
+		<section class="row product-info-wrap bg-alternative">
+			<div class="product-info col-sm pad-horizontal type-klass">
+				<div class="primary-area"></div>
+				<div class="secondary-area">
+					${infodata.classinfo_subtitle_three }</div>
+			</div>
+		</section>
+		<div class="row">
+			<div class="col" style="text-align: center; padding: 3em">
+				<h3 style="display: inline">신청자 정보</h3>
+			</div>
 		</div>
+		<section class="row info-summary" style="margin:5em">
+			<div class="col-lg">
+				<div class="box" style="width: 100%;">
+					<dl class="info">
+						<dt>이메일</dt>
+						<dd><%=session.getAttribute("member_email")%></dd>
+						<dt>이름</dt>
+						<dd><%=session.getAttribute("member_name")%></dd>
+						<dt>휴대폰번호</dt>
+						<dd><%=session.getAttribute("member_phone")%></dd>
+					</dl>
 
+				</div>
+			</div>
+		</section>
 
-	</div>
+		<section class="row">
+			<div class="col-lg-6 mx-auto" style="text-align: center; align-content: center; align-items:  center;">
+				<a href="main" class="btn btn-outline-secondary">홈으로</a>
+			</div>
+		</section>
+	</main>
+	<footer class="contrainer index-footer" data-aos="zoom-in-up"
+		data-aos-duration="800">
+		<section class="row" style="background-color: #8CD790;">
+			<div class="col-sm common"
+				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
 
-
-
-<!--        결제 정보 -->
-
-
-
-
-
-
-	<div class="container" style="background-color: mistyrose">
-	
-	
-		<div class="row" align="left">
-			<section class="col">
-				<h5>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원이름 이름
-				</h5>
-			</section>
-		</div>
-		
-		<div class="row" align="right">
-			<section class="col">
-				<h5>
-				<%=session.getAttribute("member_name") %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</h5>
-			</section>
-		</div>
-		
-		
-		
-		<div class="row" align="left">
-			<section class="col">
-				<h5>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail
-				</h5>
-			</section>
-		</div>
-		
-		<div class="row" align="right">
-			<section class="col">
-				<h5>
-				<%=session.getAttribute("member_email") %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</h5>
-			</section>
-		</div>
-
-
-		
-	<div class="row" align="left">
-			<section class="col">
-				<h5>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;전화번호
-				</h5>
-			</section>
-		</div>
-		
-		<div class="row" align="right">
-			<section class="col">
-				<h5>
-				<%=session.getAttribute("member_phone") %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				</h5>
-			</section>
-		</div>
-
-		<div class="row" align="left">
-			<section class="col">
-				<h5>
-				<hr>
-					&nbsp;&nbsp;&nbsp;결제 강의
-				</h5>
-			</section>
-		</div>
-
-		<div class="row" align="left">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${class_no}">
-							
-								<tr>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-${i.class_name}</td>
-									
-								</tr>
-						
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
-		</div>
-		
-		<div class="row" align="left">
-			<section class="col">
-				<h5>
-					&nbsp;&nbsp;&nbsp;결제 가격
-				</h5>
-			</section>
-		</div>
-		
-
-	<div class="row" align="left">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${class_no}">
-							
-								<tr>
-									<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${i.class_price}</td>
-									
-								</tr>
-						
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
-		</div>
-		
-		
-		
-	<div class="row" align="center">
-			<section class="col">
-				<h3>
-					<table style="border-collapse: collapse;">
-						<c:forEach var="i" items="${class_no}">
-							
-								<tr>
-									<hr>
-			<%=session.getAttribute("member_name") %> 회원님!  ${i.class_name} 강의를 신청해주셔서 감사합니다.	<br>
-			 항상 즐거운 마음으로 학습에 임해주세요!
-								
-								</tr>
-						
-						</c:forEach>
-					</table>
-				</h3>
-			</section>
-		</div>
-		
-		<div class="row" align="center">
-			<section class="col">
-				<h5>
-					<c:forEach var="i" items="${class_no}">
-					<hr>
-					<a href="index.jsp"><img src="resources/img/homepage.png" width="150" height="100"><br>홈으로</a>
-					</c:forEach>
-				</h5>
-			</section>
-		</div>
-
-
-	
-	</div>
-
-
-
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"></script>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"></script>
-
-	<!-- Bootstrap core JavaScript -->
-	<script src="resources/vendor/jquery/jquery.min.js"></script>
-	<script src="resources/vendor/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Bootstrap Js -->
-	<script src="resources/vendor/js/bootstrap.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script src="resources/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-	<!-- Custom scripts for this template -->
-	<script src="resources/js/card_scripts.js"></script>
-	<script src="resources/js/login.js"></script>
-	<script src="resources/js/stylish-portfolio.min.js"></script>
+				<p>(주)KIC 스터디 | 대표 4팀</p>
+				<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
+				<p>
+					<a href="admin_login" style='text-decoration: none; color: black;'>사업자</a>등록번호
+					|687-86-12345 통신판매업
+				</p>
+				<p>신고번호 | 제2018-서울구로-1234호</p>
+				<p>전화번호 | 010.1234.5678</p>
+			</div>
+		</section>
+	</footer>
 </body>
 </html>

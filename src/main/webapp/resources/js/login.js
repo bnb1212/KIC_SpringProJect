@@ -22,3 +22,4 @@ $(function() {
 		$('#loginform').submit();
 	});
 });
+
