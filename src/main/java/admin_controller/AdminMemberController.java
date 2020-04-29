@@ -72,12 +72,11 @@ public class AdminMemberController {
 	}
 	 
 	// ============= delete ===========
-	@RequestMapping(value = "admin_delete", method = RequestMethod.GET)
-	public String delete(@RequestParam("member_no") String no) {
-		
-		inter.delete(no);
-		return "redirect:/admin_memberinit";
-	}
+	@RequestMapping("admin_delete")
+	@ResponseBody
+	public int memDelete(@RequestParam("member_no") String no) throws Exception{
+        return inter.delete(no);
+    }
 	
 	@RequestMapping("404")
 	public String home2(Model model) {

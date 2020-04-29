@@ -44,5 +44,10 @@ public class MemberImpl implements MemberInter {
 	public int idcheck(String member_email) {
 		return inter.idcheck(member_email);
 	}
+	
+	@Override
+	public int update(MemberBean bean) {
+		return inter.update(bean);
+	}
 
 }

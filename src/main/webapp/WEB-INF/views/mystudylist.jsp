@@ -38,7 +38,7 @@
 					<div class="row">				
 				</c:if>
 				--%>
-				<div class="col-lg-3">
+				<div class="col-lg-3" data-aos="zoom-in-up" data-aos-duration="800">
 					<div class="card card-block" style="padding: 0.5rem;">
 						<img class="card-img-top" data-src="holder.js/100px180/"
 							alt="100%x180" src="http://loremflickr.com/320/150?random='${col_count }'"
