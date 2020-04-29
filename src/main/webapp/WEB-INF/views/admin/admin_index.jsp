@@ -70,9 +70,9 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
-												class="text-xs font-weight-bold text-primary text-uppercase mb-1">Earnings
-												(Monthly)</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">$40,000</div>
+												class="text-xs font-weight-bold text-primary text-uppercase mb-1">월 매출
+												</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">&#8361; 40,000,000</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -89,9 +89,9 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
-												class="text-xs font-weight-bold text-success text-uppercase mb-1">Earnings
-												(Annual)</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">$215,000</div>
+												class="text-xs font-weight-bold text-success text-uppercase mb-1">연매출
+												</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">&#8361; 215,000,000</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -108,7 +108,7 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
-												class="text-xs font-weight-bold text-info text-uppercase mb-1">Tasks</div>
+												class="text-xs font-weight-bold text-info text-uppercase mb-1">올린 강의 진행률</div>
 											<div class="row no-gutters align-items-center">
 												<div class="col-auto">
 													<div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">50%</div>
@@ -137,9 +137,8 @@
 									<div class="row no-gutters align-items-center">
 										<div class="col mr-2">
 											<div
-												class="text-xs font-weight-bold text-warning text-uppercase mb-1">Pending
-												Requests</div>
-											<div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+												class="text-xs font-weight-bold text-warning text-uppercase mb-1">최근 댓글 수</div>
+											<div class="h5 mb-0 font-weight-bold text-gray-800">13</div>
 										</div>
 										<div class="col-auto">
 											<i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -160,8 +159,7 @@
 								<!-- Card Header - Dropdown -->
 								<div
 									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">Earnings
-										Overview</h6>
+									<h6 class="m-0 font-weight-bold text-primary">매출 한눈에 보기</h6>
 									<div class="dropdown no-arrow">
 										<a class="dropdown-toggle" href="#" role="button"
 											id="dropdownMenuLink" data-toggle="dropdown"
@@ -194,9 +192,8 @@
 								<!-- Card Header - Dropdown -->
 								<div
 									class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-									<h6 class="m-0 font-weight-bold text-primary">Revenue
-										Sources</h6>
-									>
+									<h6 class="m-0 font-weight-bold text-primary">이용자 나이 비율</h6>
+									
 								</div>
 								<!-- Card Body -->
 								<div class="card-body">
@@ -205,11 +202,11 @@
 									</div>
 									<div class="mt-4 text-center small">
 										<span class="mr-2"> <i
-											class="fas fa-circle text-primary"></i> Direct
+											class="fas fa-circle text-primary"></i> 20대
 										</span> <span class="mr-2"> <i
-											class="fas fa-circle text-success"></i> Social
+											class="fas fa-circle text-success"></i> 30대
 										</span> <span class="mr-2"> <i class="fas fa-circle text-info"></i>
-											Referral
+											기타
 										</span>
 									</div>
 								</div>
