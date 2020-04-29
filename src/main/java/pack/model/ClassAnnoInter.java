@@ -37,7 +37,7 @@ public interface ClassAnnoInter {
 	ClassDto selectCatePart(String class_no) throws DataAccessException;
 	
 	
-	@Select("select * from classinfo where classinfo_class_no=#{classinfo_class_no}")
+	@Select("select * from classinfo where classinfo_class_no=#{class_no}")
 	ClassinfoDto selectDetail(String class_no) throws DataAccessException; 
 	
 	@Select("select * from curri where class_no=#{class_no}")

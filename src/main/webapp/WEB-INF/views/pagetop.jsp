@@ -7,7 +7,7 @@ $(document).ready(function(){
 	
     AOS.init();
 });
-$(document).fucntion()
+
 	function studyListFunc(category) {
 		var frm = $("#category");
 		var cate = $("#cate_name");
@@ -54,7 +54,8 @@ $(document).fucntion()
 			</div>
 		</div>
 	</nav>
-
+	<div class="head-wrapper">
+	</div>
 </div>
 <!-- end header -->
 <!-- sidebar navigation -->
@@ -91,9 +92,8 @@ $(document).fucntion()
 				} else {
 			%>
 			<li class="sidebar-brand"><a class="js-scroll-trigger" href="#"
-				id="loginBtn">로그인</a> <a class="menu-toggle rounded" href="#"> <i
-					class="fas fa-bars"></i>
-			</a></li>
+				id="loginBtn">로그인</a>
+			</li>
 			<%
 				}
 			%>

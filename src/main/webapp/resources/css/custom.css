@@ -65,7 +65,7 @@ a.bg-danger:hover, a.bg-danger:focus, button.bg-danger:hover, button.bg-danger:f
 }
 
 #mainNav .navbar-nav {
-	margin-top: 1rem;
+	margin: 1rem;
 }
 
 #mainNav .navbar-nav li.nav-item a.nav-link {
@@ -101,7 +101,6 @@ a.bg-danger:hover, a.bg-danger:focus, button.bg-danger:hover, button.bg-danger:f
 		transition: font-size 0.3s;
 	}
 	#mainNav .navbar-nav {
-		margin-top: 0;
 	}
 	#mainNav .navbar-nav>li.nav-item>a.nav-link.active {
 		color: #fff;
@@ -179,4 +178,8 @@ a.bg-danger:hover, a.bg-danger:focus, button.bg-danger:hover, button.bg-danger:f
 
 .infocontent{
 	padding:20px;
+}
+
+.head-wrapper{
+	padding-top: calc(3rem + 75px);
 }

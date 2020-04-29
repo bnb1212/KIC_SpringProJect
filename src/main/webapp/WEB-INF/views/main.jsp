@@ -14,7 +14,6 @@
 	data-offset="300" id="home-section">
 	<%@ include file="pagetop.jsp"%>
 
-
 	<header class="masthead d-flex">
 		<div class="container text-center my-auto">
 			<div class="intro-text"  data-aos="fade-right" data-aos-duration="1000">
@@ -28,7 +27,7 @@
 		</div>
 		<div class="overlay"></div>
 	</header>
-
+	</div>
 	<!-- category content -->
 	<section class="content-section" id="portfolio">
 		<div class="container">
@@ -74,10 +73,9 @@
 					</a>
 				</div>
 			</div>
-		</div>
 	</section>
 	<!-- category content end -->
-	<footer class="contrainer index-footer" data-aos="fade-up" data-aos-duration="800">
+	<footer class="contrainer index-footer" data-aos="fade-in" data-aos-duration="800">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">

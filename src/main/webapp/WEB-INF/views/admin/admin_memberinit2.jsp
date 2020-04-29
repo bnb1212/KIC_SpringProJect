@@ -25,7 +25,11 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="resources/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="resources/css/sb-admin-2.css" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="shortcut icon" href="resources/img/favicon.ico"
+	type="image/x-icon">
+<link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
 
 <!-- Custom styles for this page -->
 <link href="resources/vendor/datatables/dataTables.bootstrap4.min.css"
@@ -52,7 +56,7 @@
 
 					<!-- Page Heading -->
 					<h1 class="h3 mb-2 text-gray-800">회원관리</h1>
-					<p />
+					<p class="mb-4">회원 번호를 클릭하여 수정/삭제가 가능합니다 </p>
 
 
 					<!-- DataTales Example -->
@@ -79,7 +83,7 @@
 												<td>
 													<button class="btn btn-link upmodal" name="upModal" value="${s.member_no }">${s.member_no }</button>
 												</td>
-												<td>${s.member_email }</td>
+												<td>${s.member_email }<input name="memberDelNo${s.member_no }" type="hidden" value="${s.member_no}"></td>
 												<td>${s.member_name }<input
 													name="memberUpName${s.member_no }" type="hidden"
 													value="${s.member_name }"></td>
@@ -89,6 +93,7 @@
 												<td>${s.member_phone }<input
 													name="memberUpPhone${s.member_no }" type="hidden"
 													value="${s.member_phone }"></td>
+													
 											</tr>
 										</c:forEach>
 									</tbody>
@@ -188,8 +193,8 @@
 										class="btn btn-primary btn-user btn-block">
 										<i class="fas fa-pen"></i> 회원수정
 									</button>
-									<a href="admin_delete?member_no=" class="btn btn-danger btn-user btn-block" name="memberDeleteBtn">
-										<i class="fas fa-exclamation-triangle" ></i> 회원 삭제</a>
+									<button class="btn btn-danger btn-user btn-block" id="memberDeleteBtn" value="">
+										<i class="fas fa-exclamation-triangle" ></i> 회원 삭제</button>
 									<hr>
 								</form>
 
@@ -219,8 +224,10 @@
 	<script src="resources/js/demo/datatables-demo.js"></script>
 
 	<script type="text/javascript">
+		
 		$(document).ready(function() {
 
+			
 			$("button[name=upModal]").click(function() {
 				var mem_no = $(this).val();
 				var mem_name = $("input[name='memberUpName"+mem_no+"']").val();
@@ -231,24 +238,37 @@
 				$("#updateMemberName").val(mem_name); 
 				$("#updateMemberClassNo").val(mem_class_no);
 				$("#updateMemberPhone").val(mem_phone);
-
+				$("#memberDeleteBtn").val(mem_no);
 				// == delete ==
-				$("#memberDeleteBtn").click(memDelete(mem_no));
 				
 				$('div#updateMemberModal').modal();
 			});
 			
-			$("button")
+			$("#memberDeleteBtn").click(function(){
+				var mem_no = $(this).val();
+				var result = confirm('정말 삭제하시겠습니까?'); 
+				if(result) {
+					
+					$.ajax({
+						type : "get",
+						url : "admin_delete",
+						data : {"member_no":mem_no},
+						success : function(result) {
+							if (result == 1) {
+								location.href="admin_memberinit";
+							}else{
+								alert("삭제 실패");
+							}
+						}, error: function(){
+							alert("실패");
+						}
+					});
+				} 
+
+			});
+			
 		});
-		
-		function memDelete(no){
-				$("#deleteMemberNo").val(mem_no);
-				alert(mem_no);
-				$(this).submit();
-			}else
-				return false;
-			}		
-		}
+
 		
 	</script>
 </body>

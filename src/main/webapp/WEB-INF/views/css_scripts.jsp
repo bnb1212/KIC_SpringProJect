@@ -44,6 +44,11 @@
 	href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700&display=swap&subset=korean"
 	rel="stylesheet">
 
+
+<!-- favicon -->
+<link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="resources/img/favicon.ico" type="image/x-icon">
+
 <!-- SCRIPT -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

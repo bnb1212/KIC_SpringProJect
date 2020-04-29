@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -14,34 +16,35 @@
 <title>모여라</title>
 <%@ include file="css_scripts.jsp"%>
 <script>
+	
 </script>
 </head>
 <body>
 	<%@ include file="pagetop.jsp"%>
 	<!-- header Start -->
-	<header class="masthead d-flex detailpage" style="margin-bottom: 0;">
-		<div class="container text-center my-auto" style="margin-bottom: 2vh">
-			<div class="row">
-				<div class="col">
-					<h2 class="mb-1" style="color: #fff">${classes.class_name }</h2>
+		<header class="masthead d-flex detailpage" style="margin-bottom: 0;">
+			<div class="container text-center my-auto" style="margin-bottom: 2vh">
+				<div class="row">
+					<div class="col">
+						<h2 class="mb-1" style="color: #fff">${classes.class_name }</h2>
+					</div>
 				</div>
-			</div>
-			<div class="row" style="padding: 2.5em">
-				<div class="col">
+				<div class="row" style="padding: 2.5em">
+					<div class="col">
 
-					<a class="btn btn-primary js-scroll-trigger" href="machine"
-						style="opacity: .9">머신러닝</a> <a
-						class="btn btn-primary js-scroll-trigger" href="programming"
-						style="opacity: .9">프로그래밍</a> <a
-						class="btn btn-primary js-scroll-trigger" href="design"
-						style="opacity: .9">디자인</a> <a
-						class="btn btn-primary js-scroll-trigger" href="marketing"
-						style="opacity: .9">마케팅</a>
+						<a class="btn btn-primary js-scroll-trigger" href="machine"
+							style="opacity: .9">머신러닝</a> <a
+							class="btn btn-primary js-scroll-trigger" href="programming"
+							style="opacity: .9">프로그래밍</a> <a
+							class="btn btn-primary js-scroll-trigger" href="design"
+							style="opacity: .9">디자인</a> <a
+							class="btn btn-primary js-scroll-trigger" href="marketing"
+							style="opacity: .9">마케팅</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="overlay"></div>
-	</header>
+			<div class="overlay"></div>
+		</header>
 	<!-- header End  -->
 	<!-- navbar Start -->
 	<nav class="navbar navbar-expand-lg  text-uppercase" id="SubNav">
@@ -70,7 +73,8 @@
 
 	<div class="container-fluid">
 		<!-- FOR WHO -->
-		<div class="row infocontent" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
+		<div class="row infocontent" data-aos="zoom-in-up"
+			data-aos-duration="800" data-aos-easing="ease-in-out">
 			<div class="col" style="text-align: center;">
 				<h2>
 					FOR WHO
@@ -78,9 +82,10 @@
 					<p>이런분들을 위한 스터디에요!</p>
 			</div>
 		</div>
-		<div class="row infocontent" align="center" >
+		<div class="row infocontent" align="center">
 			<div class="col">
-				<div class="box" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
+				<div class="box" data-aos="zoom-in-up" data-aos-duration="800"
+					data-aos-easing="ease-in-out">
 					<h4>${datas.classinfo_fors_one }</h4>
 					<p>${datas.classinfo_forc_one }</p>
 					<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
@@ -91,71 +96,89 @@
 			</div>
 		</div>
 		<!-- GOAL -->
-		<div  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
-		<div class="row infocontent"
-			style="padding: 40px; background-color: #464D73; color: #F2F2F2;" id="goal" >
-			<div class="col" style="text-align: center;">
-				<h2>GOAL</h2>
-				<p>스터디 학습목표</p>
+		<div data-aos="zoom-in-up" data-aos-duration="800"
+			data-aos-easing="ease-in-out">
+			<div class="row infocontent"
+				style="padding: 40px; background-color: #464D73; color: #F2F2F2;"
+				id="goal">
+				<div class="col" style="text-align: center;">
+					<h2>GOAL</h2>
+					<p>스터디 학습목표</p>
+				</div>
 			</div>
-		</div>
-		<div class="row infocontent"
-			style="background-color: #464D73; color: #F2F2F2" >
-			<div class="col" style="text-align: center;" >
-				<h4>${datas.classinfo_fors_one }</h4>
-				<p>${datas.classinfo_forc_one }</p>
-				<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
-				<p>${datas.classinfo_forc_two }</p>
-				<h4 style="margin-top: 40px;">${datas.classinfo_fors_three }</h4>
-				<p>${datas.classinfo_forc_three }</p>
-			</div>
-		</div>
-
-		<!-- CURRICURUM -->
-		<div data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
-		<div class="row infocontent" id="curriculum">
-			<div class="col" style="text-align: center;">
-				<h2>CURRICULUM</h2>
-				<p>검증된 커리큘럼을 소개합니다</p>
-
-			</div>
-		</div>
-		${curri.goal_title}
-		<div class="row infocontent text-center">
-			<div class="col-lg-4 mx-auto">
-				<ul class='list-group'>
-					<c:forEach var="i" items="${curr}">
-						<li class="list-group-item">${i.goal_title}</li>
-					</c:forEach>
-				</ul>
-			</div>
-		</div>
-		</div>
-		<!-- price -->
-		<div  data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
-		<div class="row infocontent" style="background-color: #D9A566">
-			<div class="col" style="text-align: center;">
-				<h1 style="color: #402318">지금 특가! 서두르세요!</h1>
-			</div>
-		</div>
-		<div class="row infocontent text-center"
-			style="background-color: #D9A566" >
-
-			<div class="col-lg-4 mx-auto">
-				<h4 style="display: inline; color:red;">
-					<del>${classes.class_price + 10000}</del>
-					&nbsp;&nbsp;&nbsp;
-				</h4>
-				<h2 style="display: inline;">${classes.class_price }</h2>
-				&nbsp;&nbsp;&nbsp; <a class="btn btn-primary"
-					href="cash?classinfo_class_no=${datas.classinfo_class_no}">신청하기</a>
+			<div class="row infocontent"
+				style="background-color: #464D73; color: #F2F2F2">
+				<div class="col" style="text-align: center;">
+					<h4>${datas.classinfo_fors_one }</h4>
+					<p>${datas.classinfo_forc_one }</p>
+					<h4 style="margin-top: 40px;">${datas.classinfo_fors_two }</h4>
+					<p>${datas.classinfo_forc_two }</p>
+					<h4 style="margin-top: 40px;">${datas.classinfo_fors_three }</h4>
+					<p>${datas.classinfo_forc_three }</p>
+				</div>
 			</div>
 
-		</div>
-		</div>
+			<!-- CURRICURUM -->
+			<div data-aos="zoom-in-up" data-aos-duration="800"
+				data-aos-easing="ease-in-out">
+				<div class="row infocontent" id="curriculum">
+					<div class="col" style="text-align: center;">
+						<h2>CURRICULUM</h2>
+						<p>검증된 커리큘럼을 소개합니다</p>
+
+					</div>
+				</div>
+				${curri.goal_title}
+				<div class="row infocontent text-center">
+					<div class="col-lg-4 mx-auto">
+						<ul class='list-group'>
+							<c:forEach var="i" items="${curr}">
+								<li class="list-group-item list-group-item-action">${i.goal_title}</li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- price -->
+			<div data-aos="zoom-in-up" data-aos-duration="800"
+				data-aos-easing="ease-in-out">
+				<div class="row infocontent" style="background-color: #29403B">
+					<div class="col" style="text-align: center;">
+						<h1 style="color: #fff;">지금 특가! 서두르세요!</h1>
+					</div>
+				</div>
+				<div class="row infocontent text-center"
+					style="background-color: #29403B">
+
+					<div class="col-lg-4 mx-auto">
+						<div>
+							<h4 style="display: inline; color: #B1578C;">
+								<del>
+									&#8361;
+									<fmt:formatNumber type="number" maxFractionDigits="3"
+										value="${classes.class_price + 10000}" />
+								</del>
+								&nbsp;&nbsp;&nbsp;
+							</h4>
+							<h2 style="display: inline; color: #1ED9B3;">
+								&#8361;
+								<fmt:formatNumber type="number" maxFractionDigits="3"
+									value="${classes.class_price}" />
+							</h2>
+							&nbsp;&nbsp;&nbsp;
+						</div>
+						<div style="margin-top: 1.5em">
+							<a class="btn btn-outline-success"
+								href="cash?classinfo_class_no=${classes.class_no}">신청하기</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
 		</div>
 		<!-- footer Start-->
-		<footer class="contrainer index-footer" data-aos="zoom-in-up" data-aos-duration="800" data-aos-easing="ease-in-out">
+		<footer class="contrainer index-footer" data-aos="zoom-in-up"
+			data-aos-duration="800" data-aos-easing="ease-in-out">
 			<section class="row" style="background-color: #8CD790;">
 				<div class="col-sm common"
 					style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
