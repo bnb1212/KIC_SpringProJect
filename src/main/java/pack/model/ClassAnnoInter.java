@@ -51,4 +51,7 @@ public interface ClassAnnoInter {
 	
 	@Update("update member set member_class_no=#{class_no} where member_no=#{member_no}")
 	void insertClass(InsertBean bean) throws DataAccessException;
+	
+	@Insert("insert into take(class_no, member_no) values(#{class_no},#{member_no})")
+	void insertTake(TakeDto takeDto) throws DataAccessException;
 }

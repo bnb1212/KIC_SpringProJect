@@ -81,5 +81,12 @@ public class ClassImpl implements ClassInter{
 		 classAnnoInter.insertClass(insertBean);
 		 return;
 	}
+	
+	@Override
+	public void insertTake(TakeDto takeDto) throws DataAccessException {
+		classAnnoInter.insertTake(takeDto);
+		return;
+		
+	}
 
 }

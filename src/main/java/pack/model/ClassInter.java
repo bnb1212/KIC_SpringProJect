@@ -28,4 +28,6 @@ public interface ClassInter {
 	List<MemberDto> selectMember(String member_no) throws DataAccessException;
 	
 	void insertClass(InsertBean insertBean) throws DataAccessException;
+	
+	void insertTake(TakeDto takeDto) throws DataAccessException;
 }
