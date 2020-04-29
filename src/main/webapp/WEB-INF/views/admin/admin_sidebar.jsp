@@ -55,7 +55,7 @@
 			aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">코스, 강의를 관리할 수 있습니다</h6>
-				<a class="collapse-item" href="admin_classinit">강의 관리</a>>
+				<a class="collapse-item" href="admin_classinit">강의 관리</a>
 			</div>
 		</div></li>
 
@@ -65,9 +65,8 @@
 	<!-- Heading -->
 
 	<!-- Sidebar Toggler (Sidebar) -->
-	<div class="text-center d-none d-md-inline">
-		<button class="rounded-circle border-0" id="sidebarToggle"></button>
-	</div>
-
+		<div class="text-center d-none d-md-inline">
+			<button class="rounded-circle border-0" id="sidebarToggle"></button>
+		</div>
 </ul>
 <!-- End of Sidebar -->

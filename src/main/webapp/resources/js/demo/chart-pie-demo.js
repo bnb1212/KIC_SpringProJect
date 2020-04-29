@@ -7,10 +7,10 @@ var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
   type: 'doughnut',
   data: {
-    labels: ["Direct", "Referral", "Social"],
+    labels: ["머신러닝", "프로그래밍", "디자인", "마케팅"],
     datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+      data: [40, 30, 20, 10],
+      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#fff'],
       hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
