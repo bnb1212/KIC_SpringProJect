@@ -93,7 +93,7 @@
 												<td><a class="btn btn-success" href="admin_class_update?no=${s.class_no}">강의
 														수정</a> <a class="btn btn-warning" href="admin_class_delete?no=${s.class_no}">강의
 														삭제</a></td>
-												<td><a href="admin_video_insert?no=${s.class_no}" class="btn btn-primary" name="insVmodal">영상추가</a>
+												<td>
 													<a class="btn btn-secondary" href="admin_curri_insert?no=${s.class_no }">커리큘럼 추가</a></td>
 											</tr>
 										</c:forEach>

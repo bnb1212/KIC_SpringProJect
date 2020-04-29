@@ -42,21 +42,36 @@ function detList(param){
         success : function(detdata){
             var a =''; 
             $.each(detdata, function(key, value){ 
-                a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;">';
-                a += '<div class="detInfo'+value.det_no+'">'+'작성자 : '+value.member_name+' / 작성시간 : '+value.date+'&emsp;';
-                if(mno == value.mno){
-                a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\',\''+value.vno+'\');"> 수정 /  </a>';
-                a += '<a style="cursor:pointer" onclick="det_delete('+value.det_no+',\''+value.vno+'\');"> 삭제 </a> </div>';
-                }else{
-                a += '</div>';
-                }
-                
-                a += '<div class="detContent'+value.det_no+'"><div class="row"><div class="col" style="vertical-align: bottom;"><div class="coment"><p>'+value.content +'</p></div></div>';
-                a += '<div class="col" style="text-align:right;"><div class="coment2'+value.det_no+'dap"><button id="ddbtn'+value.det_no+'" class="btn btn-outline-info" onclick="showdap('+value.det_no+');" style="margin-bottom:10px;">답글보기</button></div></div></div>';
-                a += '<div class="dapdetContent'+value.det_no+'" style="display:none;">';
-                a += '</div></div></div>'; //depdetContent,detContent,detArea div 닫는부분
+            	a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px; ">';
+            	a += '<table style="margin-left:25px;">';
+            	a += '<tr><td rowspan="2" style="vertical-align:top"><i class="far fa-user-circle fa-3x" style="margin-right: 10px; color: #ced4da; "></td>';
+            	a += '<td style="width:885px;"><div class="detInfo'+value.det_no+'">'+'작성자 : '+value.member_name+'&nbsp;&nbsp;&nbsp; 작성시간 : '+value.date+'&emsp;';
+            	if(mno == value.mno){
+            		a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\',\''+value.vno+'\');"> 수정 / </a>';   
+                    a += '<a style="cursor:pointer" onclick="det_delete('+value.det_no+',\''+value.vno+'\');">삭제</a>'; 
+            	}
+            	a += '</div></td>'
+            	a += '<td rowspan="2" style="vertical-align:middle"><div class="coment2'+value.det_no+'dap"><button id="ddbtn'+value.det_no+'" class="btn btn-outline-info" onclick="showdap('+value.det_no+');" style="margin-bottom:10px; box-shadow: none;">답글보기</button></div></td></tr>';
+            	a += '<tr><td><div class="detContent'+value.det_no+'"><p>'+value.content +'</p></div></td></tr>';
+            	a += '</table>';
+            	a += '<div class="dapdetContent'+value.det_no+'" style="display:none;">';
+            	a += '</div></div>'; //dapdetContent,detArea div 닫는부분
+            //$.each(detdata, function(key, value){ 
+              //  a += '<div class="detArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;">';
+              //  a += '<div class="detInfo'+value.det_no+'">'+'작성자 : '+value.member_name+' / 작성시간 : '+value.date+'&emsp;';
+              //  if(mno == value.mno){
+              //  a += '<a style="cursor:pointer" onclick="det_update('+value.det_no+',\''+value.content+'\',\''+value.vno+'\');"> 수정 /  </a>';
+              //  a += '<a style="cursor:pointer" onclick="det_delete('+value.det_no+',\''+value.vno+'\');"> 삭제 </a> </div>';
+              //  }else{
+              //  a += '</div>';
+              //  }
+              //  
+              //  a += '<div class="detContent'+value.det_no+'"><div class="row"><div class="col" style="vertical-align: bottom;"><div class="coment"><p>'+value.content +'</p></div></div>';
+              //  a += '<div class="col" style="text-align:right;"><div class="coment2'+value.det_no+'dap"><button id="ddbtn'+value.det_no+'" class="btn btn-outline-info" onclick="showdap('+value.det_no+');" style="margin-bottom:10px;">답글보기</button></div></div></div>';
+              //  a += '<div class="dapdetContent'+value.det_no+'" style="display:none;">';
+              //  a += '</div></div></div>'; //dapdetContent,detContent,detArea div 닫는부분
+            //});
             });
-            
             $(".detshow").html(a);
         }
     });
@@ -269,14 +284,14 @@ function showdap(param){
 		$(".dapdetContent"+param).removeClass("toggled")
 	} else {
 	var aa="";
-	aa += '<table style="margin-bottom:20px;"><tr><td><i class="far fa-user-circle" style="font-size:50px; margin-right: 10px; color: #ced4da"></i></td>';
-    aa += '<td><textarea id="dapdetplace'+param+'" class="form-control" name="dapdetplace" cols="120" rows="2" placeholder="답글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>';
+	aa += '<table style="margin-bottom:20px; margin-left:35px;"><tr><td><i class="far fa-user-circle fa-2x" style="margin-right: 10px; color: #ced4da; "></i></td>';
+    aa += '<td><textarea id="dapdetplace'+param+'" class="form-control" name="dapdetplace" cols="90" rows="1" placeholder="답글을 입력해주세요" style=" margin-right: 10px;"></textarea></td>';
     aa += '<td><form id="dap" name="dap">';
     aa += '<input type="hidden" id="dapcont" name="dapcont">'; 
     aa += '<input type="hidden" id="dvno" name="dvno" value='+${vno}+'>'; 
     aa += '<input type="hidden" id="dmno" name="dmno" value='+<%=session.getAttribute("member_no") %>+'>';
     aa += '</form>';
-    aa += '<input type="button" onclick="insertdap('+param+')" class="btn btn-outline-info" value="등록"></td>';
+    aa += '<input type="button" onclick="insertdap('+param+')" class="btn btn-outline-info" style="margin-left: 10px; box-shadow: none;" value="등록"></td>';
     aa += '</tr>';
     aa += '</table>';
 	$.ajax({
@@ -286,18 +301,19 @@ function showdap(param){
 		data : {"parent":param},
 		success : function(dapList) {
 			var list = dapList.datas;
-			$(list).each(function(index,obj){ 
+			$(list).each(function(index,obj){					
 	                aa += '<div class="dapdetArea" style="border-bottom:0.125rem solid rgba(0, 0, 0, 0.1); margin-bottom: 15px;">';
-	                aa += '<div class="dapdetInfo'+obj.det_no+'">'+'작성자 : '+obj.member_name+' / 작성시간 : '+obj.date+'&emsp;';
-	                if(<%=session.getAttribute("member_no") %> == obj.mno){
-	                aa += '<a style="cursor:pointer" onclick="dapdet_update('+obj.det_no+',\''+obj.content+'\',\''+obj.vno+'\');"> 수정 /  </a>';
-	                aa += '<a style="cursor:pointer" onclick="det_delete('+obj.det_no+',\''+obj.vno+'\');"> 삭제 </a> </div>';
-	                }else{
-	                aa += '</div>';
-	                }
-	                
-	                aa += '<div class="dapdetContent'+obj.det_no+'"><div class="row"><div class="col"><div class="dapcoment"><p>'+obj.content+'</p></div></div>';
-	                aa += '</div></div></div>'
+	               	aa += '<table style="margin-left:35px;">';
+					aa += '<tr><td rowspan="2" style="vertical-align:top"><i class="far fa-user-circle fa-2x" style="margin-right: 10px; color: #ced4da; "></td>';
+	               	aa += '<td><div class="dapdetInfo'+obj.det_no+'">'+'작성자 : '+obj.member_name+'&nbsp;&nbsp;&nbsp; 작성시간 : '+obj.date+'&emsp;';
+	               	if(<%=session.getAttribute("member_no") %> == obj.mno){
+		                aa += '<a style="cursor:pointer" onclick="dapdet_update('+obj.det_no+',\''+obj.content+'\',\''+obj.vno+'\');"> 수정 /  </a>';
+		                aa += '<a style="cursor:pointer" onclick="det_delete('+obj.det_no+',\''+obj.vno+'\');">삭제 </a> </div>';
+		                }
+	               	aa += '</div></td>';
+	               	aa += '<tr><td><div class="dapdetContent'+obj.det_no+'"><p>'+obj.content +'</p></div></td></tr>'
+	                aa += '</table>';
+	                aa += '</div>';//dapdetArea end
 	            });
 				$('.dapdetContent'+param).html(aa);
 			},

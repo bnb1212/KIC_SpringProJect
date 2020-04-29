@@ -93,8 +93,23 @@
 			</div>
 		</div>
 		<div class="overlay"></div>
-	</header>
+</header>
+<footer class="contrainer index-footer">
+		<section class="row" style="background-color: #8CD790;">
+			<div class="col-sm common"
+				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">
 
+				<p>(주)KIC 스터디 | 대표 4팀</p>
+				<p>주소 | 서울특별시 강남구 테헤란로 26길 34,1층</p>
+				<p>
+					<a href="admin_login" style='text-decoration: none; color: black;'>사업자</a>등록번호
+					|687-86-12345 통신판매업
+				</p>
+				<p>신고번호 | 제2018-서울구로-1234호</p>
+				<p>전화번호 | 010.1234.5678</p>
+			</div>
+		</section>
+	</footer>
 </body>
 </html>
 
