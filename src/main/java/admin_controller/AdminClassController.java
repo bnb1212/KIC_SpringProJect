@@ -22,7 +22,7 @@ public class AdminClassController {
 	// ========= init =========== 
 	@RequestMapping("admin_classinit")
 	public ModelAndView classProcess() {
-		return new ModelAndView("admin/admin_classinit", "datas", admin_ClassInit_Inter.selectList());
+		return new ModelAndView("admin/admin_classinit2", "datas", admin_ClassInit_Inter.selectList());
 	}
 
 	// ========== detail ===========

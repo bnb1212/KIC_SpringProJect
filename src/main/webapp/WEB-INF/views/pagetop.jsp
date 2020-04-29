@@ -3,6 +3,11 @@
 
 <%--사이드바 메뉴 내 강의목록 넘어가기 --%>
 <script type="text/javascript">
+$(document).ready(function(){
+	
+    AOS.init();
+});
+
 	function studyListFunc(category) {
 		var frm = $("#category");
 		var cate = $("#cate_name");
@@ -32,15 +37,25 @@
 			<!-- 로그인 버튼 -->
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">사이트 소개</a></li>
-					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="category">전체 카테고리</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a
+						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						href="intro">강사 소개</a></li>
+					<li class="nav-item mx-0 mx-lg-1"><a
+						class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+						href="category">전체 카테고리</a></li>
 					<!-- 메뉴버튼 -->
-					<li class="nav-item mx-0 mx-lg-1"><a href="#" class="menu-toggle rounded" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"> <i class="fas fa-bars"></i></a><li>
+					<li class="nav-item mx-0 mx-lg-1"><a href="#"
+						class="menu-toggle rounded" data-toggle="collapse"
+						data-target="#navbarResponsive" aria-controls="navbarResponsive"
+						aria-expanded="false" aria-label="Toggle navigation"> <i
+							class="fas fa-bars"></i></a>
+					<li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
+	<div class="head-wrapper">
+	</div>
 </div>
 <!-- end header -->
 <!-- sidebar navigation -->
@@ -50,16 +65,17 @@
 			<%
 				if (session.getAttribute("member_no") != null) {
 			%>
-			<li class="sidebar-brand" style="color:#fff;">
-			<%=session.getAttribute("member_name")%> 님 <a class="menu-toggle rounded" href="#"> <i
+			<li class="sidebar-brand" style="color: #fff;"><%=session.getAttribute("member_name")%>
+				님 <a class="menu-toggle rounded" href="#"> <i
 					class="fas fa-bars"></i>
 			</a></li>
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
 				href="member_logout">로그아웃</a></li>
-			
+
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
-				href="#" onclick="myinfo(<%=session.getAttribute("member_no")%>)" >내 정보 보기</a></li>
-			 
+				href="#" onclick="myinfo(<%=session.getAttribute("member_no")%>)">내
+					정보 보기</a></li>
+
 			<!-- 메뉴 버튼 -->
 			<li class="sidebar-nav-item"><a class="js-scroll-trigger"
 				href="#" onclick='studyListFunc("머신러닝")'>머신러닝</a></li>
@@ -76,9 +92,8 @@
 				} else {
 			%>
 			<li class="sidebar-brand"><a class="js-scroll-trigger" href="#"
-				id="loginBtn">로그인</a> <a class="menu-toggle rounded" href="#"> <i
-					class="fas fa-bars"></i>
-			</a></li>
+				id="loginBtn">로그인</a>
+			</li>
 			<%
 				}
 			%>
@@ -86,9 +101,7 @@
 	</form>
 </nav>
 
-<div id="nav_space">
-
-</div>
+<div id="nav_space"></div>
 
 <!-- modal login -->
 <%@ include file="member_login.jsp"%>
