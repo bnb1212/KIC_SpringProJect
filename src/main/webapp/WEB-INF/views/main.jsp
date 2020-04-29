@@ -7,7 +7,7 @@
 <%@ include file="css_scripts.jsp"%>
 <title>모여라</title>
 <script>
-
+	
 </script>
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target"
@@ -16,7 +16,8 @@
 
 	<header class="masthead d-flex">
 		<div class="container text-center my-auto">
-			<div class="intro-text"  data-aos="fade-right" data-aos-duration="1000">
+			<div class="intro-text" data-aos="fade-right"
+				data-aos-duration="1000">
 				<h2 class="mb-1">
 					머신러닝 스터디 <br>지금 함께하세요
 				</h2>
@@ -27,15 +28,50 @@
 		</div>
 		<div class="overlay"></div>
 	</header>
-	</div>
+
+	<section class="page-section bg-primary text-white mb-0" id="about" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
+		<div class="container">
+			<!-- About Section Heading-->
+			<h2
+				class="page-section-heading text-center text-uppercase text-white">About</h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom divider-light">
+				<div class="divider-custom-line"></div>
+				<div class="divider-custom-icon">
+					<i class="fas fa-star"></i>
+				</div>
+				<div class="divider-custom-line"></div>
+			</div>
+			<!-- About Section Content-->
+			<div class="row">
+				<div class="col-lg-4 ml-auto">
+					<p class="lead">STUDYPRO is a free bootstrap theme created by
+						Start Bootstrap. The download includes the complete source files
+						including HTML, CSS, and JavaScript as well as optional SASS
+						stylesheets for easy customization.</p>
+				</div>
+				<div class="col-lg-4 mr-auto">
+					<p class="lead">You can create your own custom avatar for the
+						masthead, change the icon in the dividers, and add your email
+						address to the contact form to make it fully functional!</p>
+				</div>
+			</div>
+			<!-- About Section Button-->
+			<div class="text-center mt-4">
+
+			</div>
+		</div>
+	</section>
 	<!-- category content -->
 	<section class="content-section" id="portfolio">
 		<div class="container">
 			<div class="content-section-heading text-center">
-				<h4 class="text-secondary mb-0" data-aos="zoom-in-up" data-aos-duration="800">Course Category</h4>
+				<h4 class="text-secondary mb-0" data-aos="zoom-in-up"
+					data-aos-duration="800">Course Category</h4>
 				<br> <br>
 			</div>
-			<div class="row no-gutters" data-aos="flip-right" data-aos-duration="800">
+			<div class="row no-gutters" data-aos="flip-right"
+				data-aos-duration="800">
 				<div class="col-lg-3">
 					<a class="portfolio-item" href="machine"> <span class="caption">
 							<span class="caption-content">
@@ -73,9 +109,11 @@
 					</a>
 				</div>
 			</div>
+		</div>
 	</section>
 	<!-- category content end -->
-	<footer class="contrainer index-footer" data-aos="fade-in" data-aos-duration="800">
+	<footer class="contrainer index-footer" data-aos="fade-in"
+		data-aos-duration="800">
 		<section class="row" style="background-color: #8CD790;">
 			<div class="col-sm common"
 				style="font-size: 1rem; padding: 40px 20px 40px 20px; text-align: center; vertical-align: middle;">

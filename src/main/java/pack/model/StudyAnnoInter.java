@@ -33,7 +33,6 @@ public interface StudyAnnoInter {
 	public VideoDto selectVideo(String vno); 
 	
 	//이전영상 다음영상 이동을 위해 min,max값 구하기
-	
 	@Select("select min(video_no) as min from video where class_no = #{clno}")
 	public String getmin(String clno); 
 	
