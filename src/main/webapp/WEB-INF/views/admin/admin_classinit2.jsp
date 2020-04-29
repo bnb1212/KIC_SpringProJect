@@ -86,7 +86,7 @@
 
 												<td>${s.class_name }</td>
 												<td><p>${s.class_info }</p>
-												<p><a class="btn btn-outline-success">상세보기</a></p></td>
+												<p><a href="admin_classdetail?no=${s.class_no }" class="btn btn-outline-success">상세보기</a></p></td>
 												<td>${s.class_limit }</td>
 												<td>${s.class_price }</td>
 												<td>${s.class_category }</td>

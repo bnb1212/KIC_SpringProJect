@@ -33,7 +33,7 @@
 			<div class="product-info col-sm pad-horizontal type-klass">
 				<div class="primary-area"></div>
 				<div class="secondary-area">
-					${infodata.classinfo_subtitle_three }</div>
+					</div>
 			</div>
 		</section>
 		<div class="row">

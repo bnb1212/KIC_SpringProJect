@@ -14,12 +14,12 @@
 	data-offset="300" id="home-section">
 	<%@ include file="pagetop.jsp"%>
 
-	<header class="masthead d-flex">
+	<header class="masthead d-flex mainmast">
 		<div class="container text-center my-auto">
 			<div class="intro-text" data-aos="fade-right"
 				data-aos-duration="1000">
 				<h2 class="mb-1">
-					머신러닝 스터디 <br>지금 함께하세요
+					<img style="width:300px;" src="resources/img/mast-logo.png">
 				</h2>
 				<h4 class="mb-5">
 					<em>최고의 전문가들이 여러분의 길잡이가 되어드립니다.</em>
@@ -30,7 +30,7 @@
 	</header>
 
 	<section class="page-section bg-primary text-white mb-0" id="about" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="300">
-		<div class="container">
+		<div class="container-fluid">
 			<!-- About Section Heading-->
 			<h2
 				class="page-section-heading text-center text-uppercase text-white">About</h2>

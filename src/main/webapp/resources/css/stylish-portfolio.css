@@ -92,7 +92,7 @@ h6 {
   display: table;
   width: 100vw;
   height: 40vh;
-  padding-top: 8rem;
+  padding-top: 8.5rem;
   padding-bottom: 8rem;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../img/bg-masthead.jpg");
   background-position: center center;
@@ -114,6 +114,10 @@ h6 {
 	 background-size: cover;
 	 background-repeat: no-repeat;
 	 background-position: center center;
+}
+
+.mainmast{
+	padding-top: 2rem;
 }
 .masthead h1 {
   font-size: 4rem;
