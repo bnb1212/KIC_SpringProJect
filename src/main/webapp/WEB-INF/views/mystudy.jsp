@@ -11,6 +11,83 @@
     .box {
     margin-top : 60px;
 }
+@import url(https://fonts.googleapis.com/css?family=Muli:400, 300);
+
+.calendar, .calendar_weekdays, .calendar_content {
+    max-width: 300px;
+}
+.calendar {
+    margin: auto;
+    font-family:'Muli', sans-serif;
+    font-weight: 400;
+}
+.calendar_content, .calendar_weekdays, .calendar_header {
+    position: relative;
+    overflow: hidden;
+}
+.calendar_weekdays div {
+    display:inline-block;
+    vertical-align:top;
+}
+.calendar_weekdays div, .calendar_content div {
+    width: 14.28571%;
+    overflow: hidden;
+    text-align: center;
+    background-color: transparent;
+    color: #6f6f6f;
+    font-size: 14px;
+}
+.calendar_content div {
+    border: 1px solid transparent;
+    float: left;
+}
+.calendar_content div:hover {
+    border: 1px solid #dcdcdc;
+    cursor: default;
+}
+.calendar_content div.blank:hover {
+    cursor: default;
+    border: 1px solid transparent;
+}
+.calendar_content div.past-date {
+    color: #d5d5d5;
+}
+.calendar_content div.today {
+    font-weight: bold;
+    font-size: 14px;
+    color: #87b633;
+    border: 1px solid #dcdcdc;
+}
+.calendar_content div.selected {
+    background-color: #f0f0f0;
+}
+.calendar_header {
+    width: 100%;
+    text-align: center;
+}
+.calendar_header h2 {
+    padding: 0 10px;
+    font-family:'Muli', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #87b633;
+    float:left;
+    width:70%;
+    margin: 0 0 10px;
+}
+button.switch-month {
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    border: none;
+    color: #dcdcdc;
+    float: left;
+    width:15%;
+    transition: color .2s;
+}
+button.switch-month:hover {
+    color: #87b633;
+}
   </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -62,7 +139,7 @@ function gostudyroom(param){
 <body>
 <%@include file="pagetop.jsp" %>
 <div class="container">
-<div class="box" style="border-style:solid; border-color: #f5f5f5; border-radius: 4px; padding:20px 20px 20px 20px;">
+<div class="box" style="width:auto; border-style:solid; border-color: #f5f5f5; border-radius: 4px; padding:20px 20px 20px 20px;">
 <!-- row start -->
 <div class="row">
 <div class="col">
@@ -89,9 +166,23 @@ function gostudyroom(param){
 <div class="col" style="background-color: #f5f5f5; margin-right: 20px;">
 <div style="margin-top: 10px;">
 <h3>학습자료</h3><br>
+<ul>
+<li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="blank">사용할 교재</a></li>
+<li><a href="https://www.aladin.co.kr/home/welcome.aspx" target="blank">부교재</a></li>
+<li><a href="resources/img/TensorFlow-Basic-Concept_Ko.pdf" download>pdf자료 다운로드</a></li>
+</ul>
 </div>
 <div style="margin-top: 10px;">
 <h3>스터디 일정</h3><br>
+<div class="calendar calendar-first" id="calendar_first">
+    <div class="calendar_header">
+        <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
+         <h2></h2>
+        <button class="switch-month switch-right"> <i class="fa fa-chevron-right"></i></button>
+    </div>
+    <div class="calendar_weekdays"></div>
+    <div class="calendar_content"></div>
+</div>
 </div>
 </div>
 </div>
@@ -102,6 +193,7 @@ function gostudyroom(param){
 <input type="hidden" id="vno" name="vno">
 <input type="hidden" id="clno" name="clno">
 </form>
+<script type="text/javascript" src="resources/js/joycal.js"></script>
 </body>
 </html>
 
