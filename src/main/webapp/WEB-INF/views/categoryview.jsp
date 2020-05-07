@@ -42,18 +42,13 @@
 		</header>
 	</div>
 	<%-- header end --%>
+	<%-- show Category Start --%>
 	<section class="showCategory">
 		<div class="container">
 			<div class="row">
 				<c:set var="col_count" value="0" />
 				<c:forEach var="s" items="${list}">
 					<c:set var="col_count" value="${col_count + 1 }" />
-
-					<%-- 행의 첫번째 컨텐츠일 경우 
-				<c:if test="${col_count % 4 == 1}">
-					<div class="row">				
-				</c:if>
-				--%>
 					<div class="col-lg-3" data-aos="zoom-in-up" data-aos-duration="800"
 						data-aos-easing="ease-in-out">
 						<div class="card card-block" style="padding: 0.5rem;">
@@ -74,16 +69,11 @@
 							</div>
 						</div>
 					</div>
-
-					<%--행의 마지막 컨텐츠일경우 
-				<c:if test="${col_count % 4 == 0 }">
-					 
-				</c:if>
-				--%>
 				</c:forEach>
 			</div>
 		</div>
 	</section>
+	<%-- show Category End --%>
 
 	<footer class="contrainer index-footer" data-aos="fade-up">
 		<section class="row" style="background-color: #8CD790;">

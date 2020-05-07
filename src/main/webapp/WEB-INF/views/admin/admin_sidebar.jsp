@@ -8,9 +8,7 @@
 	id="accordionSidebar">
 
 	<!-- Sidebar - Brand -->
-	<a
-		class="sidebar-brand d-flex align-items-center justify-content-center"
-		href="admin_index">
+	<a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin_index">
 		<div class="sidebar-brand-icon rotate-n-15">
 			<i class="fas fa-book-reader"></i>
 		</div>
@@ -32,32 +30,32 @@
 	<div class="sidebar-heading"></div>
 
 	<!-- Nav Item - Pages Collapse Menu -->
-	<li class="nav-item"><a class="nav-link collapsed" href="#"
-		data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-		aria-controls="collapseTwo"> <i class="fas fa-fw fa-cog"></i> <span>회원
-				관리</span>
-	</a>
-		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
-			data-parent="#accordionSidebar">
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"aria-controls="collapseTwo"> 
+			<i class="fas fa-fw fa-cog"></i> <span>회원 관리</span>
+		</a>
+		<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">회원 관리를 할 수 있습니다</h6>
-				<a class="collapse-item" href="admin_memberinit"><i
-					class="far fa-address-book"></i>&nbsp;회원 정보 처리</a>
+				<a class="collapse-item" href="admin_memberinit">
+				<i class="far fa-address-book"></i>&nbsp;회원 정보 처리</a>
 			</div>
-		</div></li>
+		</div>
+	</li>
 
 	<!-- Nav Item - Utilities Collapse Menu -->
-	<li class="nav-item"><a class="nav-link collapsed" href="#"
-		data-toggle="collapse" data-target="#collapseUtilities"
-		aria-expanded="true" aria-controls="collapseUtilities"><i
-			class="far fa-play-circle"></i> <span>강의 관리</span> </a>
-		<div id="collapseUtilities" class="collapse"
-			aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+	<li class="nav-item">
+		<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+			aria-expanded="true" aria-controls="collapseUtilities">
+			<i class="far fa-play-circle"></i> <span>강의 관리</span> 
+		</a>
+		<div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
 			<div class="bg-white py-2 collapse-inner rounded">
 				<h6 class="collapse-header">코스, 강의를 관리할 수 있습니다</h6>
 				<a class="collapse-item" href="admin_classinit">강의 관리</a>
 			</div>
-		</div></li>
+		</div>
+	</li>
 
 	<!-- Divider -->
 	<hr class="sidebar-divider">

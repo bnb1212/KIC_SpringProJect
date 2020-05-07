@@ -23,13 +23,15 @@
 									<h2>로그인</h2>
 									<div class="control-group">
 									<div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>회원 Email</label><input class="form-control" name="member_email" id="member_email" type="email" placeholder="E-mail address" required="required" data-validation-required-message="이메일을 입력해주세요" />
+                                    <label>회원 Email</label><input class="form-control" name="member_email" id="member_email" 
+                                    type="email" placeholder="E-mail address" required="required" data-validation-required-message="이메일을 입력해주세요" />
                                     <p class="help-block text-danger"></p>
                             	</div>
 									  </div>
 									  <div class="control-group">
 									<div class="form-group floating-label-form-group controls mb-0 pb-2">
-                                    <label>Password</label><input class="form-control" name="member_passwd" id="member_passwd" type="password" placeholder="Password" required="required" data-validation-required-message="비밀번호를 입력해주세요" />
+                                    <label>Password</label><input class="form-control" name="member_passwd" id="member_passwd" type="password"
+                                     placeholder="Password" required="required" data-validation-required-message="비밀번호를 입력해주세요" />
                                     <p class="help-block text-danger"></p>
                                 	</div>
                                 	</div>
